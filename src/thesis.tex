@@ -1,0 +1,152 @@
+% === DOCUMENT PROPERTIES ===
+
+\newcommand{\thesisauthor}{Igor Botyan}
+\newcommand{\thesistitle}{Software Security Threats in Mobile Peer-to-peer Environment}
+\newcommand{\thesistitlewrapped}{Software Security Threats\\in Mobile Peer-to-peer Environment}
+\newcommand{\thesissubject}{Master's thesis}
+\newcommand{\thesiskeywords}{mobile environment, peer-to-peer, software, security, threats, PeerHood}
+\newcommand{\thesissupervisor}{D.Sc. Pekka J\"appinen}
+\newcommand{\thesisfirstexaminer}{Professor Esa Kerttula}
+\newcommand{\thesissecondexaminer}{\thesissupervisor}
+\newcommand{\thesisschool}{Lappeenranta University of Technology\\
+  Faculty of Technology Management\\
+  Degree Programme in Information Technology}
+
+\title{\thesistitle} % the title of the thesis
+\author{\thesisauthor} % the author of the thesis
+\date{\today} % the date of the thesis submission
+
+\documentclass[12pt,a4paper,oneside]{article}
+
+% === LIST OF USED PACKAGES ===
+
+\usepackage[printonlyused]{acronym} % to make list of abbreviations
+\usepackage[english]{babel}
+\usepackage{bold-extra} % to highlight keywords in source code listings
+
+\usepackage[
+  font=small,
+  format=plain,
+  labelfont=bf,%up,
+  textfont=normalfont,%up,
+  labelsep=period
+]{caption} % to format picture captions
+
+\usepackage{color} % to use various font colors
+
+\usepackage{courier} % to use the Courier New font as a default monospace font
+% sudo apt-get install texlive-fonts-recommended
+
+\usepackage{datetime} % to get the current year and to format dates
+\usepackage{etoolbox}
+\usepackage{fancyhdr} % to format page headers
+\usepackage{geometry} % to define custom margins of each page
+\usepackage{graphicx} % to use png graphic format for pictures
+
+\usepackage[
+  pdftitle={\thesistitle},
+  pdfauthor={\thesisauthor},
+  pdfsubject={\thesissubject},
+  pdfnewwindow=false,
+  pdfkeywords={\thesiskeywords},
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  filecolor=black,
+  urlcolor=black,
+]{hyperref} % to make references as hyperlinks
+
+\usepackage{ifthen} % provides \ifthenelse test  
+\usepackage{lastpage} % to determine a total number of pages of the thesis
+\usepackage{listings} % to format listings of source code
+\usepackage{setspace} % to set line spacing
+
+\usepackage{times} % to use the Times New Roman font as a default text font
+% sudo apt-get install texlive-fonts-recommended
+
+\usepackage{xifthen} % provides \isempty test
+
+% === TEX DEFINITIONS ===
+
+\include{tex_definitions}
+\include{styles}
+
+% === PREFERENCES ===
+
+% to define margins of each page
+\geometry{left=4cm}
+\geometry{right=2cm}
+\geometry{top=2.5cm}
+\geometry{bottom=3.5cm}
+
+\DeclareGraphicsExtensions{.png}
+
+\hypersetup{bookmarkstype=none}
+
+\onehalfspacing % to set one and half line spacing
+\setlength{\parindent}{0pt} % to disable indentation of a new paragraph
+
+\setlength{\headheight}{28pt}
+\applygeneralpagestyle{}
+
+\apptocmd{\thebibliography}{\raggedright}{}{}
+
+% === DOCUMENT BODY ===
+
+\begin{document}
+
+\graphicspath{{./images/}} % to set the path to image files
+
+% The title
+
+\include{title_page}
+
+% The abstract
+
+\setcounter{page}{2} % the title page shouldn't be numbered
+\pagenumbering{roman} % the following pages should be numbered by roman symbols
+
+\newpage
+\include{abstract}
+
+% The acknowledgements
+
+\newpage
+\include{acknowledgements}
+
+% The table of contents
+
+\pagenumbering{arabic} % the following pages should be numbered by arabic symbols
+\setcounter{page}{1} % the page numbering should be reset
+\setcounter{tocdepth}{3} % to set depth of 
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+
+\newpage
+\tableofcontents
+
+% The abbreviations
+
+\newpage
+\include{abbreviations}
+
+% The chapters
+
+\newpage
+\include{introduction}
+
+\newpage
+\include{temporary_chapter}
+
+% The references
+
+\newpage
+\include{references}
+
+% The appendices
+\newpage
+\include{appendix_valgrind_output}
+
+\newpage
+\include{appendix_peerhood_api}
+
+\end{document}

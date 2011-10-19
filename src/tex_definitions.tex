@@ -1,0 +1,307 @@
+% === DEFINITIONS FOR TEXT ITEMS ===
+
+% to use citations to bibliography items
+% requires the 'color' package
+
+\newcommand{\reference} [1] {
+	\cite{#1}
+}
+
+\newcommand{\webresource} [1] {
+	\textcolor{red}{\cite{#1}}
+}
+
+% to define bibliography items
+
+\makeatletter
+\def\url@leostyle{%
+	\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\sf}}}
+ 	 %\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+
+% Now actually use the newly defined style.
+\urlstyle{leo}
+
+% to define a bibliography item used in the thesis
+
+\newcommand{\bibbook} [9] {
+	\bibitem{#1} % key
+		\ifthenelse{\isempty{#2}}
+			{} % author(s) is not presented
+			{#2,} % author(s)
+		\emph{#3}, % title
+		\ifthenelse{\isempty{#4}}
+			{} % first edition
+			{#4 edition,} % edition
+		#5, % publisher
+		#6, % country
+		#7, % date of publication		
+		#8 pages,
+		ISBN: \mbox{#9}
+}
+
+\newcommand{\bibarticle} [9] {
+	\bibitem{#1} % key
+		#2, % author(s)
+		\emph{#3}, % title
+		#4, % journal
+		\ifthenelse{\isempty{#5}}
+			{}
+			{Vol. #5,} % volume
+		\ifthenelse{\isempty{#6}}
+			{}
+			{No. #5,} % number
+		#7, % country
+		\ifthenelse{\isempty{#9}}
+			{#8} % date
+			{#8, pages #9} % date and pages
+}
+
+\newcommand{\bibdissertation} [7] {
+	\bibitem{#1} % key
+		#2, % author(s)
+		\emph{#3}. % title
+		Dissertation, #4, % school
+		#5, % address
+		#6 % date
+		%#7 pages,
+}
+
+\newcommand{\bibmastersthesis} [7] {
+	\bibitem{#1} % key
+		#2, % author(s)
+		\emph{#3}. % title
+		Master's thesis, #4, % school
+		#5, % address
+		#6 % date
+		%#7 pages,
+}
+
+\newcommand{\bibproceedings} [6] {
+	\bibitem{#1} % key
+		#2, % author(s)
+		\emph{#3}, % title
+		#4, % conference
+		#5, % address
+		#6 % date
+}
+
+\newcommand{\bibmanual} [5] {
+	\bibitem{#1} % key
+		#2, % author(s)
+		\emph{#3}, % title
+		#4. % date
+		Available at: \url{#5}, % URL
+		retrieved \bibdateformat\today
+}
+
+\newcommand{\bibtechreport} [6] {
+	\bibitem{#1} % key
+		#2, % author(s)
+		\emph{#3}, % title
+		#4, % institution/organization
+		#5, % country
+		#6 % date
+}
+
+\newcommand{\bibwebarticle} [5] {
+	\bibitem{#1} % key
+		#2, % author(s)
+		\emph{#3}, % title
+		#4. % year
+		Online document, from: \url{#5}, % URL
+		retrieved \bibdateformat\today
+}
+
+\newcommand{\bibwebdocument} [4] {
+	\bibitem{#1} % key
+		\emph{#2},  % title
+		#3. % year
+		Online document, from: \url{#4}, % URL
+		retrieved \bibdateformat\today
+}
+
+\newcommand{\bibwebsite} [3] {
+	\bibitem{#1} % key
+		\emph{#2}.  % title
+		Internet page, from: \url{#3}, % URL
+		referred \bibdateformat\today
+}
+
+% to define and add references
+
+\newcommand{\placereferencetosection} [1] {
+	\label{sec:#1}
+}
+
+\newcommand{\placereferencetofigure} [1] {
+	\label{fig:#1}
+}
+
+\newcommand{\placereferencetotable} [1] {
+	\label{tab:#1}
+}
+
+\newcommand{\referencetotable} [1] {
+	\tablename~\ref{tab:#1}
+}
+
+\newcommand{\referencetofigure} [1] {
+	\figurename~\ref{fig:#1}
+}
+
+\newcommand{\referencetosection} [1] {
+	Section~\ref{sec:#1}
+}
+
+% to place an image
+% requires the 'graphicx' package
+
+\newcommand{\tablefigure} [3] {
+	\begin{table}[placement=h]
+		\begin{center}
+			#3
+			\caption{#1}
+			\placereferencetotable{#2}
+		\end{center}
+	\end{table}
+}
+
+\newcommand{\imagefigure} [2] {
+	\begin{figure}[placement=h]
+  		\begin{center}
+    		\includegraphics[scale=0.65]{#2}
+    		\caption{#1}
+    		\placereferencetofigure{#2}
+  		\end{center}
+	\end{figure}
+}
+
+% to print the given date (format is '<month short name> <year>')
+% requires the 'datetime' package
+
+\newcommand{\bibdate} [2] {%
+	\monthname[#1] #2
+}
+
+% to print the given date (format is 'dd.mm.yyyy')
+% requires the 'datetime' package
+
+\newdateformat{bibdateformat}{%
+	\twodigit{\THEDAY}.\twodigit{\THEMONTH}.\THEYEAR
+	%\twodigit{\THEDAY}~\monthname~\THEYEAR
+}
+
+% to print the date of the thesis submission
+% requires the 'datetime' package
+
+\newdateformat{englishdateformat}{%
+	\monthname[\THEMONTH] \ordinal{DAY}, \THEYEAR
+}
+
+\newcommand{\thesisdate}{
+	\englishdateformat\today
+}
+
+% to print the current year
+% requires the 'datetime' package
+
+\newdateformat{yeardateformat}{%
+	\THEYEAR
+}
+
+\newcommand{\currentyear}{
+	\yeardateformat\today
+}
+
+% to use abbreviations in the text
+% requires the 'acronym' package
+
+\newcommand{\abbrv} [1] {
+	\ac{#1}
+}
+
+% === DEFINITONS FOR APPENDICES ===
+
+% the counter for appendices
+\newcounter{appendixcounter}
+\setcounter{appendixcounter}{0}
+\newcommand{\appendixnumber}{\todo{\Alph{appendixcounter}}} % \arabic{appendixcounter}
+
+% to format headers of the document pages
+% requires the 'fancyhdr' package
+
+\newcommand{\theappendixtitle}{}
+
+\newcommand{\clearpagestyle} {
+	\pagestyle{fancy}
+	\fancyhf{} % to reset existing page format
+	\renewcommand{\headrulewidth}{0pt} % to remove a page header line
+}
+
+\newcommand{\applygeneralpagestyle} {
+	\clearpagestyle
+	\cfoot{\thepage} % a page number center-aligned in the page footer
+}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\applyonepageappendixpagestyle} {
+	\clearpagestyle	
+	\rhead{\theappendixtitle}
+}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\applyappendixfirstpagestyle} {
+	\clearpagestyle
+	\rhead{\theappendixtitle}
+	\rfoot{(continue)}
+}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\applyappendixpagestyle} {
+	\clearpagestyle
+	\rhead{APPENDIX \appendixnumber. (continued)}
+	\rfoot{(continue)}
+}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\applyappendixlastpagestyle} {
+	\clearpagestyle
+	\rhead{APPENDIX \appendixnumber. (continued)}
+}
+
+% to format an appendix page and to add it's title to the Table of Contents
+% doesn't require any additional package
+
+\newcommand{\theappendixpagetitle} [1] {
+	APPENDIX \appendixnumber. #1
+}
+
+\newcommand{\theappendixtoctitle} [1] {
+	APPENDIX \appendixnumber. #1\par
+}
+
+\newcommand{\theappendix} [1] {
+	\ifthenelse { \equal{\arabic{appendixcounter}}{0} } {
+		\cleardoublepage
+		\phantomsection
+		\addcontentsline{toc}{section}{APPENDICES}
+	}
+	{
+		% nothing
+	}
+
+	\addtocounter{appendixcounter}{1}
+	\addtocontents{toc}{\theappendixtoctitle{#1}}
+	\section*{\theappendixpagetitle{#1}}
+	
+	\renewcommand{\theappendixtitle}{\theappendixtoctitle{#1}}
+}
