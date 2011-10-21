@@ -23,6 +23,22 @@
 \urlstyle{leo}
 
 % to define a bibliography item used in the thesis
+% requires the 'xstring' package
+
+\newcommand{\biband} {
+	~and~%\space and \space
+}
+
+\newcommand{\getfirstletter} [1] {
+	\StrLeft{#1}{1}
+}
+
+\newcommand{\bibauthor} [3] {%
+	\getfirstletter{#2}. % first name
+	\ifthenelse{\isempty{#3}}
+		{#1}% only last name
+		{\getfirstletter{#3}. #1}% middle name and last name
+}
 
 \newcommand{\bibbook} [9] {
 	\bibitem{#1} % key

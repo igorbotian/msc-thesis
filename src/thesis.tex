@@ -25,11 +25,11 @@
 \usepackage{bold-extra} % to highlight keywords in source code listings
 
 \usepackage[
-  font=small,
-  format=plain,
-  labelfont=bf,%up,
-  textfont=normalfont,%up,
-  labelsep=period
+	font=small,
+	format=plain,
+	labelfont=bf,%up,
+	textfont=normalfont,%up,
+	labelsep=period
 ]{caption} % to format picture captions
 
 \usepackage{color} % to use various font colors
@@ -43,21 +43,10 @@
 \usepackage{geometry} % to define custom margins of each page
 \usepackage{graphicx} % to use png graphic format for pictures
 
-\usepackage[
-  pdftitle={\thesistitle},
-  pdfauthor={\thesisauthor},
-  pdfsubject={\thesissubject},
-  pdfnewwindow=false,
-  pdfkeywords={\thesiskeywords},
-  colorlinks=true,
-  linkcolor=black,
-  citecolor=black,
-  filecolor=black,
-  urlcolor=black,
-]{hyperref} % to make references as hyperlinks
+\usepackage{hyperref} % to make references as hyperlinks
 
 \usepackage{ifthen} % provides \ifthenelse test  
-\usepackage{lastpage} % to determine a total number of pages of the thesis
+%\usepackage{lastpage} % to determine a total number of pages of the thesis
 \usepackage{listings} % to format listings of source code
 \usepackage{setspace} % to set line spacing
 
@@ -65,6 +54,7 @@
 % sudo apt-get install texlive-fonts-recommended
 
 \usepackage{xifthen} % provides \isempty test
+\usepackage{xstring} % to performs basic string operations 
 
 % === TEX DEFINITIONS ===
 
@@ -81,7 +71,20 @@
 
 \DeclareGraphicsExtensions{.png}
 
-\hypersetup{bookmarkstype=none}
+\hypersetup{
+	bookmarkstype=none,
+	plainpages=false,
+	pdftitle={\thesistitle},
+	pdfauthor={\thesisauthor},
+	pdfsubject={\thesissubject},
+	pdfnewwindow=false,
+	pdfkeywords={\thesiskeywords},
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=black,
+	filecolor=black,
+	urlcolor=black,
+	pageanchor=false} % if 'lastpage' is enabled remove this option 
 
 \onehalfspacing % to set one and half line spacing
 \setlength{\parindent}{0pt} % to disable indentation of a new paragraph
@@ -103,8 +106,8 @@
 
 % The abstract
 
+\clearpage\pagenumbering{roman} % the following pages should be numbered by roman symbols
 \setcounter{page}{2} % the title page shouldn't be numbered
-\pagenumbering{roman} % the following pages should be numbered by roman symbols
 
 \newpage
 \include{abstract}
@@ -116,7 +119,7 @@
 
 % The table of contents
 
-\pagenumbering{arabic} % the following pages should be numbered by arabic symbols
+\clearpage\pagenumbering{arabic} % the following pages should be numbered by arabic symbols
 \setcounter{page}{1} % the page numbering should be reset
 \setcounter{tocdepth}{3} % to set depth of 
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
