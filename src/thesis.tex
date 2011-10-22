@@ -20,8 +20,15 @@
 
 % === LIST OF USED PACKAGES ===
 
+% these packages should be placed in the beginning of the packages list 
+\usepackage{ucs} % to enable Unicode support
+\usepackage[utf8x]{inputenc} % to allow UTF8-characters in the source files
+
 \usepackage[printonlyused]{acronym} % to make list of abbreviations
-\usepackage[english]{babel}
+
+\usepackage[russian,english]{babel} % to use hyphenation
+% sudo apt-get install texlive-lang-cyrillic
+
 \usepackage{bold-extra} % to highlight keywords in source code listings
 
 \usepackage[
@@ -34,23 +41,30 @@
 
 \usepackage{color} % to use various font colors
 
-\usepackage{courier} % to use the Courier New font as a default monospace font
+%\usepackage{courier} % to use the Courier New font as a default monospace font
+% use only when english language is primary
 % sudo apt-get install texlive-fonts-recommended
 
 \usepackage{datetime} % to get the current year and to format dates
-\usepackage{etoolbox}
+\usepackage{etoolbox} % to eliminate \hbox badnesses in bibliography area
 \usepackage{fancyhdr} % to format page headers
+
+\usepackage[T2A]{fontenc}
+% use only when russian language is primary
+
 \usepackage{geometry} % to define custom margins of each page
 \usepackage{graphicx} % to use png graphic format for pictures
 
 \usepackage{hyperref} % to make references as hyperlinks
 
-\usepackage{ifthen} % provides \ifthenelse test  
+\usepackage{ifthen} % provides \ifthenelse test
 %\usepackage{lastpage} % to determine a total number of pages of the thesis
 \usepackage{listings} % to format listings of source code
+%\usepackage[parfill]{parskip}
 \usepackage{setspace} % to set line spacing
 
-\usepackage{times} % to use the Times New Roman font as a default text font
+%\usepackage{times} % to use the Times New Roman font as a default text font
+% use only when english language is primary
 % sudo apt-get install texlive-fonts-recommended
 
 \usepackage{xifthen} % provides \isempty test
@@ -88,11 +102,12 @@
 
 \onehalfspacing % to set one and half line spacing
 \setlength{\parindent}{0pt} % to disable indentation of a new paragraph
+%\setlength{\parskip}{\baselineskip} % to set the space between paragraphs
 
 \setlength{\headheight}{28pt}
 \applygeneralpagestyle{}
 
-\apptocmd{\thebibliography}{\raggedright}{}{}
+\apptocmd{\thebibliography}{\raggedright}{}{} % to eliminate \hbox badnesses in bibliography area
 
 % === DOCUMENT BODY ===
 
@@ -139,6 +154,9 @@
 
 \newpage
 \include{temporary_chapter}
+
+\newpage
+\include{summary}
 
 % The references
 
