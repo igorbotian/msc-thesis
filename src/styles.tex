@@ -6,8 +6,13 @@
 	\textcolor{commentcolor}{\italic{#1}}
 }
 
-\newenvironment{comments}{}{}
-\newenvironment{remarks}{}{}
+\newenvironment{comments}
+	{\begin{itshape}}
+	{\end{itshape}}
+	
+\NewEnviron{remarks} {%
+	\textcolor{remarkcolor}{\BODY}
+}
 
 %\newcommand{\remark} [1] {
 %	\textcolor{remarkcolor}{#1}
