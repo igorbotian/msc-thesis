@@ -2,15 +2,17 @@
 
 % to define own paragraph delimiters
 
-\newcommand{\nextparagraph} {
-	\par
-	\vspace*{1em}
+\newcommand{\nextparagraph} [1] {
+	\ifthenelse{\isempty{#1}}
+		{\par\vspace*{1em}}
+		{\par\colorbox{paragraphdescriptionbgcolor}{#1}\par}
 }
 
 % to define new text colors
 % requires the 'color' package
 
 \definecolor{commentcolor}{gray}{0.2}
+\definecolor{paragraphdescriptionbgcolor}{RGB}{255,248,220} % pale yellow (cornsilk)
 \definecolor{remarkcolor}{gray}{0.2}
 \definecolor{suggestioncolor}{RGB}{235,140,0} % dark orange
 
