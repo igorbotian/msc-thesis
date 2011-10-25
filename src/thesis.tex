@@ -68,6 +68,7 @@
 % use only when english language is primary
 % sudo apt-get install texlive-fonts-recommended
 
+\usepackage{verbatim} % to hide 'comment' environments in output file
 \usepackage{xifthen} % provides \isempty test
 \usepackage{xstring} % to performs basic string operations 
 
@@ -161,6 +162,9 @@
 
 \newpage
 \include{summary}
+
+\newpage
+\include{instructions}
 
 % The references
 
