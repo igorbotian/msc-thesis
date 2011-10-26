@@ -1,11 +1,38 @@
 % === DEFINITIONS FOR TEXT ITEMS ===
 
+% to define own format of a section's title
+
+\newcommand{\sectiontitle} [1] {
+	\section{\MakeUppercase{#1}}
+	\vspace*{1em}
+}
+
+\newcommand{\subsectiontitle} [1] {
+	\subsection{#1}
+	\vspace*{0.5em}
+}
+
+\newcommand{\subsubsectiontitle} [1] {
+	\subsubsection{#1}
+	\vspace*{0.5em}
+}
+
+\newcommand{\preamblesectiontitle} [1] {
+	\section*{\MakeUppercase{#1}}
+	\vspace*{1em}
+}
+
+\newcommand{\preamblesubsectiontitle} [1] {
+	\subsection*{#1}
+	\vspace*{1em}
+}
+
 % to define own paragraph delimiters
 
 \newcommand{\nextparagraph} [1] {
 	\ifthenelse{\isempty{#1}}
 		{\par\vspace*{1em}}
-		{\par\colorbox{paragraphdescriptionbgcolor}{#1}\par}
+		{\par\colorbox{paragraphdescriptionbgcolor}{#1}\par} % {\par\vspace*{1em}}
 }
 
 % to define new text colors
