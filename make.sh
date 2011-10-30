@@ -24,11 +24,9 @@ fi
 cd $SRC_DIR
 call_pdflatex && call_pdflatex
 
-if [ $? = 0 ]; then
-	if [ -e "$OUTPUT_DIR/$MASTER_DOCUMENT.pdf" ]; then
-		mv "$OUTPUT_DIR/$MASTER_DOCUMENT.pdf" "$SCRIPT_DIR/$PDF_FILE_NAME.pdf"
-	fi
-
+if [ -e "$OUTPUT_DIR/$MASTER_DOCUMENT.pdf" ]; then
+	mv "$OUTPUT_DIR/$MASTER_DOCUMENT.pdf" "$SCRIPT_DIR/$PDF_FILE_NAME.pdf"
+	
 	if [ "$1" = "--view-pdf" ]; then
 		xdg-open "$SCRIPT_DIR/$PDF_FILE_NAME.pdf"
 		exit
