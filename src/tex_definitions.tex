@@ -226,18 +226,22 @@
 	\end{table}
 }
 
-\newcommand{\imagefigure} [2] {
+\newcommand{\placeimagefigure} [3] {
 	\begin{figure}[placement=h]
   		\begin{center}
-    		\includegraphics[scale=0.65]{#2}
-    		\caption{#1}
-    		\placereferencetofigure{#2}
+    		\includegraphics[scale=0.65]{#3} % file
+    		\caption{#1} % caption
+    		\placereferencetofigure{#2} % reference ID
   		\end{center}
 	\end{figure}
 }
 
+\newcommand{\imagefigure} [2] {
+	\placeimagefigure{#1}{#2}{#2}
+}
+
 \newcommand{\reproducedimagefigure} [3] {
-	\imagefigure{#1, reproduced from \reference{#3}}{#2}
+	\placeimagefigure{#1, reproduced from \reference{#3}}{#2}{#2}
 }
 
 % to print the given date (format is '<month short name> <year>')

@@ -29,6 +29,5 @@ if [ -e "$OUTPUT_DIR/$MASTER_DOCUMENT.pdf" ]; then
 	
 	if [ "$1" = "--view-pdf" ]; then
 		xdg-open "$SCRIPT_DIR/$PDF_FILE_NAME.pdf"
-		exit
 	fi
 fi
