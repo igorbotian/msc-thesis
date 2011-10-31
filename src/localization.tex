@@ -1,0 +1,120 @@
+\usepackage{ifthen} % provides \ifthenelse test
+\usepackage{datetime} % to get the current year and to format dates
+
+\newcommand{\RussianLocalizationFolderName}{ru}
+\newcommand{\EnglishLocalizationFolderName}{en}
+\newcommand{\MetaInformtionFileName}{meta}
+\newcommand{\LocalizationFileName}{l18n}
+\newcommand{\ChaptersFolderName}{chapters}
+
+\newcounter{ThesisVersion}
+\setcounter{ThesisVersion}{1}
+
+\newcommand{\ProduceRussianVersion}{%
+	\setcounter{ThesisVersion}{1}
+}
+
+\newcommand{\ProduceEnglishVersion}{%
+	\setcounter{ThesisVersion}{2}
+}
+
+\newcommand{\LoadRussianSpecificPackages} {%
+	\usepackage[english,russian]{babel} % to use hyphenation
+	% sudo apt-get install texlive-lang-cyrillic
+
+	\usepackage[T2A]{fontenc}
+}
+
+\newcommand{\LoadEnglishSpecificPackages} {%
+	\usepackage[russian,english]{babel} % to use hyphenation
+	
+	\usepackage{courier} % to use the Courier New font as a default monospace font
+	% sudo apt-get install texlive-fonts-recommended
+
+	\usepackage{times} % to use the Times New Roman font as a default text font
+	% sudo apt-get install texlive-fonts-recommended
+}
+
+\newcommand{\LoadLanguageSpecificPackages} {
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
+		\LoadRussianSpecificPackages{}
+	}
+	{
+		\LoadEnglishSpecificPackages{}
+	}
+}
+
+\newcommand{\IncludePreambleMetaInformation} {
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
+		\input{\RussianLocalizationFolderName/\LocalizationFileName}
+	}
+	{
+		\input{\EnglishLocalizationFolderName/\LocalizationFileName}
+	}
+}
+
+\newcommand{\IncludePreambleSection} [1] {
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
+		\input{\RussianLocalizationFolderName/#1}
+	}
+	{
+		\input{\EnglishLocalizationFolderName/#1}
+	}
+}
+
+\newcommand{\IncludeChapterMetaInformation} [1] {
+	\input{\ChaptersFolderName/#1/\MetaInformtionFileName}
+	
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
+		\input{\ChaptersFolderName/#1/\RussianLocalizationFolderName/\LocalizationFileName}
+	}
+	{
+		\input{\ChaptersFolderName/#1/\EnglishLocalizationFolderName/\LocalizationFileName}
+	}
+}
+
+\newcommand{\IncludeSection} [2] {
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
+		\input{\ChaptersFolderName/#1/\RussianLocalizationFolderName/#2}
+	}
+	{
+		\input{\ChaptersFolderName/#1/\EnglishLocalizationFolderName/#2}
+	}
+}
+
+\newcommand{\DefineRussianString} [2] {
+	\newcommand{#1}{#2}
+}
+
+\newcommand{\DefineEnglishString} [2] {
+	\newcommand{#1}{#2}
+}
+
+\newcommand{\RussianText} [1] {%
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }
+	{#1}
+	{\foreignlanguage{russian}{#1}}
+}
+
+\newcommand{\EnglishText} [1] {%
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }
+	{\foreignlanguage{english}{#1}}
+	{#1}
+}
+
+% to print the date of the thesis submission
+% requires the 'datetime' package
+
+\newdateformat{EnglishDateFormat}{%
+	\monthname[\THEMONTH] \ordinal{DAY}, \THEYEAR
+}
+
+\newdateformat{RussianDateFormat}{%
+	\ordinal{DAY} \monthname[\THEMONTH] \THEYEAR
+}
+
+\newcommand{\ThesisDate}{
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }
+	{\RussianDateFormat\today}
+	{\EnglishDateFormat\today}
+}

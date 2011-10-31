@@ -1,24 +1,14 @@
 % === DOCUMENT PROPERTIES ===
 
-\newcommand{\thesisauthor}{Igor Botyan}
-\newcommand{\thesistitle}{Software Security Threats in Mobile Peer-to-peer Environment}
-\newcommand{\thesistitlewrapped}{Software Security Threats\\
-	in Mobile Peer-to-peer Environment}
-\newcommand{\thesissubject}{Master's thesis}
-\newcommand{\thesiskeywords}{mobile environment, peer-to-peer, software, security, threats, 
-	PeerHood}
-\newcommand{\thesissupervisor}{D.Sc. Pekka J\"appinen}
-\newcommand{\thesisfirstexaminer}{Professor Esa Kerttula}
-\newcommand{\thesissecondexaminer}{\thesissupervisor}
-\newcommand{\thesisschool}{Lappeenranta University of Technology\\
-	Faculty of Technology Management\\
-	Degree Programme in Information Technology}
+\documentclass[12pt,a4paper,oneside]{article}
 
-\title{\thesistitle} % the title of the thesis
-\author{\thesisauthor} % the author of the thesis
+\title{Software Security Threats in Mobile Peer-to-peer Environment} % the title of the thesis
+\author{Igor Botyan} % the author of the thesis
 \date{\today} % the date of the thesis submission
 
-\documentclass[12pt,a4paper,oneside]{article}
+\input{localization}
+\ProduceRussianVersion
+%\ProduceEnglishVersion
 
 % === LIST OF USED PACKAGES ===
 
@@ -26,15 +16,11 @@
 % sudo apt-get install texlive-base
 
 % these packages should be placed in the beginning of the packages list 
-\usepackage{ucs} % to enable Unicode support
-\usepackage[utf8x]{inputenc} % to allow UTF8-characters in the source files
+%\usepackage{ucs} % to enable Unicode support
+\usepackage[utf8]{inputenc} % to allow UTF8-characters in the source files
 % sudo apt-get install texlive-latex-extra
 
 \usepackage[printonlyused]{acronym} % to make list of abbreviations
-
-\usepackage[russian,english]{babel} % to use hyphenation
-% sudo apt-get install texlive-lang-cyrillic
-
 \usepackage{bold-extra} % to highlight keywords in source code listings
 
 \usepackage[
@@ -47,42 +33,29 @@
 
 \usepackage{color} % to use various font colors
 \usepackage{combelow} % to use 'comma below a letter' special characters
-
-%\usepackage{courier} % to use the Courier New font as a default monospace font
-% use only when english language is primary
-% sudo apt-get install texlive-fonts-recommended
-
 \usepackage{datetime} % to get the current year and to format dates
 \usepackage{environ} % to define environments in command style
 \usepackage{etoolbox} % to eliminate \hbox badnesses in bibliography area
 \usepackage{fancyhdr} % to format page headers
-
-\usepackage[T2A]{fontenc}
-% use only when russian language is primary
-
 \usepackage{geometry} % to define custom margins of each page
 \usepackage{graphicx} % to use png graphic format for pictures
-
 \usepackage{hyperref} % to make references as hyperlinks
-
 \usepackage{ifthen} % provides \ifthenelse test
 %\usepackage{lastpage} % to determine a total number of pages of the thesis
+\usepackage{lipsum} % to fill the contents of a chapter
 \usepackage{listings} % to format listings of source code
-%\usepackage[parfill]{parskip}
 \usepackage{setspace} % to set line spacing
-
-%\usepackage{times} % to use the Times New Roman font as a default text font
-% use only when english language is primary
-% sudo apt-get install texlive-fonts-recommended
-
 \usepackage{verbatim} % to hide 'comment' environments in output file
 \usepackage{xifthen} % provides \isempty test
-\usepackage{xstring} % to performs basic string operations 
+\usepackage{xstring} % to performs basic string operations
+
+\LoadLanguageSpecificPackages{}
 
 % === TEX DEFINITIONS ===
 
 \include{tex_definitions}
 \include{styles}
+\IncludePreambleMetaInformation{}
 
 % === PREFERENCES ===
 
@@ -97,11 +70,11 @@
 \hypersetup{
 	bookmarkstype=none,
 	plainpages=false,
-	pdftitle={\thesistitle},
-	pdfauthor={\thesisauthor},
-	pdfsubject={\thesissubject},
+	pdftitle={Software Security Threats in Mobile Peer-to-peer Environment},
+	pdfauthor={Igor Botyan},
+	pdfsubject={Master's Thesis},
 	pdfnewwindow=false,
-	pdfkeywords={\thesiskeywords},
+	pdfkeywords={mobile environment, peer-to-peer, software, security threats, PeerHood},
 	colorlinks=true,
 	linkcolor=black,
 	citecolor=black,
@@ -114,7 +87,7 @@
 %\setlength{\parskip}{\baselineskip} % to set the space between paragraphs
 
 \setlength{\headheight}{28pt}
-\applygeneralpagestyle{}
+\ApplyGeneralPageStyle{}
 
 \apptocmd{\thebibliography}{\raggedright}{}{} % to eliminate \hbox badnesses in bibliography area
 
@@ -146,7 +119,7 @@
 \clearpage\pagenumbering{arabic} % the following pages should be numbered by arabic symbols
 \setcounter{page}{1} % the page numbering should be reset
 \setcounter{tocdepth}{3} % to set depth of 
-\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\contentsname}{\MakeUppercase{\TableOfContentsTitle}}
 
 \newpage
 \tableofcontents
@@ -163,9 +136,6 @@
 
 \newpage
 \include{temporary_chapter}
-
-\newpage
-\include{instructions}
 
 % The references
 

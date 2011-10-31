@@ -1,7 +1,8 @@
-\renewcommand{\refname}{REFERENCES} % for articles. use bibname for reports and books instead
+% for articles. use bibname for reports and books instead
+\renewcommand{\refname}{\MakeUppercase{\ReferencesTitle}}
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{section}{REFERENCES}
+\addcontentsline{toc}{section}{\MakeUppercase{\ReferencesTitle}}
 
 \begin{comment}
 INSTRUCTIONS FOR WRITING A MASTER'S THESIS
@@ -16,56 +17,56 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 
 % === MASTER'S THESES ===
 
-	\bibmastersthesis{Younan2003}
-		{\bibauthor{Younan}{Yves}{}}
+	\BibMastersThesis{Younan2003}
+		{\BibAuthor{Younan}{Yves}{}}
 		{An Overview of Common Programming Security Vulnerabilities and Possible Solutions}
 		{Vrije Universiteit Brussel}
 		{Belgium}
 		{2003}
 		{135}
 	
-	\bibmastersthesis{Polepeddi2005}
-		{\bibauthor{Polepeddi}{Sriram}{}}
+	\BibMastersThesis{Polepeddi2005}
+		{\BibAuthor{Polepeddi}{Sriram}{}}
 		{Software Vulnerability Taxonomy Consolidation}
 		{Lawrence Livermore National Laboratory}
 		{USA}
 		{2005}
 		{45}
 	
-	\bibmastersthesis{Martinsson2006}
-		{\bibauthor{Martinsson}{Roy}{}}
+	\BibMastersThesis{Martinsson2006}
+		{\BibAuthor{Martinsson}{Roy}{}}
 		{Software Vulnerability Assessment}
 		{School of Engineering at Blekinge Institute of Technology}
 		{Sweden}
 		{2006}
 		{25}
 	
-	\bibmastersthesis{Karki2008}
-		{\bibauthor{Karki}{Bishal}{Raj}}
+	\BibMastersThesis{Karki2008}
+		{\BibAuthor{Karki}{Bishal}{Raj}}
 		{Social Networking on Mobile Environment on top of PeerHood}
 		{Lappeenranta University of Technology}
 		{Finland}
 		{2008}
 		{68}
 	
-	\bibmastersthesis{Heelan2009}
-		{\bibauthor{Heelan}{Sean}{}}
+	\BibMastersThesis{Heelan2009}
+		{\BibAuthor{Heelan}{Sean}{}}
 		{Automatic Generation of Control Flow Hijacking Exploits for Software Vulnerabilities}
 		{University of Oxford}
 		{United Kingdom}
 		{2009}
 		{110}
 	
-	\bibmastersthesis{Pham2010}
-		{\bibauthor{Pham}{Nam}{H.}}
+	\BibMastersThesis{Pham2010}
+		{\BibAuthor{Pham}{Nam}{H.}}
 		{Detection of Recurring Software Vulnerabilities}
 		{Iowa State University}
 		{USA}
 		{2010}
 		{58}
 	
-	\bibmastersthesis{Kolehmainen2010}
-		{\bibauthor{Kolehmainen}{Kimmo}{}}
+	\BibMastersThesis{Kolehmainen2010}
+		{\BibAuthor{Kolehmainen}{Kimmo}{}}
 		{A Communication Middleware Quality Enhancement with {Qt} Framework}
 		{Lappeenranta University of Technology}
 		{Finland}
@@ -74,48 +75,48 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 
 % === DISSERTATIONS ===
 
-	\bibdissertation{Krsul1998}
-		{\bibauthor{Krsul}{Ivan}{Victor}}
+	\BibDissertation{Krsul1998}
+		{\BibAuthor{Krsul}{Ivan}{Victor}}
 		{Software Vulnerability Analysis}
 		{Purdue University}
 		{USA}
 		{1998}
 		{188}
 
-	\bibdissertation{Jappinen2004}
-		{\bibauthor{J\"appinen}{Pekka}{}}
+	\BibDissertation{Jappinen2004}
+		{\BibAuthor{J\"appinen}{Pekka}{}}
 		{ME -- Mobile Electronic Personality}
 		{Lappeenranta University of Technology}
 		{Finland}
 		{2004}
 		{68}
 		
-	\bibdissertation{Flechais2005}
-		{\bibauthor{Fl{\'{e}}chais}{Ivan}{}}
+	\BibDissertation{Flechais2005}
+		{\BibAuthor{Fl{\'{e}}chais}{Ivan}{}}
 		{Designing Secure and Usable Systems}
 		{University of London}
 		{United Kingdom}
 		{2005}
 		{153}
 	
-	\bibdissertation{Alhazmi2006}
-		{\bibauthor{Alhazmi}{Omar}{}}
+	\BibDissertation{Alhazmi2006}
+		{\BibAuthor{Alhazmi}{Omar}{}}
 		{Assessing Vulnerabilities in Software Systems: A Quantitative Approach}
 		{Colorado State University}
 		{USA}
 		{2006}
 		{179}
 		
-	\bibdissertation{Livshits2006}
-		{\bibauthor{Livshits}{Benjamin}{}}
+	\BibDissertation{Livshits2006}
+		{\BibAuthor{Livshits}{Benjamin}{}}
 		{Improving Software Security with Precise Static and Runtime Analysis}
 		{Stanford University}
 		{USA}
 		{2006}
 		{250}
 	
-	\bibdissertation{Espelid2008}
-		{\bibauthor{Espelid}{Yngve}{}}
+	\BibDissertation{Espelid2008}
+		{\BibAuthor{Espelid}{Yngve}{}}
 		{Practices in Software Securitys}
 		{University of Bergen}
 		{Norway}
@@ -124,8 +125,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 
 % === BOOKS ===
 
-	\bibbook{Brooks1995}
-		{\bibauthor{Brooks}{Frederick}{P.}}
+	\BibBook{Brooks1995}
+		{\BibAuthor{Brooks}{Frederick}{P.}}
 		{The Mythical Man-Month. Essays on Software Engineering}
 		{20th}
 		{Addison Wesley Longman}
@@ -134,7 +135,7 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{322}
 		{0201835959}
 	
-	\bibbook{CambridgeDictionary1999}
+	\BibBook{CambridgeDictionary1999}
 		{}
 		{The {C}ambridge {D}ictionary Of {P}hilosophy}
 		{2nd}
@@ -145,8 +146,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{0-511-07417-4}
 		% editor = Robert Audi
 	
-	\bibbook{Oram2001}
-		{\bibauthor{Oram}{Andy}{}}
+	\BibBook{Oram2001}
+		{\BibAuthor{Oram}{Andy}{}}
 		{Peer-to-Peer : Harnessing the Power of Disruptive Technologies}
 		{}
 		{O'Reilly}
@@ -155,7 +156,7 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{448}
 		{059600110X}
 		
-	\bibbook{Collin2002}
+	\BibBook{Collin2002}
 		{} % S.M.H. Collin
 		{Dictionary of {I}nformation {T}echnology}
 		{3rd}
@@ -165,8 +166,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{442}
 		{1901659550}
 		
-	\bibbook{Whittaker2002}
-		{\bibauthor{Whittaker}{James}{A.}}
+	\BibBook{Whittaker2002}
+		{\BibAuthor{Whittaker}{James}{A.}}
 		{How to Break Software. A Practical Guide to Testing}
 		{}
 		{Addison Wesley Longman}
@@ -175,8 +176,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{208}
 		{0201796198}
 	
-	\bibbook{Erickson2003}
-		{\bibauthor{Erickson}{J.}{}}
+	\BibBook{Erickson2003}
+		{\BibAuthor{Erickson}{J.}{}}
 		{Hacking. The Art of Exploitation}
 		{}
 		{No Starch Press}
@@ -185,7 +186,7 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{240}
 		{1-59327-007-0}
 	
-	\bibbook{Collins2003}
+	\BibBook{Collins2003}
 		{}
 		{Collins {E}nglish {D}ictionary}
 		{6th}
@@ -195,10 +196,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{1888}
 		{0007109822}
 	
-	\bibbook{Graff2003}
-		{\bibauthor{Graff}{Mark}{G.}
-			\biband
-			\bibauthor{van Wyk}{Kenneth}{R.}}
+	\BibBook{Graff2003}
+		{\BibAuthor{Graff}{Mark}{G.}
+			\BibAnd
+			\BibAuthor{van Wyk}{Kenneth}{R.}}
 		{Secure Coding. Principles and Practices}
 		{}
 		{O'Reilly}
@@ -207,10 +208,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{224}
 		{0-596-00242-4}
 	
-	\bibbook{Viega2003}
-		{\bibauthor{Messier}{Matt}{}
-			\biband
-			\bibauthor{Viega}{John}{}}
+	\BibBook{Viega2003}
+		{\BibAuthor{Messier}{Matt}{}
+			\BibAnd
+			\BibAuthor{Viega}{John}{}}
 		{Secure Programming Cookbook for {C} and {C++}}
 		{}
 		{O'Reilly}
@@ -219,8 +220,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{784}
 		{0-596-00394-3}
 	
-	\bibbook{Domarev2004}
-		{\bibauthor{Domarev}{Valery}{}}
+	\BibBook{Domarev2004}
+		{\BibAuthor{Domarev}{Valery}{}}
 		{{IT} Security. The System Approach}
 		{}
 		{ITD DIS}
@@ -229,12 +230,12 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{992}
 		{966-7992-36-5}
 	
-	\bibbook{Stevens2004}
-		{\bibauthor{Stevens}{Richard}{W.}
-			\biband
-			\bibauthor{Fenner}{Bill}{}
-			\biband
-			\bibauthor{Rudoff}{Andrew}{M.}}
+	\BibBook{Stevens2004}
+		{\BibAuthor{Stevens}{Richard}{W.}
+			\BibAnd
+			\BibAuthor{Fenner}{Bill}{}
+			\BibAnd
+			\BibAuthor{Rudoff}{Andrew}{M.}}
 		{{UNIX} Network Programming. The Sockets Networking {API}. Vol. 1}
 		{3rd}
 		{Addison Wesley}
@@ -243,10 +244,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{1024}
 		{0-13-141155-1}
 	
-	\bibbook{McGraw2004}
-		{\bibauthor{Hoglund}{Greg}{}
-			\biband
-			\bibauthor{McGraw}{Gary}{}}
+	\BibBook{McGraw2004}
+		{\BibAuthor{Hoglund}{Greg}{}
+			\BibAnd
+			\BibAuthor{McGraw}{Gary}{}}
 		{Exploiting Software. How to Break Code}
 		{}
 		{Peter Collin Publishing}
@@ -255,8 +256,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{512}
 		{0-201-78695-8}
 	
-	\bibbook{McConnell2004}
-		{\bibauthor{McConnell}{Steve}{}}
+	\BibBook{McConnell2004}
+		{\BibAuthor{McConnell}{Steve}{}}
 		{Code Complete. A Practical Handbook of Software Construction}
 		{2nd}
 		{Microsoft Press}
@@ -265,8 +266,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{960}
 		{978073561967}
 	
-	\bibbook{Eilam2005}
-		{\bibauthor{Eilam}{Eldad}{}}
+	\BibBook{Eilam2005}
+		{\BibAuthor{Eilam}{Eldad}{}}
 		{Reversing: Secrets of Reverse Engineering}
 		{}
 		{Wiley}
@@ -275,12 +276,12 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{624}
 		{0764574817}
 	
-	\bibbook{Howard2005}
-		{\bibauthor{Howard}{Michael}{}
-			\biband
-			\bibauthor{LeBlanc}{David}{}
-			\biband
-			\bibauthor{Vega}{John}{}}
+	\BibBook{Howard2005}
+		{\BibAuthor{Howard}{Michael}{}
+			\BibAnd
+			\BibAuthor{LeBlanc}{David}{}
+			\BibAnd
+			\BibAuthor{Vega}{John}{}}
 		{19 Deadly Sins of Software Security. Programming Flaws and How to Fix Them}
 		{}
 		{McGraw-Hill/Osborne}
@@ -289,10 +290,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{304}
 		{0072260858}
 	
-	\bibbook{Chase2005}
-		{\bibauthor{Thompson}{Herbert}{H.}
-			\biband
-			\bibauthor{Chase}{Scott}{G.}}
+	\BibBook{Chase2005}
+		{\BibAuthor{Thompson}{Herbert}{H.}
+			\BibAnd
+			\BibAuthor{Chase}{Scott}{G.}}
 		{The Software Vulnerability Guide}
 		{}
 		{Charles River Media}
@@ -301,8 +302,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{369}
 		{1-58450-358-0}
 	
-	\bibbook{Seacord2005}
-		{\bibauthor{Seacord}{Robert}{S.}}
+	\BibBook{Seacord2005}
+		{\BibAuthor{Seacord}{Robert}{S.}}
 		{Secure Coding in {C} and {C++}}
 		{}
 		{Addison Wesley Professional}
@@ -311,10 +312,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{368}
 		{0-321-33572-4}
 	
-	\bibbook{Skoudis2005}
-		{\bibauthor{Scoudis}{Ed}{}
-			\biband
-			\bibauthor{Liston}{Tom}{}}
+	\BibBook{Skoudis2005}
+		{\BibAuthor{Scoudis}{Ed}{}
+			\BibAnd
+			\BibAuthor{Liston}{Tom}{}}
 		{Counter Hack Reloaded, Second Edition. A Step-by-Step Guide to Computer Attacks and Effective Defenses}
 		{}
 		{Prentice Hall}
@@ -323,12 +324,12 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{784}
 		{0-13-148104-5}
 	
-	\bibbook{Gallagher2006}
-		{\bibauthor{Gallagher}{Tom}{}
-			\biband
-			\bibauthor{Jeffries}{Bryan}{}
-			\biband
-			\bibauthor{Launder}{Lawrence}{}}
+	\BibBook{Gallagher2006}
+		{\BibAuthor{Gallagher}{Tom}{}
+			\BibAnd
+			\BibAuthor{Jeffries}{Bryan}{}
+			\BibAnd
+			\BibAuthor{Launder}{Lawrence}{}}
 		{Hunting Security Bugs}
 		{}
 		{Microsoft Press}
@@ -337,8 +338,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{586}
 		{073562187}
 	
-	\bibbook{Stamp2006}
-		{\bibauthor{Stamp}{Mark}{}}
+	\BibBook{Stamp2006}
+		{\BibAuthor{Stamp}{Mark}{}}
 		{Information Security. Principles and Practice}
 		{}
 		{John Wiley and Sons}
@@ -347,8 +348,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{413}
 		{0-471-73848-4}
 	
-	\bibbook{McGraw2006}
-		{\bibauthor{McGraw}{Gary}{}}
+	\BibBook{McGraw2006}
+		{\BibAuthor{McGraw}{Gary}{}}
 		{Software Security. Building Security In}
 		{}
 		{Addison Wesley Professional}
@@ -357,10 +358,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{448}
 		{0-321-35670-5}
 	
-	\bibbook{Howard2006}
-		{\bibauthor{Howard}{Michael}{}
-			\biband
-			\bibauthor{Lipner}{Steve}{}}
+	\BibBook{Howard2006}
+		{\BibAuthor{Howard}{Michael}{}
+			\BibAnd
+			\BibAuthor{Lipner}{Steve}{}}
 		{The Security Development Lifecycle. A Process for Developing Demonstrably More Secure Software}
 		{}
 		{Microsoft Press}
@@ -369,12 +370,12 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{304}
 		{0-7356-2214-0}
 	
-	\bibbook{Dowd2006}
-		{\bibauthor{Dowd}{Mark}{}
-			\biband
-			\bibauthor{McDonald}{John}{}
-			\biband
-			\bibauthor{Schuh}{Justin}{}}
+	\BibBook{Dowd2006}
+		{\BibAuthor{Dowd}{Mark}{}
+			\BibAnd
+			\BibAuthor{McDonald}{John}{}
+			\BibAnd
+			\BibAuthor{Schuh}{Justin}{}}
 		{The Art of Software Security Assessment. Identifying and Preventing Software Vulnerabilities}
 		{}
 		{Addison Wesley Professional}
@@ -383,12 +384,12 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{1200}
 		{0-321-44442-6}
 	
-	\bibbook{Sutton2007}
-		{\bibauthor{Sutton}{Michael}{}
-			\biband
-			\bibauthor{Greene}{Adam}{}
-			\biband
-			\bibauthor{Amini}{Pedram}{}}
+	\BibBook{Sutton2007}
+		{\BibAuthor{Sutton}{Michael}{}
+			\BibAnd
+			\BibAuthor{Greene}{Adam}{}
+			\BibAnd
+			\BibAuthor{Amini}{Pedram}{}}
 		{Fuzzing: Brute Force Vulnerability Discovery}
 		{}
 		{Addison Wesley Professional}
@@ -397,14 +398,14 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{576}
 		{0321446119}
 	
-	\bibbook{Anley2007}
-		{\bibauthor{Anley}{Chris}{}
-			\biband
-			\bibauthor{Heasman}{John}{}
-			\biband
-			\bibauthor{Linder}{Felix}{FX}
-			\biband
-			\bibauthor{Richarte}{Gerardo}{}
+	\BibBook{Anley2007}
+		{\BibAuthor{Anley}{Chris}{}
+			\BibAnd
+			\BibAuthor{Heasman}{John}{}
+			\BibAnd
+			\BibAuthor{Linder}{Felix}{FX}
+			\BibAnd
+			\BibAuthor{Richarte}{Gerardo}{}
 			}
 		{The Shellcoder's Handbook, Second Edition. Discovering and Exploiting Security Holes}
 		{}
@@ -414,10 +415,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{745}
 		{978-0-470-08023-8}
 	
-	\bibbook{LeBlanc2007}
-		{\bibauthor{LeBlanc}{David}{}
-			\biband
-			\bibauthor{Howard}{Michael}{}}
+	\BibBook{LeBlanc2007}
+		{\BibAuthor{LeBlanc}{David}{}
+			\BibAnd
+			\BibAuthor{Howard}{Michael}{}}
 		{Writing Secure Code for {W}indows {V}ista}
 		{}
 		{Microsoft Press}
@@ -426,10 +427,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{222}
 		{0735623937}
 	
-	\bibbook{Talukder2007}
-		{\bibauthor{Talukder}{Asoke}{K.}
-			\biband
-			\bibauthor{Yavagal}{Roopa}{}}
+	\BibBook{Talukder2007}
+		{\BibAuthor{Talukder}{Asoke}{K.}
+			\BibAnd
+			\BibAuthor{Yavagal}{Roopa}{}}
 		{Mobile Computing. Technology, Applications, and Service Creation}
 		{}
 		{McGraw-Hill}
@@ -438,8 +439,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{672}
 		{0071477330}
 	
-	\bibbook{Chess2007}
-		{\bibauthor{Chess}{Brian}{}}
+	\BibBook{Chess2007}
+		{\BibAuthor{Chess}{Brian}{}}
 		{Secure Programming with Static Analysis}
 		{}
 		{Pearson Education}
@@ -448,10 +449,10 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{619}
 		{0-321-42477-8}
 	
-	\bibbook{Stallings2008}
-		{\bibauthor{Stallings}{William}{}
-			\biband
-			\bibauthor{Brown}{Lee}{}}
+	\BibBook{Stallings2008}
+		{\BibAuthor{Stallings}{William}{}
+			\BibAnd
+			\BibAuthor{Brown}{Lee}{}}
 		{Computer Security. Principles and Practice}
 		{}
 		{Prentice Hall}
@@ -460,8 +461,8 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{880}
 		{0-13-600424-5}
 	
-	\bibbook{Foreman2010}
-		{\bibauthor{Foreman}{Park}{}}
+	\BibBook{Foreman2010}
+		{\BibAuthor{Foreman}{Park}{}}
 		{Vulnerability Management}
 		{}
 		{CRC Press}
@@ -470,14 +471,14 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{331}
 		{978-1-4398-0150-5}
 	
-	\bibbook{Chess2010}
-		{\bibauthor{Chess}{Brian}{}
-			\biband
-			\bibauthor{Snyder}{Garth}{}
-			\biband
-			\bibauthor{Hein}{Trent}{R.}
-			\biband
-			\bibauthor{Whaley}{Ben}{}}
+	\BibBook{Chess2010}
+		{\BibAuthor{Chess}{Brian}{}
+			\BibAnd
+			\BibAuthor{Snyder}{Garth}{}
+			\BibAnd
+			\BibAuthor{Hein}{Trent}{R.}
+			\BibAnd
+			\BibAuthor{Whaley}{Ben}{}}
 		{{UNIX} and {L}inux System Administration Handbook}
 		{4th}
 		{Pearson Education}
@@ -488,38 +489,38 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		
 % === ARTICLES ===
 
-	\bibarticle{Netzer1992}
-		{\bibauthor{Netzer}{Robert}{H. B.}
-			\biband
-			\bibauthor{Miller}{Barton}{P.}}
+	\BibArticle{Netzer1992}
+		{\BibAuthor{Netzer}{Robert}{H. B.}
+			\BibAnd
+			\BibAuthor{Miller}{Barton}{P.}}
 		{What are Race Conditions? Some Issues and Formalizations}
 		{ACM Letters on Programming Languages and Systems}
 		{1}
 		{1}
 		{USA}
-		{\bibdate{03}{1992}}
+		{\BibDate{03}{1992}}
 		{}
 	
-	\bibarticle{Landwehr1994}
-		{\bibauthor{Landwehr}{Carl}{}
-			\biband
-			\bibauthor{Bull}{Alan}{}
-			\biband
-			\bibauthor{McDermott}{John}{}
-			\biband
-			\bibauthor{Choi}{William}{}}
+	\BibArticle{Landwehr1994}
+		{\BibAuthor{Landwehr}{Carl}{}
+			\BibAnd
+			\BibAuthor{Bull}{Alan}{}
+			\BibAnd
+			\BibAuthor{McDermott}{John}{}
+			\BibAnd
+			\BibAuthor{Choi}{William}{}}
 		{A Taxonomy of Computer Program Security Flaws}
 		{ACM Computing Surveys}
 		{26}
 		{3}
 		{USA}
-		{\bibdate{09}{1994}}
+		{\BibDate{09}{1994}}
 		{211--254}
 		
-	\bibarticle{Fink1997}
-		{\bibauthor{Fink}{George}{}
-			\biband
-			\bibauthor{Bishop}{Matt}{}}
+	\BibArticle{Fink1997}
+		{\BibAuthor{Fink}{George}{}
+			\BibAnd
+			\BibAuthor{Bishop}{Matt}{}}
 		{Property-Based Testing; A New Approach to Testing for Assurance}
 		{ACM SIGSOFT Software Engineering Notes}
 		{22}
@@ -528,182 +529,182 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		{1997}
 		{74--80}
 	
-	\bibarticle{Hsueh1997}
-		{\bibauthor{Hsueh}{Mei-Chen}{}
-			\biband
-			\bibauthor{Tsai}{Timothy}{K.}
-			\biband
-			\bibauthor{Iyer}{Ravishankar}{K.}}
+	\BibArticle{Hsueh1997}
+		{\BibAuthor{Hsueh}{Mei-Chen}{}
+			\BibAnd
+			\BibAuthor{Tsai}{Timothy}{K.}
+			\BibAnd
+			\BibAuthor{Iyer}{Ravishankar}{K.}}
 		{Fault Injection Techniques and Tools}
 		{Computer}
 		{30}
 		{4}
 		{USA}
-		{\bibdate{04}{1997}}
+		{\BibDate{04}{1997}}
 		{75--82}
 	
-	\bibarticle{McConnell1997}
-		{\bibauthor{McConnell}{Steve}{}}
+	\BibArticle{McConnell1997}
+		{\BibAuthor{McConnell}{Steve}{}}
 		{Less is more}
 		{Software Development}
 		{5}
 		{10}
 		{USA}
-		{\bibdate{10}{1997}}
+		{\BibDate{10}{1997}}
 		{28--34}
 	
-	\bibarticle{Lindqvist1998}
-		{\bibauthor{Lindqvist}{Ulf}{}
-			\biband
-			\bibauthor{Jonsson}{Erland}{}}
+	\BibArticle{Lindqvist1998}
+		{\BibAuthor{Lindqvist}{Ulf}{}
+			\BibAnd
+			\BibAuthor{Jonsson}{Erland}{}}
 		{A Map of Security Risks Associated with Using {COTS}}
 		{Computer}
 		{31}
 		{6}
 		{USA}
-		{\bibdate{06}{1998}}
+		{\BibDate{06}{1998}}
 		{60--66}
 	
-	\bibarticle{Rubin1998}
-		{\bibauthor{Rubin}{Aviel}{D.}
-			\biband
-			\bibauthor{Geer}{Daniel}{E.}}
+	\BibArticle{Rubin1998}
+		{\BibAuthor{Rubin}{Aviel}{D.}
+			\BibAnd
+			\BibAuthor{Geer}{Daniel}{E.}}
 		{Mobile Code Security}
 		{{IEEE} Internet Computing}
 		{2}
 		{6}
 		{USA}
-		{\bibdate{11}{1998}}
+		{\BibDate{11}{1998}}
 		{30--34}
 	
-	\bibarticle{Evans2002}
-		{\bibauthor{Evans}{David}{}
-			\biband
-			\bibauthor{Larochelle}{David}{}}
+	\BibArticle{Evans2002}
+		{\BibAuthor{Evans}{David}{}
+			\BibAnd
+			\BibAuthor{Larochelle}{David}{}}
 		{Improving Security Using Extensible Lightweight Static Analysis}
 		{{IEEE} Software}
 		{19}
 		{}
 		{USA}
-		{\bibdate{01}{2002}}
+		{\BibDate{01}{2002}}
 		{42--51}
 	
-	\bibarticle{Lhee2003}
-		{\bibauthor{Lhee}{Kyung-Suk}{}
-			\biband
-			\bibauthor{Chapin}{Steve}{}}
+	\BibArticle{Lhee2003}
+		{\BibAuthor{Lhee}{Kyung-Suk}{}
+			\BibAnd
+			\BibAuthor{Chapin}{Steve}{}}
 		{Buffer Overflow and Format String Overflow Vulnerabilities}
 		{Software -- Practice and Experience}
 		{33}
 		{5}
 		{USA}
-		{\bibdate{04}{2003}}
+		{\BibDate{04}{2003}}
 		{}
 	
-	\bibarticle{Whittaker2003}
-		{\bibauthor{Whittaker}{James}{A.}
-			\biband
-			\bibauthor{Thompson}{Herbert}{H.}}
+	\BibArticle{Whittaker2003}
+		{\BibAuthor{Whittaker}{James}{A.}
+			\BibAnd
+			\BibAuthor{Thompson}{Herbert}{H.}}
 		{Black Box Debugging}
 		{Queue}
 		{1}
 		{9}
 		{USA}
-		{\bibdate{12}{2003}}
+		{\BibDate{12}{2003}}
 		{68--74}
 	
-	\bibarticle{Potter2004}
-		{\bibauthor{McGrow}{Gary}{}
-			\biband
-			\bibauthor{Potter}{Bruce}{}}
+	\BibArticle{Potter2004}
+		{\BibAuthor{McGrow}{Gary}{}
+			\BibAnd
+			\BibAuthor{Potter}{Bruce}{}}
 		{Software Security Testing}
 		{{IEEE} Security and Privacy}
 		{2}
 		{5}
 		{USA}
-		{\bibdate{09}{2004}}
+		{\BibDate{09}{2004}}
 		{}
 	
-	\bibarticle{Arkin2005}
-		{\bibauthor{Arkin}{Brad}{}
-			\biband
-			\bibauthor{Stender}{Scott}{}
-			\biband
-			\bibauthor{McGraw}{Gary}{}}
+	\BibArticle{Arkin2005}
+		{\BibAuthor{Arkin}{Brad}{}
+			\BibAnd
+			\BibAuthor{Stender}{Scott}{}
+			\BibAnd
+			\BibAuthor{McGraw}{Gary}{}}
 		{Software Penetration Testing}
 		{{IEEE} Security and Privacy}
 		{3}
 		{1}
 		{USA}
-		{\bibdate{01}{2005}}
+		{\BibDate{01}{2005}}
 		{84--87}
 	
-	\bibarticle{Thompson2005}
-		{\bibauthor{Thompson}{Herbert}{H.}}
+	\BibArticle{Thompson2005}
+		{\BibAuthor{Thompson}{Herbert}{H.}}
 		{Application Penetration Testing}
 		{{IEEE} Security and Privacy}
 		{3}
 		{1}
 		{USA}
-		{\bibdate{01}{2005}}
+		{\BibDate{01}{2005}}
 		{66--69}
 	
-	\bibarticle{Bian2005}
-		{\bibauthor{Bian}{Gaowei}{}
-			\biband
-			\bibauthor{Nakayama}{Ken}{}
-			\biband
-			\bibauthor{Kobayushi}{Yoshitake}{}
-			\biband
-			\bibauthor{Maekawa}{Mamoru}{}}
+	\BibArticle{Bian2005}
+		{\BibAuthor{Bian}{Gaowei}{}
+			\BibAnd
+			\BibAuthor{Nakayama}{Ken}{}
+			\BibAnd
+			\BibAuthor{Kobayushi}{Yoshitake}{}
+			\BibAnd
+			\BibAuthor{Maekawa}{Mamoru}{}}
 		{Java Mobile Code Security by Bytecode Analysis}
 		{{ECTI} Transactions on Computer and Information Theory}
 		{1}
 		{1}
 		{USA}
-		{\bibdate{05}{2005}}
+		{\BibDate{05}{2005}}
 		{}
 	
-	\bibarticle{Tsipenyuk2005}
-		{\bibauthor{Tsipenyuk}{Katrina}{}
-			\biband
-			\bibauthor{Chess}{Brian}{}
-			\biband
-			\bibauthor{McGraw}{Gary}{}}
+	\BibArticle{Tsipenyuk2005}
+		{\BibAuthor{Tsipenyuk}{Katrina}{}
+			\BibAnd
+			\BibAuthor{Chess}{Brian}{}
+			\BibAnd
+			\BibAuthor{McGraw}{Gary}{}}
 		{Seven Pernicious Kingdoms. A Taxonomy of Software Security Errors}
 		{{IEEE} Security and Privacy}
 		{3}
 		{6}
 		{USA}
-		{\bibdate{11}{2005}}
+		{\BibDate{11}{2005}}
 		{81--84}
 	
-	\bibarticle{Wildmoser2005}
-		{\bibauthor{Wildmoser}{Martin}{}
-			\biband
-			\bibauthor{Chaieb}{Amine}{}
-			\biband
-			\bibauthor{Nipkow}{Tobias}{}}
+	\BibArticle{Wildmoser2005}
+		{\BibAuthor{Wildmoser}{Martin}{}
+			\BibAnd
+			\BibAuthor{Chaieb}{Amine}{}
+			\BibAnd
+			\BibAuthor{Nipkow}{Tobias}{}}
 		{Bytecode Analysis for Proof Carrying Code}
 		{Electronic Notes in Theoretical Computer Science ({ENTCS})}
 		{141}
 		{1}
 		{USA}
-		{\bibdate{12}{2005}}
+		{\BibDate{12}{2005}}
 		{}
 	
-	\bibarticle{Goertzel2008}
-		{\bibauthor{Goertzel}{Karen}{Mercedes}}
+	\BibArticle{Goertzel2008}
+		{\BibAuthor{Goertzel}{Karen}{Mercedes}}
 		{Enhancing the Development Life Cycle to Produce Secure Software}
 		{CrossTalk}
 		{21}
 		{9}
 		{USA}
-		{\bibdate{09}{2008}}
+		{\BibDate{09}{2008}}
 		{24--25}
 	
-	\bibarticle{Drepper2009}
-		{\bibauthor{Drepper}{Ulrich}{}}
+	\BibArticle{Drepper2009}
+		{\BibAuthor{Drepper}{Ulrich}{}}
 		{Defensive Programming for {R}ed {H}at {E}nterprise {L}inux (and What To Do If Something Goes Wrong)}
 		{{IEEE} Security and Privacy}
 		{}
@@ -714,26 +715,26 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		
 % === CONFERENCE PROCEEDINGS ===
 
-	\bibproceedings{Davies1994}
-		{\bibauthor{Davies}{Nigel}{}
-			\biband
-			\bibauthor{Blair}{Gordon}{S.}
-			\biband
-			\bibauthor{Cheverst}{Keith}{}
-			\biband
-			\bibauthor{Friday}{Adrian}{}}
+	\BibProceedings{Davies1994}
+		{\BibAuthor{Davies}{Nigel}{}
+			\BibAnd
+			\BibAuthor{Blair}{Gordon}{S.}
+			\BibAnd
+			\BibAuthor{Cheverst}{Keith}{}
+			\BibAnd
+			\BibAuthor{Friday}{Adrian}{}}
 		{Supporting Adaptive Services in a Heterogeneous Mobile Environment}
 		{WMCSA '94 Proceedings of the 1994 First Workshop on Mobile Computing Systems and Applications}
 		{Washington, DC, USA}
 		{1994}
 		% isbn = 978-0-7695-3451-0
 		
-	\bibproceedings{Madeira2000}
-		{\bibauthor{Madeira}{Henrique}{}
-			\biband
-			\bibauthor{Costa}{Diamantino}{}
-			\biband
-			\bibauthor{Vieira}{Marco}{}}
+	\BibProceedings{Madeira2000}
+		{\BibAuthor{Madeira}{Henrique}{}
+			\BibAnd
+			\BibAuthor{Costa}{Diamantino}{}
+			\BibAnd
+			\BibAuthor{Vieira}{Marco}{}}
 		{On the Emulation of Software Faults by Software Fault Injection}
 		{In Proceedings of the International Conference on Dependable Systems and Networks}
 		{New York, NY , USA}
@@ -742,142 +743,142 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 		% publisher = IEEE Computer Society Press
 		% isbn = 0-7695-0707-7
 	
-	\bibproceedings{Schollmeier2001}
-		{\bibauthor{Schollmeier}{R\"udiger}{}}
+	\BibProceedings{Schollmeier2001}
+		{\BibAuthor{Schollmeier}{R\"udiger}{}}
 		{A Definition of Peer-to-Peer Networking for the Classification of Peer-to-Peer Architectures and Applications}
 		{Proceedings of the First International Conference on Peer-to-Peer Computing ({P2P}'01)}
 		{Washington, DC, USA}
 		{2001}
 		% isbn = 0-7695-1503-7
 
-	\bibproceedings{Wallach2002}
-		{\bibauthor{Wallach}{Dan}{S.}}
+	\BibProceedings{Wallach2002}
+		{\BibAuthor{Wallach}{Dan}{S.}}
 		{A Survey of Peer-to-Peer Security Issues}
 		{Proceedings of the 2002 {M}ext-{NSF}-{JSPS} International Conference on Software Security. Theories and Systems}
 		{USA}
 		{2002}
 	
-	\bibproceedings{Damiani2002}
-		{\bibauthor{Damiani}{Ernesto}{}
-			\biband
-			\bibauthor{Di Vimercati}{De Capitani}{}
-			\biband
-			\bibauthor{Paraboshi}{Stefano}{}
-			\biband
-			\bibauthor{Samarati}{Pierangela}{}
-			\biband
-			\bibauthor{Violante}{Fabio}{}}
+	\BibProceedings{Damiani2002}
+		{\BibAuthor{Damiani}{Ernesto}{}
+			\BibAnd
+			\BibAuthor{Di Vimercati}{De Capitani}{}
+			\BibAnd
+			\BibAuthor{Paraboshi}{Stefano}{}
+			\BibAnd
+			\BibAuthor{Samarati}{Pierangela}{}
+			\BibAnd
+			\BibAuthor{Violante}{Fabio}{}}
 		{A Reputation-Based Approach for Choosing Reliable Resources in Peer-to-Peer Networks}
 		{Proceedings of the 9th ACM Conference on Computer and Communications Security}
 		{USA}
 		{2002}
 		
-	\bibproceedings{Eigler2003}
-		{\bibauthor{Eigler}{Frank}{Ch.}}
+	\BibProceedings{Eigler2003}
+		{\BibAuthor{Eigler}{Frank}{Ch.}}
 		{Mudflap. Pointer Use Checking for {C/C++}}
 		{{GCC} Developers Summit}
 		{Canada}
-		{\bibdate{05}{2003}}
+		{\BibDate{05}{2003}}
 		% pages = 57--70
 		% url = http://gcc.fyxm.net/summit/2003/mudflap.pdf
 	
-	\bibproceedings{Gilliam2003}
-		{\bibauthor{Gilliam}{David}{P.}
-			\biband
-			\bibauthor{Wolfe}{Thomas}{L.}
-			\biband
-			\bibauthor{Sherif}{Josef}{S.}}
+	\BibProceedings{Gilliam2003}
+		{\BibAuthor{Gilliam}{David}{P.}
+			\BibAnd
+			\BibAuthor{Wolfe}{Thomas}{L.}
+			\BibAnd
+			\BibAuthor{Sherif}{Josef}{S.}}
 		{Software Security Checklist for the Software Life Cycle}
 		{In Proceedings of the Twelfth {IEEE} International Workshop on Enabling Technologies. Infrastructure for Colaborative Enterprises ({WETICE}'03)}
 		{USA}
 		{2003}
 		% pages = 243--248
 	
-	\bibproceedings{Li2004}
-		{\bibauthor{Li}{Wenjia}{}
-			\biband
-			\bibauthor{Joshi}{Anupam}{}}
+	\BibProceedings{Li2004}
+		{\BibAuthor{Li}{Wenjia}{}
+			\BibAnd
+			\BibAuthor{Joshi}{Anupam}{}}
 		{Security Issues in Mobile Ad Hoc Networks - A Survey}
 		{The 17 White House Papers Graduate Research In Informatics}
 		{Sussex, United Kingdom}
-		{\bibdate{06}{2004}}
+		{\BibDate{06}{2004}}
 		% pages = 1--23
 	
-	\bibproceedings{Langweg2004}
-		{\bibauthor{Langweg}{Hanno}{}
-			\biband
-			\bibauthor{Snekkenes}{Einar}{}}
+	\BibProceedings{Langweg2004}
+		{\BibAuthor{Langweg}{Hanno}{}
+			\BibAnd
+			\BibAuthor{Snekkenes}{Einar}{}}
 		{A Classification of Malicious Software Attacks}
 		{Proceedings of the 2004 IEEE International Performance, Computing, and Communications Conference}
 		{USA}
-		{\bibdate{04}{2004}}
+		{\BibDate{04}{2004}}
 		% pages = 827--832
 		% isbn = 0-7803-8396-6
 	
-	\bibproceedings{PorrasP2P2004}
-		{\bibauthor{Porras}{Jari}{}
-			\biband
-			\bibauthor{Hiirsalmi}{Petri}{}
-			\biband
-			\bibauthor{Valtaoja}{Ari}{}}
+	\BibProceedings{PorrasP2P2004}
+		{\BibAuthor{Porras}{Jari}{}
+			\BibAnd
+			\BibAuthor{Hiirsalmi}{Petri}{}
+			\BibAnd
+			\BibAuthor{Valtaoja}{Ari}{}}
 		{Peer-to-peer Communication Approach for a Mobile Environment}
 		{Proceedings of the 37th {H}awaii International Conference on System Sciences}
 		{Big Island, Hawaii, USA}
 		{2004}
 		% isbn = 0-7695-2056-1
 	
-	\bibproceedings{PorrasPTD2004}
-		{\bibauthor{Porras}{Jari}{}
-			\biband
-			\bibauthor{J\"appinen}{Pekka}{}
-			\biband
-			\bibauthor{Hiirsalmi}{Petri}{}
-			\biband
-			\bibauthor{H\"am\"al\"ainen}{Arto}{}
-			\biband
-			\bibauthor{Saalasti}{Sami}{}
-			\biband
-			\bibauthor{Koponen}{Raine}{}
-			\biband
-			\bibauthor{Keski-Jaskari}{Satu}{}}
+	\BibProceedings{PorrasPTD2004}
+		{\BibAuthor{Porras}{Jari}{}
+			\BibAnd
+			\BibAuthor{J\"appinen}{Pekka}{}
+			\BibAnd
+			\BibAuthor{Hiirsalmi}{Petri}{}
+			\BibAnd
+			\BibAuthor{H\"am\"al\"ainen}{Arto}{}
+			\BibAnd
+			\BibAuthor{Saalasti}{Sami}{}
+			\BibAnd
+			\BibAuthor{Koponen}{Raine}{}
+			\BibAnd
+			\BibAuthor{Keski-Jaskari}{Satu}{}}
 		{Personal Trusted Device in Personal Communications}
 		{1st {IEEE} International Symposium on Wireless Communication Systems}
 		{Mauritius}
 		{2004}
 	
-	\bibproceedings{PorrasEnhancing2005}
-		{\bibauthor{H\"am\"al\"ainen}{Arto}{}
-			\biband
-			\bibauthor{Porras}{Jari}{}}
+	\BibProceedings{PorrasEnhancing2005}
+		{\BibAuthor{H\"am\"al\"ainen}{Arto}{}
+			\BibAnd
+			\BibAuthor{Porras}{Jari}{}}
 		{Enhancing Mobile Peer-to-Peer Environment with Neighborhood Information}
 		{Proceedings of the 3rd Workshop on Applications of Wireless Communications}
 		{Finland}
 		{2005}
 	
-	\bibproceedings{PorrasComparison2005}
-		{\bibauthor{H\"am\"al\"ainen}{Arto}{}
-			\biband
-			\bibauthor{Hiirsalmi}{Petri}{}
-			\biband
-			\bibauthor{Porras}{Jari}{}}
+	\BibProceedings{PorrasComparison2005}
+		{\BibAuthor{H\"am\"al\"ainen}{Arto}{}
+			\BibAnd
+			\BibAuthor{Hiirsalmi}{Petri}{}
+			\BibAnd
+			\BibAuthor{Porras}{Jari}{}}
 		{Comparison of {L}inux and {S}ymbian Based Implementations of Mobile Peer-to-Peer Environment}
 		{The 13th International Conference on Software, Telecommunications and Computer Networks ({SoftCOM} 2005)}
 		{Split, Marina Frapa, Croatia}
 		{2005}
 	
-	\bibproceedings{Barcellos2008}
-		{\bibauthor{Barcellos}{Marinho}{P.}}
+	\BibProceedings{Barcellos2008}
+		{\BibAuthor{Barcellos}{Marinho}{P.}}
 		{Security Issues and Perspectives in P2P Systems: from Gnutella to BitTorrent}
 		{53nd Meeting of the IFIP 10.4 Working Group on Dependable Computing and Fault Tolerance}
 		{Natal, Brazil}
 		{2008}
 	
-	\bibproceedings{Godefroid2008}
-		{\bibauthor{Godefroid}{Patrice}{}
-			\biband
-			\bibauthor{Levin}{Michael}{Y.}
-			\biband
-			\bibauthor{Molnar}{David}{A.}}
+	\BibProceedings{Godefroid2008}
+		{\BibAuthor{Godefroid}{Patrice}{}
+			\BibAnd
+			\BibAuthor{Levin}{Michael}{Y.}
+			\BibAnd
+			\BibAuthor{Molnar}{David}{A.}}
 		{Automated Whitebox Fuzz Testing}
 		{Network Distributed Security Symposium ({NDSS})}
 		{San Diego, CA, USA}
@@ -885,262 +886,262 @@ either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis�
 
 % === MANUALS ===
 
-	\bibmanual{CStandard1999}
+	\BibManual{CStandard1999}
 		{International Organization for Standardization (ISO)}
 		{{C} Programming Language Standard ({ISO/IEC} 9899)}
 		{1999}
 		{http://www.open-std.org/jtc1/sc22/wg14/}
 		
-	\bibmanual{Wheeler2003}
-		{\bibauthor{Wheeler}{David}{}}
+	\BibManual{Wheeler2003}
+		{\BibAuthor{Wheeler}{David}{}}
 		{Secure Programming for {L}inux and {U}nix {HOWTO}}
-		{\bibdate{03}{2003}}
+		{\BibDate{03}{2003}}
 		{http://www.dwheeler.com/secure-programs/}
 		
-	\bibmanual{CppStandard2003}
+	\BibManual{CppStandard2003}
 		{International Organization for Standardization (ISO)}
 		{{C++} Programming Language Standard ({ISO/IEC} 14882)}
 		{2003}
 		{http://www.open-std.org/jtc1/sc22/WG21/}
 		
-	\bibmanual{FIBSPUB199}
+	\BibManual{FIBSPUB199}
 		{National Institute of Standards and Technology, USA}
 		{Standards for Security Categorization of Federal Information and Information Systems ({FIPS PUB} 199)}
-		{\bibdate{02}{2004}}
+		{\BibDate{02}{2004}}
 		{http://csrc.nist.gov/publications/fips/fips199/FIPS-PUB-199-final.pdf}
 		
-	\bibmanual{ISO17799}
+	\BibManual{ISO17799}
 		{International Organization for Standardization (ISO)}
 		{ISO/IEC FDIS 17799. Information Technology — Security Techniques — Code of Practice for Information Security Management}
-		{\bibdate{04}{2005}}
+		{\BibDate{04}{2005}}
 		{http://www.iso.org/iso/catalogue_detail?csnumber=39612}
 	
-	\bibmanual{FIBSPUB200}
+	\BibManual{FIBSPUB200}
 		{National Institute of Standards and Technology, USA}
 		{Minimum Security Requirements for Federal Information and Information Systems ({FIPS PUB} 200)}
-		{\bibdate{03}{2006}}
+		{\BibDate{03}{2006}}
 		{http://csrc.nist.gov/publications/fips/fips200/FIPS-200-final-march.pdf}
 	
-	\bibmanual{RFC4949}
+	\BibManual{RFC4949}
 		{Internet Engineering Task Force}
 		{Internet Security Glossary, Version 2 ({RFC} 4949)}
-		{\bibdate{08}{2007}}
+		{\BibDate{08}{2007}}
 		{http://tools.ietf.org/html/rfc4949}
 		% editor = Robert Shirey
 		
-	\bibmanual{RFC5765}
+	\BibManual{RFC5765}
 		{Internet Engineering Task Force}
 		{Security Issues and Solutions in Peer-to-Peer Systems for Realtime Communications ({RFC} 5765)}
-		{\bibdate{02}{2010}}
+		{\BibDate{02}{2010}}
 		{http://tools.ietf.org/html/rfc5765}
 		% editor = Henning Schulzrinne
 	
-	\bibmanual{CERTCCSecureCodingStandard2007}
+	\BibManual{CERTCCSecureCodingStandard2007}
 		{Carnegie Mellon University's Computer Emergency Response Team (CERT), USA}
 		{{CERT} {C} Programming Language Secure Coding Standard (Document No. N1255)}
-		{\bibdate{09}{2007}}
+		{\BibDate{09}{2007}}
 		{http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1255.pdf}
 		
-	\bibmanual{POSIX2008}
+	\BibManual{POSIX2008}
 		{Institute of Electrical and Electronics Engineers, USA}
 		{Portable Operating System Interface for {U}nix ({POSIX}.1-2008)}
 		{2008}
 		{http://standards.ieee.org/findstds/standard/1003.1-2008.html}
 		
-	\bibmanual{AppleSecureCodingGuide2010}
+	\BibManual{AppleSecureCodingGuide2010}
 		{Apple Inc., USA}
 		{Secure Coding Guide}
-		{\bibdate{02}{2010}}
+		{\BibDate{02}{2010}}
 		{http://developer.apple.com/library/mac/documentation/Security/Conceptual/SecureCodingGuide/SecureCodingGuide.pdf}
 
-	\bibmanual{NISTGlossary2011}
+	\BibManual{NISTGlossary2011}
 		{National Institute of Standards and Technology, USA}
 		{Glossary of Key Information Security Terms}
-		{\bibdate{02}{2011}}
+		{\BibDate{02}{2011}}
 		{http://csrc.nist.gov/publications/nistir/ir7298-rev1/nistir-7298-revision1.pdf}
 		% editor = Richard Kissel
 		
 % === TECHNICAL REPORTS ===
 
-	\bibtechreport{Landwehr1993}
-		{\bibauthor{Landwehr}{Carl}{}
-			\biband
-			\bibauthor{Bull}{Alan}{}
-			\biband
-			\bibauthor{McDermott}{John}{}
-			\biband
-			\bibauthor{Choi}{William}{}}
+	\BibTechReport{Landwehr1993}
+		{\BibAuthor{Landwehr}{Carl}{}
+			\BibAnd
+			\BibAuthor{Bull}{Alan}{}
+			\BibAnd
+			\BibAuthor{McDermott}{John}{}
+			\BibAnd
+			\BibAuthor{Choi}{William}{}}
 		{A Taxonomy of Computer Program Security Flaws, with Examples}
 		{Naval Research Laboratory}
 		{USA}
-		{\bibdate{11}{1993}}
+		{\BibDate{11}{1993}}
 		
-	\bibtechreport{Wenliang1998}
-		{\bibauthor{Du}{Wenliang}{}
-			\biband
-			\bibauthor{Mathur}{Aditya}{P.}}
+	\BibTechReport{Wenliang1998}
+		{\BibAuthor{Du}{Wenliang}{}
+			\BibAnd
+			\BibAuthor{Mathur}{Aditya}{P.}}
 		{Vulnerability Testing of Software System Using Fault Injection}
 		{Purdue University}
 		{USA}
-		{\bibdate{04}{1998}}
+		{\BibDate{04}{1998}}
 		% http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.159.1829&rep=rep1&type=pdf
 
-	\bibtechreport{Younan2004}
-		{\bibauthor{Younan}{Yves}{}
-			\biband
-			\bibauthor{Joosen}{Wouter}{}
-			\biband
-			\bibauthor{Piessens}{Frank}{}}
+	\BibTechReport{Younan2004}
+		{\BibAuthor{Younan}{Yves}{}
+			\BibAnd
+			\BibAuthor{Joosen}{Wouter}{}
+			\BibAnd
+			\BibAuthor{Piessens}{Frank}{}}
 		{Code Injection in {C} and {C++}. A Survey of Vulnerabilities and Countermeasures}
 		{Katholieke Universiteit Leuven}
 		{Belgium}
 		{2004}
 		
-	\bibtechreport{Guttman2004}
-		{\bibauthor{Guttman}{Barbara}{}}
+	\BibTechReport{Guttman2004}
+		{\BibAuthor{Guttman}{Barbara}{}}
 		{An Introduction to Computer Security. The {NIST} Handbook}
 		{National Institute of Standards and Technology}
 		{USA}
-		{\bibdate{10}{2004}}
+		{\BibDate{10}{2004}}
 		% isbn = 0788128302
 		% http://csrc.nist.gov/publications/nistpubs/800-12
 	
-	\bibtechreport{Winograd2008}
-		{\bibauthor{Goertzel}{Karen}{Mercedes}
-			\biband
-			\bibauthor{Winograd}{Theodor}{}}
+	\BibTechReport{Winograd2008}
+		{\BibAuthor{Goertzel}{Karen}{Mercedes}
+			\BibAnd
+			\BibAuthor{Winograd}{Theodor}{}}
 		{Enhancing the Development Life Cycle to Produce Secure Software}
 		{Technology Analysis Center (IATAC)}
 		{USA}
-		{\bibdate{10}{2008}}
+		{\BibDate{10}{2008}}
 		% http://www.thedacs.com/techs/enhanced_life_cycles/
 
 % === WEB RESOURCES ===
 
 % ARTICLES
 
-	\bibwebarticle{Asokan1995}
-		{\bibauthor{Asokan}{N.}{}}
+	\BibWebArticle{Asokan1995}
+		{\BibAuthor{Asokan}{N.}{}}
 		{Security Issues in Mobile Computing}	
 		{1995}	
 		{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.54.9758\&rep=rep1\&type=pdf}
 		
-	\bibwebarticle{Mavridis1997}
-		{\bibauthor{Mavridis}{I.}{}
-			\biband
-			\bibauthor{Pangalos}{G.}{}}
+	\BibWebArticle{Mavridis1997}
+		{\BibAuthor{Mavridis}{I.}{}
+			\BibAnd
+			\BibAuthor{Pangalos}{G.}{}}
 		{Security Issues in a Mobile Computing Paradigm}	
 		{1997}	
 		{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.16.573\&rep=rep1\&type=pdf}
 	
-	\bibwebarticle{Shriraghavan2003}
-		{\bibauthor{Shriraghavan}{Sowmya}{}
-			\biband
-			\bibauthor{Sundaragopalan}{Srikanth}{}
-			\biband
-			\bibauthor{Yang}{Fan}{}
-			\biband
-			\bibauthor{Jun}{Jinsuk}{}}
+	\BibWebArticle{Shriraghavan2003}
+		{\BibAuthor{Shriraghavan}{Sowmya}{}
+			\BibAnd
+			\BibAuthor{Sundaragopalan}{Srikanth}{}
+			\BibAnd
+			\BibAuthor{Yang}{Fan}{}
+			\BibAnd
+			\BibAuthor{Jun}{Jinsuk}{}}
 		{Security in Mobile Computing}	
 		{2003}	
 		{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.89.6519\&rep=rep1\&type=pdf}
 
-	\bibwebarticle{Newsome2005}
-		{\bibauthor{Newsome}{James}{}
-			\biband
-			\bibauthor{Song}{Dawn}{}}
+	\BibWebArticle{Newsome2005}
+		{\BibAuthor{Newsome}{James}{}
+			\BibAnd
+			\BibAuthor{Song}{Dawn}{}}
 		{Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software}	
 		{2005}	
 		{http://www.ece.cmu.edu/~dawnsong/papers/taintcheck.pdf}
 	
-	\bibwebarticle{Vroonhoven2006}
-		{\bibauthor{Van Vroonhoven}{Jochem}{}}
+	\BibWebArticle{Vroonhoven2006}
+		{\BibAuthor{Van Vroonhoven}{Jochem}{}}
 		{Peer to Peer Security}	
 		{2006}
 		{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.3334\&rep=rep1\&type=pdf}
 
-	\bibwebarticle{CWEWebTopTen2007}
+	\BibWebArticle{CWEWebTopTen2007}
 		{The MITRE Corporation}
 		{The Ten Most Critical Web Application Security Vulnerabilities}
 		{2007}
 		{http://cwe.mitre.org/top10/}
 
-	\bibwebarticle{CERTStatistics2008}
+	\BibWebArticle{CERTStatistics2008}
 		{Carnegie Mellon University's Computer Emergency Response Team (CERT)}
 		{CERT Statistics (Historical)}
 		{2008}
 		{http://www.cert.org/stats/}
 				
-	\bibwebarticle{Seacord2008}
-		{\bibauthor{Seacord}{Robert}{}
-			\biband
-			\bibauthor{Rafail}{Jason}{}}
+	\BibWebArticle{Seacord2008}
+		{\BibAuthor{Seacord}{Robert}{}
+			\BibAnd
+			\BibAuthor{Rafail}{Jason}{}}
 		{The {CERT} {C} Secure Coding Standard}
 		{2008}
 		{http://www.ioc.ornl.gov/csiirw/07/abstracts/Rafail-Abstract.pdf}
 		
-	\bibwebarticle{TopSixMobileSecurityThreats2010}
-		{\bibauthor{Mehling}{Herman}{}}
+	\BibWebArticle{TopSixMobileSecurityThreats2010}
+		{\BibAuthor{Mehling}{Herman}{}}
 		{Top Six Mobile Security Threats and How to Prevent Them}
 		{2010}
 		{http://www.enterprisemobiletoday.com/features/security/article.php/3900806/Top-Six-Mobile-Security-Threats-and-How-to-Prevent-Them.htm}
 		
-	\bibwebarticle{OWASPWebTop10}
+	\BibWebArticle{OWASPWebTop10}
 		{Open Web Application Security Project (OWASP) Foundation}
 		{The Ten Most Critical Web Application Security Vulnerabilities}
 		{2010}
 		{http://www.owasp.org/index.php/Top_10_2010}
 	
-	\bibwebarticle{CWETop25DangerousErrors2011}
+	\BibWebArticle{CWETop25DangerousErrors2011}
 		{The MITRE Corporation}
 		{Top 25 Most Dangerous Software Errors}
 		{2011}
 		{http://cwe.mitre.org/top25/archive/2011/2011_cwe_sans_top25.pdf}
 		
-	\bibwebarticle{OWASPMobileTopTen2011}
+	\BibWebArticle{OWASPMobileTopTen2011}
 		{Open Web Application Security Project (OWASP) Foundation}
 		{Top Ten Mobile Risks}
 		{2011}
 		{http://www.owasp.org/index.php/OWASP_Mobile_Security_Project}
 		
-	\bibwebarticle{PVSStudio2011}
-		{\bibauthor{Karpov}{Andrey}{}
-			\biband
-			\bibauthor{Ryzhkov}{Evgeniy}{}}
+	\BibWebArticle{PVSStudio2011}
+		{\BibAuthor{Karpov}{Andrey}{}
+			\BibAnd
+			\BibAuthor{Ryzhkov}{Evgeniy}{}}
 		{PVS-Studio Advertisement - Static Analysis of C/C++ Code}
 		{2011}
 		{www.viva64.com/en/a/0077/print/}
 
 % DOCUMENTS
 
-	\bibwebdocument{TalesOfTheUnknown2006}
+	\BibWebDocument{TalesOfTheUnknown2006}
 		{Tales of the Unknown}
 		{2006}
 		{http://www.felinemenace.org/~mercy/papers/UBehavior/Undefined\%20Behavior.pdf}
 	
 % === WEB-SITES ===
 
-	\bibwebsite{Android}
+	\BibWebSite{Android}
 		{Google Android Platform}
 		{http://www.android.com/}
 	
-	\bibwebsite{iOS}
+	\BibWebSite{iOS}
 		{iOS Mobile Operating System}
 		{http://www.applce.com/ios/}
 		
-	\bibwebsite{Qt}
+	\BibWebSite{Qt}
 		{Qt -- Cross-platform Application and UI Framework}
 		{http://qt.nokia.com/}
 	
-	\bibwebsite{Ubuntu}
+	\BibWebSite{Ubuntu}
 		{Ubuntu Operating System}
 		{http://www.ubuntu.com/}
 		
-	\bibwebsite{Unity}
+	\BibWebSite{Unity}
 		{Ubuntu Unity Project}
 		{http://unity.ubuntu.com/}
 	
-	\bibwebsite{Windows8}
+	\BibWebSite{Windows8}
 		{Microsoft Reimagines Windows, Presents Windows 8 Developer Preview}
 		{http://www.microsoft.com/presspass/press/2011/sep11/09-13FutureofComputingPR.mspx}
 
