@@ -1,12 +1,16 @@
-\newcommand{\TODO} [1] {
-	\textcolor{red}{#1}
+\newcommand{\TODO} [1] {%
+	\textcolor{red}{#1}%
+}
+
+\newcommand{\TODOReference} {%
+	\textcolor{red}{[!]}%
 }
 
 %\newcommand{\Comment} [1] {
 %	\textcolor{CommentColor}{\italic{#1}}
 %}
 
-\newcommand{\Suggestion} [1] {
+\newcommand{\Suggestion} [1] {%
 	\textcolor{suggestioncolor}{#1}
 }
 
@@ -22,26 +26,34 @@
 	\textcolor{suggestioncolor}{\BODY}
 }
 
-\newcommand{\Bold} [1] {
-	\textbf{#1}
+\newcommand{\Bold} [1] {%
+	\textbf{#1}%
 }
 
-\newcommand{\Italic} [1] {
-	\textit{#1}
+\newcommand{\Italic} [1] {%
+	\textit{#1}%
 }
 
-\newcommand{\Emphasis} [1] {
-	\emph{#1}
+\newcommand{\Emphasis} [1] {%
+	\emph{#1}%
 }
 
-\newcommand{\Definition} [1] {
-	\italic{#1}
+\newcommand{\Definition} [1] {%
+	\italic{#1}%
 }
 
-\newcommand{\Term} [1] {
-	\textsf{#1}
+\newcommand{\Term} [1] {%
+	\textsf{#1}%
 }
 
-\newcommand{\SourceCode} [1] {
-	\texttt{#1}
+\newcommand{\Important} [1] {%
+	\Bold{#1}%
+}
+
+\newcommand{\IT} [1] {%
+	#1%
+}
+
+\newcommand{\SourceCode} [1] {%
+	\texttt{#1}%
 }

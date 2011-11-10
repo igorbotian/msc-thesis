@@ -2,38 +2,41 @@
 
 % to define own format of a section's title
 
-\newcommand{\SectionTitle} [1] {
-	\section{\MakeUppercase{#1}}
-	\vspace*{1em}
+\newcommand{\SectionTitle} [1] {%
+	\section{\MakeUppercase{#1}}%
+	\vspace*{1em}%
 }
 
-\newcommand{\SubSectionTitle} [1] {
-	\subsection{#1}
-	\vspace*{0.5em}
+\newcommand{\SubSectionTitle} [1] {%
+	\subsection{#1}%
+	\vspace*{0.5em}%
 }
 
-\newcommand{\SubSubSectionTitle} [1] {
-	\subsubsection{#1}
-	\vspace*{0.5em}
+\newcommand{\SubSubSectionTitle} [1] {%
+	\subsubsection{#1}%
+	\vspace*{0.5em}%
 }
 
-\newcommand{\PreambleSectionTitle} [1] {
-	\section*{\MakeUppercase{#1}}
-	\vspace*{1em}
+\newcommand{\PreambleSectionTitle} [1] {%
+	\section*{\MakeUppercase{#1}}%
+	\vspace*{1em}%
 }
 
-\newcommand{\PreambleSubSectionTitle} [1] {
-	\subsection*{#1}
-	\vspace*{1em}
+\newcommand{\PreambleSubSectionTitle} [1] {%
+	\subsection*{#1}%
+	\vspace*{1em}%
 }
 
-% to define own paragraph delimiters
+% to define own delimiters between paragraphs and delimiters
 
-\newcommand{\NextParagraph} [1] {
+\newcommand{\Paragraph} [1] {
 	\ifthenelse{\isempty{#1}}
 		{\par\vspace*{1em}}
-		{\par\colorbox{paragraphdescriptionbgcolor}{#1}\par} % {\par\vspace*{1em}}
+		{\par\vspace*{1em}}
+		%{\par\colorbox{paragraphdescriptionbgcolor}{#1}\par} % {\par\vspace*{1em}}
 }
+
+\newcommand{\Sentence} {}
 
 % to define new text colors
 % requires the 'color' package
@@ -46,12 +49,12 @@
 % to use citations to bibliography items
 % requires the 'color' package
 
-\newcommand{\Reference} [1] {
-	\cite{#1}
+\newcommand{\Reference} [1] {%
+	\cite{#1}%
 }
 
-\newcommand{\WebResource} [1] {
-	\textcolor{blue}{\cite{#1}}
+\newcommand{\WebSite} [1] {%
+	\textcolor{blue}{\cite{#1}}%
 }
 
 % to define bibliography items
@@ -68,12 +71,12 @@
 % to define a bibliography item used in the thesis
 % requires the 'xstring' package
 
-\newcommand{\BibAnd} {
+\newcommand{\BibAnd} {%
 	~\AndWord~%\space and \space
 }
 
-\newcommand{\GetFirstLetter} [1] {
-	\StrLeft{#1}{1}
+\newcommand{\GetFirstLetter} [1] {%
+	\StrLeft{#1}{1}%
 }
 
 \newcommand{\BibAuthor} [3] {%
@@ -169,7 +172,7 @@
 		\emph{#3}, % title
 		#4. % year
 		\OnlineDocumentWord, \RetrievedFromWord: \url{#5}, % URL
-		\RetrievedWord \BibDateFormat\today
+		\RetrievedWord~\BibDateFormat\today
 }
 
 \newcommand{\BibWebDocument} [4] {
@@ -177,40 +180,40 @@
 		\emph{#2},  % title
 		#3. % year
 		\OnlineDocumentWord, \RetrievedFromWord: \url{#4}, % URL
-		\RetrievedWord \BibDateFormat\today
+		\RetrievedWord~\BibDateFormat\today
 }
 
 \newcommand{\BibWebSite} [3] {
 	\bibitem{#1} % key
 		\emph{#2}.  % title
 		\InternetPageWord, \RetrievedFromWord: \url{#3}, % URL
-		\ReferredWord \BibDateFormat\today
+		\ReferredWord~\BibDateFormat\today
 }
 
 % to define and add references
 
-\newcommand{\PlaceReferenceToSection} [1] {
-	\label{sec:#1}
+\newcommand{\PlaceReferenceToSection} [1] {%
+	\label{sec:#1}%
 }
 
-\newcommand{\PlaceReferenceToFigure} [1] {
-	\label{fig:#1}
+\newcommand{\PlaceReferenceToFigure} [1] {%
+	\label{fig:#1}%
 }
 
-\newcommand{\PlaceReferenceToTable} [1] {
-	\label{tab:#1}
+\newcommand{\PlaceReferenceToTable} [1] {%
+	\label{tab:#1}%
 }
 
-\newcommand{\ReferenceToTable} [1] {
-	\tablename~\ref{tab:#1}
+\newcommand{\ReferenceToTable} [1] {%
+	\tablename~\ref{tab:#1}%
 }
 
-\newcommand{\ReferenceToFigure} [1] {
-	\figurename~\ref{fig:#1}
+\newcommand{\ReferenceToFigure} [1] {%
+	\figurename~\ref{fig:#1}%
 }
 
-\newcommand{\ReferenceToSection} [1] {
-	Section~\ref{sec:#1}
+\newcommand{\ReferenceToSection} [1] {%
+	Section~\ref{sec:#1}%
 }
 
 % to place an image
@@ -236,19 +239,19 @@
 	\end{figure}
 }
 
-\newcommand{\ImageFigure} [2] {
-	\PlaceImageFigure{#1}{#2}{#2}
+\newcommand{\ImageFigure} [2] {%
+	\PlaceImageFigure{#1}{#2}{#2}%
 }
 
-\newcommand{\ReproducedImageFigure} [3] {
-	\PlaceImageFigure{#1, reproduced from \Reference{#3}}{#2}{#2}
+\newcommand{\ReproducedImageFigure} [3] {%
+	\PlaceImageFigure{#1, reproduced from \Reference{#3}}{#2}{#2}%
 }
 
 % to print the given date (format is '<month short name> <year>')
 % requires the 'datetime' package
 
 \newcommand{\BibDate} [2] {%
-	\monthname[#1] #2
+	\monthname[#1] #2%
 }
 
 % to print the given date (format is 'dd.mm.yyyy')
@@ -263,22 +266,28 @@
 % requires the 'datetime' package
 
 \newdateformat{YearDateFormat} {%
-	\THEYEAR
+	\THEYEAR%
 }
 
 \newcommand{\CurrentYear}{
-	\YearDateFormat\today
+	\YearDateFormat\today%
 }
 
 % to use abbreviations in the text
 % requires the 'acronym' package
 
-\newcommand{\Abbrv} [1] {
+\newcommand{\Abbreviation} [1] {%
 	\EnglishText{\ac{#1}}
 }
 
-\newcommand{\AbbrvRu} [1] {
-	\RussianText{\ac{#1}}
+\newcommand{\RussianAbbreviation} [1] {%
+	\RussianText{#1}%
+	%\RussianText{\ac{#1}}
+}
+
+\newcommand{\RussianAbbreviationShort} [1] {%
+	\RussianText{#1}%
+	%\RussianText{\acs{#1}}
 }
 
 % === DEFINITONS FOR APPENDICES ===

@@ -91,15 +91,15 @@
 }
 
 \newcommand{\RussianText} [1] {%
-	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }
-	{#1}
-	{\foreignlanguage{russian}{#1}}
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }%
+	{#1}%
+	{\foreignlanguage{russian}{#1}}%
 }
 
 \newcommand{\EnglishText} [1] {%
-	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }
-	{\foreignlanguage{english}{#1}}
-	{#1}
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }%
+	{\foreignlanguage{english}{#1}}%
+	{#1}%
 }
 
 % to print the date of the thesis submission
