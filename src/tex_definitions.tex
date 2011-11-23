@@ -2,18 +2,21 @@
 
 % to define own format of a section's title
 
-\newcommand{\SectionTitle} [1] {%
+\newcommand{\SectionTitle} [2] {%
 	\section{\MakeUppercase{#1}}%
+	\PlaceReferenceToSection{#2}%
 	\vspace*{1em}%
 }
 
-\newcommand{\SubSectionTitle} [1] {%
+\newcommand{\SubSectionTitle} [2] {%
 	\subsection{#1}%
+	\PlaceReferenceToSection{#2}%
 	\vspace*{0.5em}%
 }
 
-\newcommand{\SubSubSectionTitle} [1] {%
+\newcommand{\SubSubSectionTitle} [2] {%
 	\subsubsection{#1}%
+	\PlaceReferenceToSection{#2}%
 	\vspace*{0.5em}%
 }
 
@@ -196,6 +199,10 @@
 	\label{sec:#1}%
 }
 
+\newcommand{\PlaceReferenceToAppendix} [1] {%
+	\label{sec:#1}%
+}
+
 \newcommand{\PlaceReferenceToFigure} [1] {%
 	\label{fig:#1}%
 }
@@ -213,7 +220,11 @@
 }
 
 \newcommand{\ReferenceToSection} [1] {%
-	Section~\ref{sec:#1}%
+	\SectionWord~\ref{sec:#1}%
+}
+
+\newcommand{\ReferenceToAppendix} [1] {%
+	\AppendixWord~\ref{sec:#1}%
 }
 
 % to place an image
@@ -244,7 +255,7 @@
 }
 
 \newcommand{\ReproducedImageFigure} [3] {%
-	\PlaceImageFigure{#1, reproduced from \Reference{#3}}{#2}{#2}%
+	\PlaceImageFigure{#1, \ReproducedFromWord~\Reference{#3}}{#2}{#2}%
 }
 
 % to print the given date (format is '<month short name> <year>')
@@ -358,7 +369,7 @@
 	\MakeUppercase{\AppendixTitle} \AppendixNumber. #1\par
 }
 
-\newcommand{\TheAppendix} [1] {
+\newcommand{\TheAppendix} [2] {
 	\ifthenelse { \equal{\arabic{AppendixCounter}}{0} } {
 		\cleardoublepage
 		\phantomsection
@@ -371,6 +382,7 @@
 	\addtocounter{AppendixCounter}{1}
 	\addtocontents{toc}{\TheAppendixTocTitle{#1}}
 	\section*{\TheAppendixPageTitle{#1}}
+	\PlaceReferenceToAppendix{#2}
 	
 	\renewcommand{\TheAppendixTitle}{\TheAppendixTocTitle{#1}}
 }
