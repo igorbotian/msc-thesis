@@ -1,0 +1,85 @@
+\newcommand{\AppendicesFolderName}{appendices}
+\newcommand{\IncludeAppendix} [1] {%
+	\input{\ChaptersFolderName/\AppendicesFolderName/#1}
+}
+
+% the counter for appendices
+\newcounter{AppendixCounter}
+\setcounter{AppendixCounter}{0}
+\newcommand{\AppendixNumber}{\TODO{\Alph{AppendixCounter}}} % \arabic{AppendixCounter}
+
+% to format headers of the document pages
+% requires the 'fancyhdr' package
+
+\newcommand{\TheAppendixTitle}{}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\ApplyOnePageAppendixPageStyle} {
+	\ClearPageStyle	
+	\rhead{\TheAppendixTitle}
+}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\ApplyAppendixFirstPageStyle} {
+	\ClearPageStyle
+	\rhead{\TheAppendixTitle}
+	\rfoot{(continue)}
+}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\ApplyAppendixPageStyle} {
+	\ClearPageStyle
+	\rhead{\MakeUppercase{\AppendixTitle} \AppendixNumber. (continued)}
+	\rfoot{(continue)}
+}
+
+% to format a header of an appendix page
+% requires the 'fancyhdr' package
+
+\newcommand{\ApplyAppendixLastPageStyle} {
+	\ClearPageStyle
+	\rhead{\MakeUppercase{\AppendixTitle} \AppendixNumber. (continued)}
+}
+
+% to format an appendix page and to add it's title to the Table of Contents
+% doesn't require any additional package
+
+\newcommand{\TheAppendixPageTitle} [1] {
+	\MakeUppercase{\AppendixTitle} \AppendixNumber. #1
+}
+
+\newcommand{\TheAppendixTocTitle} [1] {
+	\MakeUppercase{\AppendixTitle} \AppendixNumber. #1\par
+}
+
+\newcommand{\TheAppendix} [2] {
+	\ifthenelse { \equal{\arabic{AppendixCounter}}{0} } {
+		\cleardoublepage
+		\phantomsection
+		\addcontentsline{toc}{section}{\MakeUppercase{\AppendicesTitle}}
+	}
+	{
+		% nothing
+	}
+
+	\addtocounter{AppendixCounter}{1}
+	\addtocontents{toc}{\TheAppendixTocTitle{#1}}
+	\section*{\TheAppendixPageTitle{#1}}
+	\PlaceReferenceToAppendix{appendix_#2}
+	
+	\renewcommand{\TheAppendixTitle}{\TheAppendixTocTitle{#1}}
+}
+%
+\newpage
+\TheAppendix{PeerHood API}{peerhood_api}
+\IncludeAppendix{peerhood_api}
+%
+\newpage
+\TheAppendix{Valgrind Output}{valgrind output}
+\IncludeAppendix{valgrind_output}

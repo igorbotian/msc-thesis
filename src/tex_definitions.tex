@@ -1,5 +1,19 @@
 % === DEFINITIONS FOR TEXT ITEMS ===
 
+% to format headers of the document pages
+% requires the 'fancyhdr' package
+
+\newcommand{\ClearPageStyle} {
+	\pagestyle{fancy}
+	\fancyhf{} % to reset existing page format
+	\renewcommand{\headrulewidth}{0pt} % to remove a page header line
+}
+
+\newcommand{\ApplyGeneralPageStyle} {
+	\ClearPageStyle
+	\cfoot{\thepage} % a page number center-aligned in the page footer
+}
+
 % to define own format of a section's title
 
 \newcommand{\SectionTitle} [2] {%
@@ -58,139 +72,6 @@
 
 \newcommand{\WebSite} [1] {%
 	\textcolor{blue}{\cite{#1}}%
-}
-
-% to define bibliography items
-
-\makeatletter
-\def\url@leostyle{%
-	\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\sf}}}
- 	 %\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
-\makeatother
-
-% Now actually use the newly defined style.
-\urlstyle{leo}
-
-% to define a bibliography item used in the thesis
-% requires the 'xstring' package
-
-\newcommand{\BibAnd} {%
-	~\AndWord~%\space and \space
-}
-
-\newcommand{\GetFirstLetter} [1] {%
-	\StrLeft{#1}{1}%
-}
-
-\newcommand{\BibAuthor} [3] {%
-	\GetFirstLetter{#2}. % first name
-	\ifthenelse{\isempty{#3}}
-		{#1}% only last name
-		{\GetFirstLetter{#3}. #1}% middle name and last name
-}
-
-\newcommand{\BibBook} [9] {
-	\bibitem{#1} % key
-		\ifthenelse{\isempty{#2}}
-			{} % author(s) is not presented
-			{#2,} % author(s)
-		\emph{#3}, % title
-		\ifthenelse{\isempty{#4}}
-			{} % first edition
-			{#4 edition,} % edition
-		#5, % publisher
-		#6, % country
-		#7, % date of publication		
-		#8 pages,
-		ISBN: \mbox{#9}
-}
-
-\newcommand{\BibArticle} [9] {
-	\bibitem{#1} % key
-		#2, % author(s)
-		\emph{#3}, % title
-		#4, % journal
-		\ifthenelse{\isempty{#5}}
-			{}
-			{Vol. #5,} % volume
-		\ifthenelse{\isempty{#6}}
-			{}
-			{No. #5,} % number
-		#7, % country
-		\ifthenelse{\isempty{#9}}
-			{#8} % date
-			{#8, \PagesWord\ #9} % date and pages
-}
-
-\newcommand{\BibDissertation} [7] {
-	\bibitem{#1} % key
-		#2, % author(s)
-		\emph{#3}. % title
-		\DoctoralThesisWord, #4, % school
-		#5, % address
-		#6 % date
-		%#7 pages,
-}
-
-\newcommand{\BibMastersThesis} [7] {
-	\bibitem{#1} % key
-		#2, % author(s)
-		\emph{#3}. % title
-		\MastersThesisWord, #4, % school
-		#5, % address
-		#6 % date
-		%#7 pages,
-}
-
-\newcommand{\BibProceedings} [6] {
-	\bibitem{#1} % key
-		#2, % author(s)
-		\emph{#3}, % title
-		#4, % conference
-		#5, % address
-		#6 % date
-}
-
-\newcommand{\BibManual} [5] {
-	\bibitem{#1} % key
-		#2, % author(s)
-		\emph{#3}, % title
-		#4. % date
-		\AvailableAtWord: \url{#5}, % URL
-		retrieved \BibDateFormat\today
-}
-
-\newcommand{\BibTechReport} [6] {
-	\bibitem{#1} % key
-		#2, % author(s)
-		\emph{#3}, % title
-		#4, % institution/organization
-		#5, % country
-		#6 % date
-}
-
-\newcommand{\BibWebArticle} [5] {
-	\bibitem{#1} % key
-		#2, % author(s)
-		\emph{#3}, % title
-		#4. % year
-		\OnlineDocumentWord, \RetrievedFromWord: \url{#5}, % URL
-		\RetrievedWord~\BibDateFormat\today
-}
-
-\newcommand{\BibWebDocument} [4] {
-	\bibitem{#1} % key
-		\emph{#2},  % title
-		#3. % year
-		\OnlineDocumentWord, \RetrievedFromWord: \url{#4}, % URL
-		\RetrievedWord~\BibDateFormat\today
-}
-
-\newcommand{\BibWebSite} [3] {
-	\bibitem{#1} % key
-		\emph{#2}.  % title
-		\InternetPageWord, \RetrievedFromWord: \url{#3}, % URL
-		\ReferredWord~\BibDateFormat\today
 }
 
 % to define and add references
@@ -258,32 +139,6 @@
 	\PlaceImageFigure{#1, \ReproducedFromWord~\Reference{#3}}{#2}{#2}%
 }
 
-% to print the given date (format is '<month short name> <year>')
-% requires the 'datetime' package
-
-\newcommand{\BibDate} [2] {%
-	\monthname[#1] #2%
-}
-
-% to print the given date (format is 'dd.mm.yyyy')
-% requires the 'datetime' package
-
-\newdateformat{BibDateFormat} {%
-	\twodigit{\THEDAY}.\twodigit{\THEMONTH}.\THEYEAR
-	%\twodigit{\THEDAY}~\monthname~\THEYEAR
-}
-
-% to print the current year
-% requires the 'datetime' package
-
-\newdateformat{YearDateFormat} {%
-	\THEYEAR%
-}
-
-\newcommand{\CurrentYear}{
-	\YearDateFormat\today%
-}
-
 % to use abbreviations in the text
 % requires the 'acronym' package
 
@@ -301,88 +156,13 @@
 	%\RussianText{\acs{#1}}
 }
 
-% === DEFINITONS FOR APPENDICES ===
+% to print the current year
+% requires the 'datetime' package
 
-% the counter for appendices
-\newcounter{AppendixCounter}
-\setcounter{AppendixCounter}{0}
-\newcommand{\AppendixNumber}{\TODO{\Alph{AppendixCounter}}} % \arabic{AppendixCounter}
-
-% to format headers of the document pages
-% requires the 'fancyhdr' package
-
-\newcommand{\TheAppendixTitle}{}
-
-\newcommand{\ClearPageStyle} {
-	\pagestyle{fancy}
-	\fancyhf{} % to reset existing page format
-	\renewcommand{\headrulewidth}{0pt} % to remove a page header line
+\newdateformat{YearDateFormat} {%
+	\THEYEAR%
 }
 
-\newcommand{\ApplyGeneralPageStyle} {
-	\ClearPageStyle
-	\cfoot{\thepage} % a page number center-aligned in the page footer
-}
-
-% to format a header of an appendix page
-% requires the 'fancyhdr' package
-
-\newcommand{\ApplyOnePageAppendixPageStyle} {
-	\ClearPageStyle	
-	\rhead{\TheAppendixTitle}
-}
-
-% to format a header of an appendix page
-% requires the 'fancyhdr' package
-
-\newcommand{\ApplyAppendixFirstPageStyle} {
-	\ClearPageStyle
-	\rhead{\TheAppendixTitle}
-	\rfoot{(continue)}
-}
-
-% to format a header of an appendix page
-% requires the 'fancyhdr' package
-
-\newcommand{\ApplyAppendixPageStyle} {
-	\ClearPageStyle
-	\rhead{\MakeUppercase{\AppendixTitle} \AppendixNumber. (continued)}
-	\rfoot{(continue)}
-}
-
-% to format a header of an appendix page
-% requires the 'fancyhdr' package
-
-\newcommand{\ApplyAppendixLastPageStyle} {
-	\ClearPageStyle
-	\rhead{\MakeUppercase{\AppendixTitle} \AppendixNumber. (continued)}
-}
-
-% to format an appendix page and to add it's title to the Table of Contents
-% doesn't require any additional package
-
-\newcommand{\TheAppendixPageTitle} [1] {
-	\MakeUppercase{\AppendixTitle} \AppendixNumber. #1
-}
-
-\newcommand{\TheAppendixTocTitle} [1] {
-	\MakeUppercase{\AppendixTitle} \AppendixNumber. #1\par
-}
-
-\newcommand{\TheAppendix} [2] {
-	\ifthenelse { \equal{\arabic{AppendixCounter}}{0} } {
-		\cleardoublepage
-		\phantomsection
-		\addcontentsline{toc}{section}{\MakeUppercase{\AppendicesTitle}}
-	}
-	{
-		% nothing
-	}
-
-	\addtocounter{AppendixCounter}{1}
-	\addtocontents{toc}{\TheAppendixTocTitle{#1}}
-	\section*{\TheAppendixPageTitle{#1}}
-	\PlaceReferenceToAppendix{#2}
-	
-	\renewcommand{\TheAppendixTitle}{\TheAppendixTocTitle{#1}}
+\newcommand{\CurrentYear}{
+	\YearDateFormat\today%
 }

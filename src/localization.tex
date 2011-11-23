@@ -3,7 +3,7 @@
 
 \newcommand{\RussianLocalizationFolderName}{ru}
 \newcommand{\EnglishLocalizationFolderName}{en}
-\newcommand{\MetaInformtionFileName}{meta}
+\newcommand{\MetaInformationFileName}{meta}
 \newcommand{\LocalizationFileName}{l18n}
 \newcommand{\ChaptersFolderName}{chapters}
 
@@ -44,27 +44,11 @@
 	}
 }
 
-\newcommand{\IncludePreambleMetaInformation} {
-	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
-		\input{\RussianLocalizationFolderName/\LocalizationFileName}
-	}
-	{
-		\input{\EnglishLocalizationFolderName/\LocalizationFileName}
-	}
-}
-
-\newcommand{\IncludePreambleSection} [1] {
-	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
-		\input{\RussianLocalizationFolderName/#1}
-	}
-	{
-		\input{\EnglishLocalizationFolderName/#1}
-	}
-}
-
 \newcommand{\IncludeChapterMetaInformation} [1] {
-	\input{\ChaptersFolderName/#1/\MetaInformtionFileName}
-	
+	\input{\ChaptersFolderName/#1/\MetaInformationFileName}
+}
+
+\newcommand{\IncludeChapterLocalization} [1] {
 	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} } {
 		\input{\ChaptersFolderName/#1/\RussianLocalizationFolderName/\LocalizationFileName}
 	}
@@ -80,6 +64,11 @@
 	{
 		\input{\ChaptersFolderName/#1/\EnglishLocalizationFolderName/#2}
 	}
+}
+
+\newcommand{\IncludeChapter} [1] {
+	\IncludeChapterLocalization{#1}
+	\input{\ChaptersFolderName/#1/\MetaInformationFileName}
 }
 
 \newcommand{\DefineRussianString} [2] {

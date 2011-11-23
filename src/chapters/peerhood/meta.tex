@@ -1,16 +1,94 @@
-\newcommand{\PeerHoodFolder}{peerhood}
-\newcommand{\IncludePeerHoodOutline}{%
-	\IncludeSection{\PeerHoodFolder}{outline}
-}
-\newcommand{\IncludePeerHoodConcept}{%
-	\IncludeSection{\PeerHoodFolder}{concept}
-}
-\newcommand{\IncludePeerHoodGoalsAndRequirements}{%
-	\IncludeSection{\PeerHoodFolder}{goals}
-}
-\newcommand{\IncludePeerHoodArchitecture}{%
-	\IncludeSection{\PeerHoodFolder}{architecture}
-}
-\newcommand{\IncludePeerHoodSecurityProblem}{%
-	\IncludeSection{\PeerHoodFolder}{security_problem}
-}
+\newcommand{\PeerHoodFolderName}{peerhood}
+%
+\SectionTitle{\PeerHoodTitle}{peerhood}
+\IncludeSection{\PeerHoodFolderName}{outline}
+%
+\SubSectionTitle{\PeerHoodConcept}{peerhood_concept}
+\IncludeSection{\PeerHoodFolderName}{concept}
+%
+\SubSectionTitle{\PeerHoodGoalsAndRequirementsTitle}{peerhood_goals_and_requirements}
+\IncludeSection{\PeerHoodFolderName}{goals}
+%
+\SubSectionTitle{\PeerHoodArchitectureTitle}{peerhood_architecture}
+\IncludeSection{\PeerHoodFolderName}{architecture}
+%
+\SubSectionTitle{\PeerHoodSecurityProblemTitle}{peerhood_security_problem}
+\IncludeSection{\PeerHoodFolderName}{security_problem}
+%
+\begin{comment}
+\Paragraph{Источники}
+\begin{description}
+	\item[Bishal Raj Karki]
+		- определение
+		- где и когда началась разработка
+		- концепция (вместе с рисунком)
+		- архитектура (демон, библиотека, плагины)
+		- функциональные характеристики
+		- взаимодействие пользовательских приложений с PeerHood
+	\item[Jussi Laakkonen]
+		- определение
+		- для чего был разработан
+		- где был разработан
+		- связь с PTD
+		- концепция (вместе с рисунком)
+		- архитектура
+		- связь между компонентами
+		- цели
+		- функциональные характеристики
+		- текущая разработка
+		- описание плагинов
+	\item[Kimmo Kolehmainen]
+		- определение
+		- для чего предназначен
+		- краткое описание функциональных характеристик
+		- какие платформы поддерживает
+		- где был протестирован
+		- концепция
+		- ключевые требования
+		- высокоуровневая архитектура (демон, библиотека, плагины, приложения)
+	\item[Sami Saalasti]
+		- зачем был разработан проект (реализация, не концепция)
+		- разработка ключевых требований и функциональных характеристик
+	\item[Yevgeniy Bondarenko]
+		- какую проблему решает PeerHood
+		- определение
+		- как приложения могут взаимодействовать с PeerHood
+		- рассмотрение проблемы безопасности
+		- планы по разработке
+	\item[Comparison of Linux and Symbian Based Implementations of Mobile Peer-to-Peer Environment]
+		- определение (в общих сетевых терминах)
+		- цели
+		- PeerHood и PTD
+		- местоположение PeerHood в стеке пользовательского ПО
+		- функциональные характеристики
+		- реализации под Linux и Symbian
+	\item[Enhancing Mobile Peer-to-Peer Environment with Neighborhood Information]
+		- описание мобильной пиринговой среды
+		- местоположение PeerHood в концепции PTD
+		- компоненты, их взаимодействие
+		- обмен информацией между клиентами
+		- сценарии использования
+		- результат при обмене информации между клиентами
+	\item[Peer-to-peer Communication Approach for a Mobile Environment]
+		- концепция пирингового взаимодействия в мобильном окружении
+		- пример работы
+		- описание реализации под Linux (архитектура, демон, библиотека, интерфейс)
+	\item[Personal Trusted Device in Personal Communications]
+		- примеры использования PTD в жизни
+\end{description}
+
+\begin{description}
+	\item[Enhancing Mobile Peer-to-Peer Environment with Neighborhood Information]
+		- обмен информацией между клиентами
+		- результат при обмене информации между клиентами
+\end{description}
+\end{comment}
+%
+\begin{comment}
+HOW TO ORGANIZE YOUR THESIS
+
+A brief section giving background information may be necessary, especially if your work spans two or
+more traditional fields. That means that your readers may not have any experience with some of the 
+material needed to follow your thesis, so you need to give it to them. 
+A different title than that given above is usually better; e.g., "A Brief Review of Frammis Algebra."
+\end{comment}

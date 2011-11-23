@@ -1,0 +1,23 @@
+\newcommand{\PreambleFolderName}{preamble}
+\newcommand{\IncludePreambleSection} [1] {%
+	\input{\ChaptersFolderName/\PreambleFolderName/#1}
+}
+\newcommand{\IncludePreambleSectionContents} [1] {%
+	\IncludeSection{\PreambleFolderName}{#1}
+}
+%
+\IncludePreambleSection{title_page}
+\clearpage\pagenumbering{roman} % the following pages should be numbered by roman symbols
+\setcounter{page}{2} % the title page shouldn't be numbered
+%
+\newpage
+\IncludePreambleSection{abstract}
+%
+\newpage
+\IncludePreambleSection{preface}
+%
+\newpage
+\IncludePreambleSection{table_of_contents}
+%
+\newpage
+\IncludePreambleSection{abbreviations}

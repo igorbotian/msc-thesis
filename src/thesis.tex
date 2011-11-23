@@ -57,7 +57,6 @@
 
 \include{tex_definitions}
 \include{styles}
-\IncludePreambleMetaInformation{}
 
 % === PREFERENCES ===
 
@@ -99,62 +98,38 @@
 
 \graphicspath{{./images/}} % to set the path to image files
 
-% The title
+% Preamble
 
-\include{title_page}
+\IncludeChapter{preamble}
 
-% The abstract
-
-\clearpage\pagenumbering{roman} % the following pages should be numbered by roman symbols
-\setcounter{page}{2} % the title page shouldn't be numbered
+% Chapters
 
 \newpage
-\include{abstract}
-
-% The preface
+\IncludeChapter{introduction}
 
 \newpage
-\include{preface}
-
-% The table of contents
-
-\clearpage\pagenumbering{arabic} % the following pages should be numbered by arabic symbols
-\setcounter{page}{1} % the page numbering should be reset
-\setcounter{tocdepth}{3} % to set depth of 
-\renewcommand{\contentsname}{\MakeUppercase{\TableOfContentsTitle}}
+\IncludeChapter{software_security}
 
 \newpage
-\tableofcontents
-
-% The abbreviations
-
-\newpage
-\include{abbreviations}
-
-% The chapters
-
-\newpage
-\include{introduction}
-
-\newpage
-\include{peerhood}
-
-\newpage
-\include{temporary_chapter}
+\IncludeChapter{peerhood}
 
 %\newpage
-%\include{dictionary}
+%\IncludeChapter{peerhood_analysis}
 
-% The references
+%\newpage
+%\IncludeChapter{conclusions}
+
+%\newpage
+%\include{misc/temporary_chapter}
+
+% References
 
 \newpage
-\include{references}
+\IncludeChapter{references}
 
-% The appendices
-\newpage
-\include{appendix_valgrind_output}
+% Appendices
 
 \newpage
-\include{appendix_peerhood_api}
+\IncludeChapter{appendices}
 
 \end{document}
