@@ -40,9 +40,11 @@
 			{#4 edition,} % edition
 		#5, % publisher
 		#6, % country
-		#7, % date of publication		
-		#8 pages,
-		ISBN: \mbox{#9}
+		#7, % date of publication
+		\ifthenelse{\isempty{#9}}
+			{#8 pages} % first edition
+			{#8 pages,
+				ISBN: \mbox{#9}}
 }
 
 \newcommand{\BibArticle} [9] {
