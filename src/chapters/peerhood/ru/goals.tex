@@ -1,10 +1,10 @@
 \Paragraph{Цели}
-\Sentence
+%
 Причиной разработки программного проекта является необходимость решения определённого круга проблем.
-\Sentence
+%
 В качестве критерия возможности их решения выступает условие выполнения всех целей, которые 
 ставятся перед проектом.
-\Sentence
+%
 Согласно спецификации проекта \PeerHood, его разработка направлена на достижение следующих целей 
 \Reference{PeerHoodSpecification}: 
 \begin{description}
@@ -22,34 +22,34 @@
 \end{description}
 
 \Paragraph{Шаги по достижению данных целей}
-\Sentence
+%
 Для достижения поставленных целей необходимо выполнение ряда задач.
-\Sentence
+%
 К ним относятся следующие \Reference{PorrasEnhancing2005}:
 \begin{itemize}
 	\item Предоставление коммуникационной среды, в которой устройства взаимодействуют 
 	с использованием пирингового подхода.
-	\Sentence
+	%
 	Это позволяет устройствам осуществлять коммуникационное взаимодействие без использования 
 	централизованных серверов.
 	
 	\item Создание программной библиотеки, которая бы позволила использование какой-либо 
 	сетевой технологии посредством унифицированного интерфейса.
-	\Sentence
+	%
 	Это приводит к упрощению разработки пользовательских сетевых приложений за 
 	счёт их полной независимости от используемой ими в конкретный времени сетевой технологии.
 \end{itemize}
 
 \Paragraph{Функциональные требования}
-\Sentence
+%
 Для корректной работы пользовательского приложения необходимо, чтобы \PeerHood имел такие 
 функциональные характеристики, которые в совокупности обеспечивали бы поддержку 
 \Emphasis{\EnglishText{proactivity}}, \Emphasis{\EnglishText{connectivity}} и 
 \Emphasis{\EnglishText{reactivity}}.
-\Sentence
+%
 К такими характеристикам, условиям и возможностями относятся требования к проекту 
 \Reference{Krutchen2000}.
-\Sentence
+%
 Из них функциональными являются следующие \Reference{PeerHoodSpecification} 
 \Reference{PorrasComparison2005}:
 \begin{description}
@@ -59,46 +59,46 @@
 
 	\item[\EnglishText{Device discovery}] \EnglishText{System must be able to discovery other 
 		PeerHood capable devices within range and the same device neighborhood.
-		\Sentence
+		%
 		Device detection can be depend used network technology.
 		\item[Service discovery] System must be able to discovery services from the local device 
 		and other PeerHood devices in the device neighborhood.
-		\Sentence
+		%
 		System must have capability to read service attributes as well with service discovery.}
 
 	\item[\EnglishText{Service sharing}] \EnglishText{PeerHood must provide mechanism to register 
 		services and use them by applications or middleware components. 
-		\Sentence
+		%
 		Services can locate on local or remote device. 
-		\Sentence
+		%
 		The PeerHood system must advertise registered services to other devices in a PeerHood 
 		neighborhood.}
 
 	\item[\EnglishText{Connection establishment}] \EnglishText{PeerHood must provide ability of 
 		connect to one or more other PeerHood device in a PeerHood neighborhood. 
-		\Sentence
+		%
 		Connect establishment must be transparent for used underlying network technology.}
 
 	\item[\EnglishText{Active monitoring of a device}] \EnglishText{PeerHood must provide way to 
 		set a selected device in the PeerHood neighborhood under active monitoring. 
-		\Sentence
+		%
 		In the active monitoring state, a PeerHood client is notified when the device under 
 		monitoring is out of range or when it comes back in the range. 
-		\Sentence
+		%
 		Proper response time and range are network technology dependent attributes.}
 
 	\item[\EnglishText{Data transmission between devices}] \EnglishText{PeerHood must provide data 
 		transmission between connected PeerHood devices. 
-		\Sentence
+		%
 		PeerHood should not take care of data being transferred. 
-		\Sentence
+		%
 		User of the PeerHood must take care of data endianess and word length of data.}
 
 	\item[\EnglishText{Seamless connectivity}] \EnglishText{PeerHood should provide way to change 
 		used active network technology automatically if established connection weakens or breaks. 
-		\Sentence
+		%
 		PeerHood should provide always the best possible connections for the user. 
-		\Sentence
+		%
 		Established connection should be possible to monitoring for detecting connection changes, 
 		which might cause change of used network technology.}
 \end{description}
@@ -116,9 +116,9 @@
 \end{description}
 
 \Paragraph{Нефункциональные требования}
-\Sentence
+%
 Помимо функциональных требований к проекту \PeerHood существует также ряд нефункциональных.
-\Sentence
+%
 К таким относятся следующие \Reference{PeerHoodSpecification}:
 \begin{description}
 	\leftskip2em%
@@ -126,25 +126,25 @@
 	\setlength{\parsep}{0pt}%	
 	\item[\EnglishText{Network management}] \EnglishText{PeerHood should be able to manage 
 		a specific network and events from the network. 
-		\Sentence
+		%
 		In addition, PeerHood should check availability of network and get notifications of changes 
 		of the network.}
 
 	\item[\EnglishText{Component management}] \EnglishText{PeerHood should provide events to 
 		PeerHood client of changes and suspensions of discovering functionalities. 
-		\Sentence
+		%
 		The PeerHood operates on mobile devices where memory and power consumptions have to take 
 		care. 
-		\Sentence
+		%
 		Due to that, used device environment is dynamic. 
-		\Sentence
+		%
 		As, if network interface might go power saving state or it can be closed for freeing memory 
 		to other applications.}
 
 	\item[\EnglishText{Communication concurrency base}] \EnglishText{PeerHood must support 
 		concurrent execution, in that multiple connections are used and they need to get execution 
 		time evenly. 
-		\Sentence
+		%
 		The only exception for use of multiple simultaneous connections is if used network 
 		technology limits multiple connections on the hardware level.}
 
@@ -153,22 +153,22 @@
 
 	\item[\EnglishText{Plugin architecture for networks}] \EnglishText{PeerHood must provide 
 		interface for its functionalities to plugins. 
-		\Sentence
+		%
 		Network plugins implements abstractions of connectivity and device monitoring 
 		functionalities. 
-		\Sentence
+		%
 		In addition, plugins handles device detection and service sharing.}
 \end{description}
 
 \Paragraph{Связь требований с архитектурой}
-\Sentence
+%
 Как уже было упомянуто выше, достижение цели разработки проекта основывается на обеспечении 
 требований к нему.
-\Sentence
+%
 Функциональные требования необходимы для определения функций, которые должно поддерживать 
 разрабатываемое \RussianAbbreviation{ПО}, а также для определения его будущих компонентов.
-\Sentence
+%
 Тогда как разработка нефункциональных требований в первую очередь определяет архитектура 
 разрабатываемого \RussianAbbreviation{ПО} \Reference{Stellman2005}.
-\Sentence
+%
 Архитектура проекта PeerHood рассматривается в следующем подразделе.
