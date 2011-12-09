@@ -1,29 +1,44 @@
 % === PREFERENCES ===
 
-\lstset{language=C++,
-  stringstyle=\ttfamily,
-  breaklines=true
+\lstset{
+	language=C++,
+	basicstyle=\small\ttfamily,
+	breaklines=true
 }
-\lstloadlanguages{C++}
+%\lstloadlanguages{C++}
 
 % === APPENDIX CONTENTS ===
 
 % first page
 \ApplyAppendixFirstPageStyle{}
-\lstinputlisting[caption=peerhoodglobal.h]{listings/peerhood_api/peerhoodglobal.h}
-\lstinputlisting[caption=abstractconnection.h]{listings/peerhood_api/abstractconnection.h}
-\lstinputlisting[caption=abstractcreator.h]{listings/peerhood_api/abstractcreator.h}
+
+\NonTitledListing{peerhoodglobal.h}{C++}
+	{listings/peerhood_api/peerhoodglobal.h}
+\NonTitledListing{abstractconnection.h}{C++}
+	{listings/peerhood_api/abstractconnection.h}
+\NonTitledListing{abstractcreator.h}{C++}
+	{listings/peerhood_api/abstractcreator.h}
 
 % intermediate pages
 \ApplyAppendixPageStyle{}
-\lstinputlisting[caption=device.h]{listings/peerhood_api/device.h}
-\lstinputlisting[caption=service.h]{listings/peerhood_api/service.h}
-\lstinputlisting[caption=abstractadverter.h]{listings/peerhood_api/abstractadverter.h}
-\lstinputlisting[caption=abstractpinger.h]{listings/peerhood_api/abstractpinger.h}
-\lstinputlisting[caption=peerhoodsettings.h]{listings/peerhood_api/peerhoodsettings.h}
-\lstinputlisting[caption=peerhood.h]{listings/peerhood_api/peerhood.h}
-\lstinputlisting[caption=abstractconnection.h]{listings/peerhood_api/abstractconnection.h}
+
+\NonTitledListing{device.h}{C++}
+	{listings/peerhood_api/device.h}
+\NonTitledListing{service.h}{C++}
+	{listings/peerhood_api/service.h}
+\NonTitledListing{abstractadverter.h}{C++}
+	{listings/peerhood_api/abstractadverter.h}
+\NonTitledListing{abstractpinger.h}{C++}
+	{listings/peerhood_api/abstractpinger.h}
+\NonTitledListing{peerhoodsettings.h}{C++}
+	{listings/peerhood_api/peerhoodsettings.h}
+\NonTitledListing{peerhood.h}{C++}
+	{listings/peerhood_api/peerhood.h}
+\NonTitledListing{abstractconnection.h}{C++}
+	{listings/peerhood_api/abstractconnection.h}
 
 % last page
 \ApplyAppendixLastPageStyle{}
-\lstinputlisting[caption=abstractmonitor.h]{listings/peerhood_api/abstractmonitor.h}
+
+\NonTitledListing{abstractmonitor.h}{C++}
+	{listings/peerhood_api/abstractmonitor.h}

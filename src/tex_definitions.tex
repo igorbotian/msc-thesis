@@ -140,6 +140,27 @@
 	\PlaceImageFigure{#1 \Reference{#3}}{#2}{#2}%
 }
 
+\newcommand{\Listing} [3] {
+	\lstinputlisting[
+		caption={#1}, 
+		basicstyle=\footnotesize\ttfamily, 
+		language=#2, 
+		frame=single, 
+		showstringspaces=false,
+		tabsize=2]
+		{#3}
+}
+
+\newcommand{\NonTitledListing} [3] {
+	\lstinputlisting[
+		title={\Bold{#1}}, 
+		basicstyle=\footnotesize\ttfamily, 
+		language=#2, 
+		showstringspaces=false,
+		tabsize=2]
+		{#3}
+}
+
 % to use abbreviations in the text
 % requires the 'acronym' package
 
