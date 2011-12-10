@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     return EXIT_SUCCESS;
 }
 
-int is_prime(unsigned short number) {
+int is_prime(unsigned int number) {
     int result = 1;
     int i;
     
