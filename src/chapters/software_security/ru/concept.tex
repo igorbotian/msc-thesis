@@ -1,21 +1,16 @@
 \Paragraph{Роль информации в современном мире}
 %
-Роль информации в современном мире очень велика, и с постоянным усложнением науки и техники её 
-значение только возрастает \Reference{Stratonovich1975}.
+Роль информации в современном мире очень велика, и с постоянным усложнением науки и техники её значение только возрастает \Reference{Stratonovich1975}.
 %
-Согласно Кембриджскому словарю философии, информация является объективным понятием и связана с 
-такими операциями, как формирование, передача, хранение и др. \Reference{CambridgeDictionary1999}.
+Согласно Кембриджскому словарю философии, информация является объективным понятием и связана с такими операциями, как формирование, передача, хранение и др. \Reference{CambridgeDictionary1999}.
 %
-Современная бизнес-среда становится всё более информационно коммуникабельной, при этом операция 
-передачи информации формирует основу информационных систем \Reference{ISO17799}. 
+Современная бизнес-среда становится всё более информационно коммуникабельной, при этом операция передачи информации формирует основу информационных систем \Reference{ISO17799}. 
 %
-Поэтому проблема обеспечения безопасности информации в таких системах становится всё более 
-актуальной.
+Поэтому проблема обеспечения безопасности информации в таких системах становится всё более актуальной.
 
 \Paragraph{Обеспечение информационной безопасности}
 %
-Понятие "информационная безопасность" означает защиту информации и информационных систем от 
-несанкционированного доступа, использования, раскрытия, изменения или уничтожения 
+Понятие "информационная безопасность" означает защиту информации и информационных систем от несанкционированного доступа, использования, раскрытия, изменения или уничтожения 
 \Reference{USCodeTitle44}. 
 %
 Она направлена на защиту следующих свойств информации:
@@ -24,10 +19,10 @@
 	\setlength{\itemsep}{0pt}%
 	\setlength{\parsep}{0pt}%
 
-	\item[Целостность] \EnglishText{Guarding against improper information modification or 
-		destruction, and includes ensuring information nonrepudiation and authenticity}.
-	\item[Конфиденциальность] \EnglishText{Preserving authorized restrictions on access and 
-		disclosure, including means for protecting personal privacy and proprietary information}.
+	\item[Целостность] \EnglishText{Guarding against improper information modification or destruction, and includes ensuring information nonrepudiation and authenticity}.
+
+	\item[Конфиденциальность] \EnglishText{Preserving authorized restrictions on access and disclosure, including means for protecting personal privacy and proprietary information}.
+
 	\item[Доступность] \EnglishText{Ensuring timely and reliable access to and use of information}.
 \end{description}
 
@@ -37,66 +32,51 @@
 %
 Она изображена на \ReferenceToFigure{software_security_cia_triad}. 
 %
-Кроме указанных трёх свойств, в некоторых литературных источниках также указываются достоверность, 
-отслеживаемость, невозможность отказа от авторства и надёжность \Reference{ISO17799}. 
+Кроме указанных трёх свойств, в некоторых литературных источниках также указываются достоверность, отслеживаемость, невозможность отказа от авторства и надёжность \Reference{ISO17799}. 
 
 \ReproducedImageFigure{Цели информационной безопасности}{software_security_cia_triad}{Stallings2008}
 
 \Paragraph{Последствия необеспечения безопасности информации}
 %
-Если при обеспечении безопасности хотя бы один элемент \CIATriad не учитывается, то это может 
-привести к серьёзным последствиям \Reference{FIBSPUB199}.
+Если при обеспечении безопасности хотя бы один элемент \CIATriad не учитывается, то это может привести к серьёзным последствиям \Reference{FIBSPUB199}.
 %
-A loss of confidentiality is the unauthorized disclosure of information.
+\EnglishText{A loss of confidentiality is the unauthorized disclosure of information.}
 %
-A loss of availability is the disruption of access to or use of information or an information 
-system.
+\EnglishText{A loss of availability is the disruption of access to or use of information or an information system.}
 %
-A loss of integrity is the unauthorized modification or destruction of information.
+\EnglishText{A loss of integrity is the unauthorized modification or destruction of information.}
 
 \Paragraph{Способы обеспечения безопасности}
 %
-Для того, чтобы избежать перечисленных выше проблем, применяются различные способы обеспечения 
-безопаности.
+Для того, чтобы избежать перечисленных выше проблем, применяются различные способы обеспечения безопаности.
 %
-Домарёв выделяет следующие: законодательный, административный, процедурный и 
-программного-технический \Reference{Domarev2004}. 
+Домарёв выделяет следующие: законодательный, административный, процедурный и программного-технический \Reference{Domarev2004}. 
 %
-Способы являются взаимодополняющими, поэтому могут использоваться как в совокупности, так и по 
-отдельности. 
+Способы являются взаимодополняющими, поэтому могут использоваться как в совокупности, так и по отдельности. 
 %
-В данной работе рассматривается только программно-технический способ обеспечения безопасности 
-информации.
+В данной работе рассматривается только программно-технический способ обеспечения безопасности информации.
 %
 Он тесно связан с понятием компьютерной безопасности.
 
 \Paragraph{Компьютерная безопасность}
 %
-Согласно RFC 4949, компьютерная безопасность - это \EnglishText{the protection afforded to an 
-automated information system in order to attain the applicable objectives of preserving the 
-integrity, availability and confidentiality of information system resources (includes hardware, 
-software, firmware, information/data, and telecommunications)} \Reference{RFC4949}.
+Согласно RFC 4949, компьютерная безопасность - это \EnglishText{the protection afforded to an automated information system in order to attain the applicable objectives of preserving the integrity, availability and confidentiality of information system resources (includes hardware, software, firmware, information/data, and telecommunications)} \Reference{RFC4949}.
 %
-В отличии от информационной безопасности, компьютерная безопасность имеет также две дополнительные 
-цели \Reference{Stallings2008}:. 
+В отличии от информационной безопасности, компьютерная безопасность имеет также две дополнительные цели \Reference{Stallings2008}:. 
 %
 \begin{description}
-	\item[Authenticity] The property of being genuine and being able to be verified and trusted;
-		confidence in the validity of a transmission, a message, or message originator 
-		\Reference{RFC4949}.
-	\item[Accountability] The security goal generates the requirement for actions of an entity to 
-		be traced uniquely to that entity \Reference{RFC4949}.
+
+	\item[Authenticity] The property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator \Reference{RFC4949}.
+
+	\item[Accountability] The security goal generates the requirement for actions of an entity to be traced uniquely to that entity \Reference{RFC4949}.
 \end{description}
 
 \Paragraph{Компьютерная безопасность}
 %
 Основу компьютерной безопасности формирует безопасность \RussianAbbreviation{ПО}.
 %
-МкГроу считает, что программное обеспечение является центральным и наиболее критичным аспектом 
-компьютерной безопасности \Reference{McGraw2006}. 
+МкГроу считает, что программное обеспечение является центральным и наиболее критичным аспектом компьютерной безопасности \Reference{McGraw2006}. 
 %
-Идея безопасности \RussianAbbreviation{ПО} заключается в том, чтобы \RussianAbbreviation{ПО} 
-смогло корректно выполнять свои функции под воздействием атаки со стороны злоумышленника 
-\Reference{McGrawArticle2004}.
+Идея безопасности \RussianAbbreviation{ПО} заключается в том, чтобы \RussianAbbreviation{ПО} смогло корректно выполнять свои функции под воздействием атаки со стороны злоумышленника \Reference{McGrawArticle2004}.
 %
 На эту возможность влияет ряд факторов, которые рассматриваются в следующем подразделе.
