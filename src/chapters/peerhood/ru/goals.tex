@@ -47,41 +47,41 @@
 	\setlength{\itemsep}{0pt}%
 	\setlength{\parsep}{0pt}%
 
-	\item[\EnglishText{Device discovery}] \EnglishText{System must be able to discovery other PeerHood capable devices within range and the same device neighborhood.
+	\item[\EnglishText{Device discovery}] \EnglishText{System must be able to discovery other PeerHood capable devices within range and the same device neighborhood}.
 	%
-	Device detection can be depend used network technology.
+	\EnglishText{Device detection can be depend used network technology}.
 		
-	\item[Service discovery] System must be able to discovery services from the local device and other PeerHood devices in the device neighborhood.
+	\item[\EnglishText{Service discovery}] \EnglishText{System must be able to discovery services from the local device and other PeerHood devices in the device neighborhood}.
 	%
-	System must have capability to read service attributes as well with service discovery.}
+	\EnglishText{System must have capability to read service attributes as well with service discovery}.
 
-	\item[\EnglishText{Service sharing}] \EnglishText{PeerHood must provide mechanism to register services and use them by applications or middleware components. 
+	\item[\EnglishText{Service sharing}] \EnglishText{PeerHood must provide mechanism to register services and use them by applications or middleware components}. 
 	%
-	Services can locate on local or remote device. 
+	\EnglishText{Services can locate on local or remote device}. 
 	%
-	The PeerHood system must advertise registered services to other devices in a PeerHood neighborhood.}
+	\EnglishText{The PeerHood system must advertise registered services to other devices in a PeerHood neighborhood}.
 
-	\item[\EnglishText{Connection establishment}] \EnglishText{PeerHood must provide ability of connect to one or more other PeerHood device in a PeerHood neighborhood. 
+	\item[\EnglishText{Connection establishment}] \EnglishText{PeerHood must provide ability of connect to one or more other PeerHood device in a PeerHood neighborhood}. 
 	%
-	Connect establishment must be transparent for used underlying network technology.}
+	\EnglishText{Connect establishment must be transparent for used underlying network technology}.
 
-	\item[\EnglishText{Active monitoring of a device}] \EnglishText{PeerHood must provide way to set a selected device in the PeerHood neighborhood under active monitoring. 
+	\item[\EnglishText{Active monitoring of a device}] \EnglishText{PeerHood must provide way to set a selected device in the PeerHood neighborhood under active monitoring}. 
 	%
-	In the active monitoring state, a PeerHood client is notified when the device under monitoring is out of range or when it comes back in the range. 
+	\EnglishText{In the active monitoring state, a PeerHood client is notified when the device under monitoring is out of range or when it comes back in the range}. 
 	%
-	Proper response time and range are network technology dependent attributes.}
+	\EnglishText{Proper response time and range are network technology dependent attributes}.
 
-	\item[\EnglishText{Data transmission between devices}] \EnglishText{PeerHood must provide data transmission between connected PeerHood devices. 
+	\item[\EnglishText{Data transmission between devices}] \EnglishText{PeerHood must provide data transmission between connected PeerHood devices}. 
 	%
-	PeerHood should not take care of data being transferred. 
+	\EnglishText{PeerHood should not take care of data being transferred}. 
 	%
-	User of the PeerHood must take care of data endianess and word length of data.}
+	\EnglishText{User of the PeerHood must take care of data endianess and word length of data}.
 
-	\item[\EnglishText{Seamless connectivity}] \EnglishText{PeerHood should provide way to change used active network technology automatically if established connection weakens or breaks. 
+	\item[\EnglishText{Seamless connectivity}] \EnglishText{PeerHood should provide way to change used active network technology automatically if established connection weakens or breaks}. 
 	%
-	PeerHood should provide always the best possible connections for the user. 
+	\EnglishText{PeerHood should provide always the best possible connections for the user}. 
 	%
-	Established connection should be possible to monitoring for detecting connection changes, which might cause change of used network technology.}
+	\EnglishText{Established connection should be possible to monitoring for detecting connection changes, which might cause change of used network technology}.
 \end{description}
 
 \Paragraph{Новое функциональное требование}
@@ -104,29 +104,29 @@
 	\setlength{\itemsep}{0pt}%
 	\setlength{\parsep}{0pt}%	
 	
-	\item[\EnglishText{Network management}] \EnglishText{PeerHood should be able to manage a specific network and events from the network. 
+	\item[\EnglishText{Network management}] \EnglishText{PeerHood should be able to manage a specific network and events from the network}. 
 	%
-	In addition, PeerHood should check availability of network and get notifications of changes of the network.}
+	\EnglishText{In addition, PeerHood should check availability of network and get notifications of changes of the network}.
 
-	\item[\EnglishText{Component management}] \EnglishText{PeerHood should provide events to PeerHood client of changes and suspensions of discovering functionalities. 
+	\item[\EnglishText{Component management}] \EnglishText{PeerHood should provide events to PeerHood client of changes and suspensions of discovering functionalities}. 
 	%
-	The PeerHood operates on mobile devices where memory and power consumptions have to take care. 
+	\EnglishText{The PeerHood operates on mobile devices where memory and power consumptions have to take care}. 
 	%
-	Due to that, used device environment is dynamic. 
+	\EnglishText{Due to that, used device environment is dynamic}. 
 	%
-	As, if network interface might go power saving state or it can be closed for freeing memory to other applications.}
+	\EnglishText{As, if network interface might go power saving state or it can be closed for freeing memory to other applications}.
 
-	\item[\EnglishText{Communication concurrency base}] \EnglishText{PeerHood must support concurrent execution, in that multiple connections are used and they need to get execution time evenly. 
+	\item[\EnglishText{Communication concurrency base}] \EnglishText{PeerHood must support concurrent execution, in that multiple connections are used and they need to get execution time evenly}. 
 	%
-	The only exception for use of multiple simultaneous connections is if used network technology limits multiple connections on the hardware level.}
+	\EnglishText{The only exception for use of multiple simultaneous connections is if used network technology limits multiple connections on the hardware level}.
 
-	\item[\EnglishText{Event interface}] \EnglishText{PeerHood must provide event interface for be able to notify dynamic changes to PeerHood client and itself.}
+	\item[\EnglishText{Event interface}] \EnglishText{PeerHood must provide event interface for be able to notify dynamic changes to PeerHood client and itself}.
 
-	\item[\EnglishText{Plugin architecture for networks}] \EnglishText{PeerHood must provide interface for its functionalities to plugins. 
+	\item[\EnglishText{Plugin architecture for networks}] \EnglishText{PeerHood must provide interface for its functionalities to plugins}. 
 	%
-	Network plugins implements abstractions of connectivity and device monitoring functionalities. 
+	\EnglishText{Network plugins implements abstractions of connectivity and device monitoring functionalities}. 
 	%
-	In addition, plugins handles device detection and service sharing.}
+	\EnglishText{In addition, plugins handles device detection and service sharing}.
 \end{description}
 
 \Paragraph{Связь требований с архитектурой}
