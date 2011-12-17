@@ -189,6 +189,10 @@
 	\THEYEAR%
 }
 
+\newcommand{\FourDigitsDate} [3] {%
+	\twodigit{#3}.\twodigit{#2}.#1
+}
+
 \newcommand{\CurrentYear}{
 	\YearDateFormat\today%
 }
