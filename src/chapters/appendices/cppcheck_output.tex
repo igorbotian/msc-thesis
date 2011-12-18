@@ -4,11 +4,11 @@
 	language=bash,
 	basicstyle=\small\ttfamily,
 	breaklines=true]
-$ valgrind ./ph2daemon
+$ cppcheck -I ./common/
 \end{lstlisting}
 
 \lstinputlisting[
 	basicstyle=\footnotesize\ttfamily, 
 	showstringspaces=false,
 	tabsize=2]
-	{listings/peerhood_analysis/valgrind.log}
+	{listings/peerhood_analysis/cppcheck.log}

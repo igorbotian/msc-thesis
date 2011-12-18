@@ -1,0 +1,23 @@
+==1979== Helgrind, a thread error detector
+==1979== Copyright (C) 2007-2010, and GNU GPL'd, by OpenWorks LLP et al.
+==1979== Using Valgrind-3.6.1-Debian and LibVEX; rerun with -h for copyright info
+==1979== Command: ./ph2daemon
+==1979== Parent PID: 1978
+==1979== 
+==1979== Thread #1 is the program's root thread
+==1979== 
+==1979== Thread #2 was created
+==1979==    at 0x46320B8: clone (clone.S:111)
+==1979== 
+==1979== Possible data race during write of size 1 at 0x48a247c by thread #1
+==1979==    at 0x4332DC9: QObjectPrivate::setThreadData_helper(QThreadData*, QThreadData*) (in /usr/lib/i386-linux-gnu/libQtCore.so.4.7.4)
+==1979==    by 0x4332FE0: QObject::moveToThread(QThread*) (in /usr/lib/i386-linux-gnu/libQtCore.so.4.7.4)
+==1979==    by 0x4103032: QNetworkConfigurationManagerPrivate::updateConfigurations() (in /usr/lib/i386-linux-gnu/libQtNetwork.so.4.7.4)
+==1979==    by 0x410375C: QNetworkConfigurationManagerPrivate::initialize() (in /usr/lib/i386-linux-gnu/libQtNetwork.so.4.7.4)
+==1979==    by 0x4579112: (below main) (libc-start.c:226)
+==1979==  This conflicts with a previous read of size 1 by thread #2
+==1979==    at 0x4349308: ??? (in /usr/lib/i386-linux-gnu/libQtCore.so.4.7.4)
+==1979==    by 0x476388B: g_main_context_prepare (in /lib/i386-linux-gnu/libglib-2.0.so.0.3000.0)
+==1979==    by 0x4764636: ??? (in /lib/i386-linux-gnu/libglib-2.0.so.0.3000.0)
+==1979==    by 0x4764C29: g_main_context_iteration (in /lib/i386-linux-gnu/libglib-2.0.so.0.3000.0)
+==1979==    by 0x4349AD9: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (in /usr/lib/i386-linux-gnu/libQtCore.so.4.7.4)

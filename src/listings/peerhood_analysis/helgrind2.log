@@ -1,0 +1,17 @@
+==1979==    by 0x431A1DC: QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (in /usr/lib/i386-linux-gnu/libQtCore.so.4.7.4)
+==1979==    by 0x56C6387: ???
+==1979==  Address 0x48a247c is 44 bytes inside a block of size 56 alloc'd
+==1979==    at 0x402848F: operator new(unsigned int) (vg_replace_malloc.c:255)
+==1979==    by 0x421E003: ??? (in /usr/lib/i386-linux-gnu/libQtCore.so.4.7.4)
+==1979==    by 0x421E0AB: QThread::QThread(QObject*) (in /usr/lib/i386-linux-gnu/libQtCore.so.4.7.4)
+==1979==    by 0x4579112: (below main) (libc-start.c:226)
+==1979== 
+
+...
+
+==1979== 
+==1979== 
+==1979== For counts of detected and suppressed errors, rerun with: -v
+==1979== Use --history-level=approx or =none to gain increased speed, at
+==1979== the cost of reduced accuracy of conflicting-access information
+==1979== ERROR SUMMARY: 170 errors from 41 contexts (suppressed: 882 from 81)

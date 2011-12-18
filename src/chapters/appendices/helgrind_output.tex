@@ -1,0 +1,27 @@
+\ApplyOnePageAppendixPageStyle{}
+
+\begin{lstlisting}[
+	language=bash,
+	basicstyle=\small\ttfamily,
+	breaklines=true]
+$ valgrind --tool=helgrind ./ph2daemon
+\end{lstlisting}
+
+% first page
+\ApplyAppendixFirstPageStyle{}
+
+\lstinputlisting[
+	basicstyle=\footnotesize\ttfamily, 
+	showstringspaces=false,
+	tabsize=2]
+	{listings/peerhood_analysis/helgrind1.log}
+
+% second page
+\newpage
+\ApplyAppendixLastPageStyle{}
+
+\lstinputlisting[
+	basicstyle=\footnotesize\ttfamily, 
+	showstringspaces=false,
+	tabsize=2]
+	{listings/peerhood_analysis/helgrind2.log}

@@ -1,0 +1,21 @@
+Analyzing ./common/service.cpp
+Analyzing ./common/abstractpluginloader.cpp
+Analyzing ./common/daemonclient.cpp
+Analyzing ./common/connectionmanager.cpp
+./plugins/wlanplugin/wlanpinger_unix.cpp:142: High: fixed size local buffer
+./plugins/wlanplugin/wlanpinger_unix.cpp:187: High: fixed size local buffer
+Extra care should be taken to ensure that character arrays that are allocated
+on the stack are used safely.  They are prime targets for buffer overflow
+attacks.
+
+./plugins/wlanplugin/wlanpinger_unix.cpp:148: High: gethostbyname
+DNS results can easily be forged by an attacker (or 
+arbitrarily set to large values, etc), and should not be trusted.
+
+./daemon/main.cpp:45: Medium: signal
+When setting signal handlers, do not use the same function to handle multiple signals. There exists the possibility a race condition will result if 2 or more different signals are sent to the process at nearly the same time. Also, when writing signal handlers, it is best to do as little as possible in them. The best strategy is to use the signal handler to set a flag, that another part of the program tests and performs the appropriate action(s) when it is set.
+See also: http://razor.bindview.com/publish/papers/signals.txt
+
+Total lines analyzed: 5932
+Total time 0.007901 seconds
+750791 lines per second

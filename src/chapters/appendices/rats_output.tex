@@ -1,0 +1,27 @@
+\ApplyOnePageAppendixPageStyle{}
+
+\begin{lstlisting}[
+	language=bash,
+	basicstyle=\small\ttfamily,
+	breaklines=true]
+$ rats .
+\end{lstlisting}
+
+% first page
+\ApplyAppendixFirstPageStyle{}
+
+\lstinputlisting[
+	basicstyle=\footnotesize\ttfamily, 
+	showstringspaces=false,
+	tabsize=2]
+	{listings/peerhood_analysis/rats1.log}
+
+% second page
+\newpage
+\ApplyAppendixLastPageStyle{}
+
+\lstinputlisting[
+	basicstyle=\footnotesize\ttfamily, 
+	showstringspaces=false,
+	tabsize=2]
+	{listings/peerhood_analysis/rats2.log}
