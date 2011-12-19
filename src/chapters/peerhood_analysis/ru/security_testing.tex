@@ -393,7 +393,7 @@
 
 \Paragraph{Нарушение инкапсуляции в PeerHood}
 %
-\EnglishText{PeerHood} \Abbreviation{API} содержит ряд уязвимостей, связанных с нарушением инкапсуляцией классов. Они перечислены в \ReferenceToTable{peerhood_analysis_security_testing_api_encapsulation}. Данные уязвимости влияют на все функциональные характеристики \EnglishText{PeerHood}, за исключением возможности одновременной поддержки нескольких клиентов и возможности контроля работы системы (см. \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}).
+\EnglishText{PeerHood} \Abbreviation{API} содержит ряд уязвимостей, связанных с нарушением инкапсуляцией классов. Они перечислены в \InReferenceToTable{peerhood_analysis_security_testing_api_encapsulation}. Данные уязвимости влияют на все функциональные характеристики \EnglishText{PeerHood}, за исключением возможности одновременной поддержки нескольких клиентов и возможности контроля работы системы (см. \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}).
 
 \TableFigure{Методы классов PeerHood API, нарушающие инкапсуляцию}{peerhood_analysis_security_testing_api_encapsulation}{
 	\begin{tabular}{ | p{4cm} | p{10cm} | }
@@ -423,7 +423,7 @@
 %
 В \EnglishText{PeerHood} уязвимости такого вида влияют на его функционирование, то есть на функциональные характеристики, связанные с доступностью и возможностю (см. \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}). 
 %
-В \ReferenceToTable{peerhood_analysis_security_testing_unsafe_api_methods} перечислены методы классов, входящих в \EnglishText{PeerHood} \Abbreviation{API} и не осуществляющих проверку корректности своих аргументов. Ревизия кода также показала, что \EnglishText{PeerHood} не осуществляет проверку входных данных, передаваемых данных. В частности, десериализация классов \SourceCode{Service} и \SourceCode{Device} является небезопасной. 
+В \InReferenceToTable{peerhood_analysis_security_testing_unsafe_api_methods} перечислены методы классов, входящих в \EnglishText{PeerHood} \Abbreviation{API} и не осуществляющих проверку корректности своих аргументов. Ревизия кода также показала, что \EnglishText{PeerHood} не осуществляет проверку входных данных, передаваемых данных. В частности, десериализация классов \SourceCode{Service} и \SourceCode{Device} является небезопасной. 
 
 \TableFigure{Методы классов PeerHood API, не осуществляющие проверку корректности своих аргументов}{peerhood_analysis_security_testing_unsafe_api_methods}{
 	\begin{tabular}{ | p{4cm} | p{10cm} | }
