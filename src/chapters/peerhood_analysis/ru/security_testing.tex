@@ -293,104 +293,161 @@
 
 \Paragraph{Цель ревизии кода}
 %
-TODO
+Целью проведения ревизии кода \PeerHood является поиск уязвимостей, влияющих на его безопасность.  
 %
-\begin{comment}
-На что направлена ревизия
-Как она будет происходит
-Какие результаты необходимо получить
-Что они дадут (связь с задачами анализа)
+Согласно \Reference{NISTSP500268} \Reference{Michael2005}, данный процесс состоит следующих шагов: установления цели ревизии, выбора классов потенциальных уязвимостей и их дальнейший поиск в коде. 
+%
+Целью ревизии \PeerHood является оценка составляющих его безопасности, перечисленных в \InReferenceToSection{peerhood_analysis_security_testing_method_choosing}. 
+%
+Причём особое внимание уделяются участкам кода, соответствующим ''уязвимым'' местам (см. \ReferenceToSection{peerhood_analysis_risk_modeling}). 
+%
+В качестве классов уязвимости можно выбрать категории классификации ''\EnglishText{Seven Pernicious Kingdoms}'' (см. \ReferenceToSection{software_security_vulnerabilities_seven_pernicious_kingdoms}). 
+%
+Среди них проверка входных данных и их представление, неправильное использование \Abbreviation{API}, средства безопасности, время и состояние, ошибки, инкапсуляция, программное окружение \Reference{Tsipenyuk2005}. 
 
-Анализ кода с точки зрения безопасности
-Методы тестирования — лишь дополнительный инструмент
-Более глубокий поиск уязвимостей
-\end{comment}
+\Paragraph{Проверка входных данных}
+%
+Категория ''входные данные'' состоит из следующего вида уязвимостей: переполнение буфера, внедрение кода, уязвимости форматных строк, переполнение целочисленных данных, неверное значение указателя \Reference{Tsipenyuk2005}. 
+%
+Массивы С/С++ в исходном коде \PeerHood не используются, за исключением случая, рассмотренного в \InReferenceToSection{peerhood_analysis_security_testing_static_analysis}. 
+%
+Вместо них используются их безопасные \Qt-аналоги: \SourceCode{QString}, \SourceCode{QList}, \SourceCode{QStringList}, \SourceCode{QByteArray} \WebSite{QtDocs}. 
+%
+Форматные строки в проекте также не используются. 
+%
+Ревизия исходного кода показала отсутствие ошибок переполнения целочисленных данных, а также работы с указателями. 
 
-\Paragraph{Что можно проверить в ходе ревизии кода}
+\Paragraph{Средства безопасности}
 %
-TODO
+Категория ''средства безопасности'' содержит уязвимости, связанные с полным или частичным отсутствием механизмов безопасности (контроль доступа, авторизация, аутентификация, защита передаваемых данных и др.) \Reference{Tsipenyuk2005}. 
 %
-\begin{comment}
-Язык разработки С++: переполнение буфера, целочисленные данные, форматные строки, указатели
-Apple Secure Coding Guide: помимо перечисленных выше ещё проверка входных данных, состояние гонки, IPC, файловая система, проблемы контроля доступа
-C Secure Coding Standard: препроцессор, инициализация, целочисленные данные, массивы, строки, распределение памяти, ввод/вывод, временные файлы, окружение, сигналы
-Seven Pernicious Kingdoms: проверка входных данных, неправильное использование API, механизм безопасности, проблема синхронизации, неправильная обработка исключительных ситуаций, нарушение инкапсуляции (раскрытие информации), программное окружение
-Подведение итогов: выжимка из перечисленных выше списков
-\end{comment}
+Согласно спецификации (см. \ReferenceToSection{peerhood}), в \PeerHood отсутствуют механизмы безопасности. 
+%
+Но их реализация запланирована и входит в одно из направлений дальнейшей разработки проекта. 
+%
+Ревизия исходного кода показала, что данные между мобильными устройствами сетевого окружения передаются в незашифрованном виде. 
+%
+Поэтому можно сказать, что конфиденциальность и целостность передаваемых данных как составляющие безопасности \PeerHood могут быть нарушены. 
 
-\Paragraph{Что будет проверено в ходе ревизии кода}
+\Paragraph{Ошибки}
 %
-TODO
+Категория ''ошибки'' содержит следующего вида уязвимости: двойное освобождение памяти, утечка памяти, разыменование \SourceCode{NULL}-указателя \Reference{Tsipenyuk2005}. 
 %
-\begin{comment}
-Уязвимости, характерные для С++, будут проверены с помощью ревизии кода
-Проверка входных данных, в каких местах: с помощью ревизии кода
-Необходима проверка API: ревизия кода
-Состояния гонки с помощью инструментальных средств, а примитивы синхронизации с помощью ревизии кода
-Чек-лист из C Secure Coding Standard по списку с помощью ревизии кода
-Программное окружение: с помощью ревизии кода + анализ Qt
-Раскрытие информации: с помощью ревизии кода
-Неправильная обработка исключений: ревизия кода
+Текущая версия \PeerHood поставляется с набором тестов, в том числе направленных на проверку утечку памяти. 
+%
+Они выполняются успешно, что свидетельствует об отсутствии уязвимости утечки памяти в исходном коде \PeerHood. 
+%
+Это подтверждают результаты динамического анализа (см. \ReferenceToSection{peerhood_analysis_security_testing_dynamic_analysis}). 
+%
+Ревизия исходного кода показала отсутствие уязвимостей, связанных с разыменованием \SourceCode{NULL}-указателей и двойным освобождением памяти. 
 
-Проверка точек входа приложения
-\end{comment}
+\Paragraph{Программное окружение}
+%
+Категория ''ошибки'' содержит следующего вида уязвимости: неправильная установка прав доступа к используемым файлам, хранение конфиденциальной информации в незашифрованном виде \Reference{Tsipenyuk2005}. 
+%
+Уязвимость \PeerHood, связанная с правами доступа файла конфигурации, была рассмотрена в \InReferenceToSection{peerhood_analysis_security_testing_fault_injection}. 
+%
+Помимо неё существует ещё она, связанная с тем, что в файле конфигурации хранится имя мобильного устройства и его идентификатор. 
+%
+Они используются для различения устройств в сетевом окружении. 
+%
+Несанкционированное изменение этих параметров может привести к выдаче одного устройства за другое. 
+%
+Последствием этого может быть нарушение конфиденциальности данных как составляющей безопасности \PeerHood. 
 
-\Paragraph{Общие проблемы С/C++}
+\Paragraph{Инкапсуляция}
 %
-TODO
+Категория ''инкапсуляция'' содержит следующего вида уязвимости: раскрытие лишней информации, нарушение инкапсуляции классов приложения \Reference{Tsipenyuk2005}. 
 %
-\begin{comment}
-Переполнение буфера - поиск массивов в коде
-Целочисленные данные - поиск целочисленных переменных в коде и их отслеживание
-Форматные строки - поиск форматных строк
-Указатели - поиск указателей и их отслеживание
-\end{comment}
+В текущей реализации \PeerHood демон использует имя хоста и идентификатор устройства, на котором он запущен, другим демонам в сетевом окружении. 
+%
+Такое поведение с точки зрения безопасности можно считать раскрытием лишней информации, так как это помогает злоумышленнику в выдаче себя за другое устройство в сети. 
+%
+Последствия данной уязвимости уже были рассмотрены выше в данном подразделе.
+%
+Поиск нарушений инкапсуляции классов \Abbreviation{API} \PeerHood осуществляется дальше в этом подразделе. 
 
-\Paragraph{Входные данные}
+\Paragraph{Неправильное использование API}
 %
-TODO
+Категория ''неправильное использование \Abbreviation{API}'' связана с нарушением контрактов элементов \Abbreviation{API} \Reference{Tsipenyuk2005}. 
 %
-\begin{comment}
-Анализ кода, отвечающего за приём и отправку данных через сокетный интерфейс демона
-Анализ API для приложений и API для сетевых интерфейсов
-\end{comment}
+Такое действие может способствовать некорректному функционированию приложения, в том числе небезопасному. 
+%
+Анализ безопасности \PeerHood \Abbreviation{API} позволяет оценить отказоустойчивость компонентов приложения. 
+%
+Дополнительно он способствует поиску уязвимостей, связанных с раскрытием информации. 
 
-\Paragraph{Синхронизация}
+\Paragraph{Нарушение инкапсуляции}
 %
-TODO
+Как уже было упомянуто выше, \PeerHood использует более безопасные аналоги массивов С/С++: классы \SourceCode{QList}, \SourceCode{QString} и другие. 
 %
-\begin{comment}
-Анализ и поиск мест, где нужно синхронизация. Анализ кода
-\end{comment}
+Согласно документации \Qt, данные классы не являются неизменяемыми, поэтому в ходе работы приложения состояние их объектов  может изменяться. 
+%
+В том числе и несанкционированно, что может привести к проблемам безопасности.
+%
+В объектно-ориентированных языках программирования это выражается в нарушении инкапсуляции классов, связанной с изменением значения поля класса со стороны, не в методе данного класса.
+%
+Такое действие может произойти в случаях, когда метод класса возвращает одно из его полей или когда полю класса присваивается аргумент одного из его методов или конструкторов.
+%
+С точки зрения безопасности, такая уязвимость может привести к нарушению конфиденциальности, если поле класса содержит конфиденциальную информацию, целостности, когда поле класса несанкционированно изменяет своё значение, а также доступности, когда память объекта-поля несанкционированно освобождается. 
 
-\Paragraph{Использование API}
+\Paragraph{Нарушение инкапсуляции в PeerHood}
 %
-TODO
-%
-\begin{comment}
-Анализ вызываемых системных API функций и Qt API
-\end{comment}
+\PeerHood \Abbreviation{API} содержит ряд уязвимостей, связанных с нарушением инкапсуляцией классов. Они перечислены в \ReferenceToTable{peerhood_analysis_security_testing_api_encapsulation}. Данные уязвимости влияют на все функциональные характеристики \PeerHood, за исключением возможности одновременной поддержки нескольких клиентов и возможности контроля работы системы (см. \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}).
 
-\Paragraph{Механизм безопасности}
-%
-TODO
-%
-\begin{comment}
-Отсутствует
-\end{comment}
+\TableFigure{Методы классов PeerHood API, нарушающие инкапсуляцию}{peerhood_analysis_security_testing_api_encapsulation}{
+	\begin{tabular}{ | p{4cm} | p{10cm} | }
+		\hline
+		\Bold{Класс} & \Bold{Методы/конструкторы} \\ \hline
+		\SourceCode{Service} & \SourceCode{const QString\& name() \linebreak \linebreak const QStringList\& attributes() \linebreak \linebreak const QStringList\& attributes()} \\ \hline
+		\SourceCode{AbstractConnection} & \SourceCode{const QString remoteAddress()} \\ \hline
+		\SourceCode{AbstractCreator} & \SourceCode{const QString\& connectionBase()} \\ \hline
+		\SourceCode{AbstractMonitor} & \SourceCode{const QString\& connectionBase() \linebreak \linebreak const QString\& address()} \\ \hline
+		\SourceCode{AbstractPinger} & \SourceCode{const QString\& connectionBase() \linebreak \linebreak const QString\& address()} \\ \hline
+		\SourceCode{Device} & \SourceCode{const QString\& name() \linebreak \linebreak const QString\& prototype() \linebreak \linebreak const QString\& address() \linebreak \linebreak QList<Service\*>\& serviceList()} \\ \hline
+		\SourceCode{AbstractAdverter} & \SourceCode{const QString\& connectionBase()} \\ \hline
+	\end{tabular}
+}
 
-\Paragraph{Механизм обработки ошибок}
+\Paragraph{Проверка аргументов методов}
 %
-TODO
+Для обеспечения отказоустойчивости приложения его компоненты должны осуществлять проверку входных данных. 
 %
-\begin{comment}
-Поиск и анализ исключительных ситуаций в коде
-\end{comment}
+В случае \Abbreviation{API} в качестве входных данных выступают аргументы функций (методов, конструкторов). 
+%
+Отсутствие проверки входных данных на корректность компонентом может привести к нарушению его функционирования. 
+%
+С точки зрения безопасности, это может стать причиной нарушения доступности, когда входные данные имеют непредусмотренное или некорректное значение и приводят к аварийному завершению приложения. 
 
-\Paragraph{Раскрытие информации}
+\Paragraph{Уязвимые методы классов PeerHood API}
 %
-TODO
+В \PeerHood уязвимости такого вида влияют на его функционирование, то есть на функциональные характеристики, связанные с доступностью и возможностю (см. \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}). 
 %
-\begin{comment}
-Анализ сообщений об ошибках, ресурсов приложений, характер передачи пользовательских данных
-\end{comment}
+В \ReferenceToTable{peerhood_analysis_security_testing_unsafe_api_methods} перечислены методы классов, входящих в \PeerHood \Abbreviation{API} и не осуществляющих проверку корректности своих аргументов. Ревизия кода также показала, что \PeerHood не осуществляет проверку входных данных, передаваемых данных. В частности, десериализация классов \SourceCode{Service} и \SourceCode{Device} является небезопасной. 
+
+\TableFigure{Методы классов PeerHood API, не осуществляющие проверку корректности своих аргументов}{peerhood_analysis_security_testing_unsafe_api_methods}{
+	\begin{tabular}{ | p{4cm} | p{10cm} | }
+		\hline
+		\Bold{Класс} & \Bold{Методы/конструкторы} \\ \hline
+		\SourceCode{Service} & \SourceCode{void setPort(unsigned int) \linebreak \linebreak Service(const QString\& name, const QStringList\& attributes, unsigned int port, quint64 pid = 0, QObject\* parent=0)} \\ \hline
+
+		\SourceCode{AbstractConnection} & \SourceCode{AbstractConnection(const QString\& connectionBase, const QHostAddress\& address = QHostAddress::Any, QObject\* parent = 0) \linebreak \linebreak bool listen(quint16 port)} \\ \hline
+		\SourceCode{AbstractCreator} & \SourceCode{AbstractMonitor\* createMonitor(const QString\& address) \linebreak \linebreak AbstractPinger\* createPinger(const QString\& address)} \\ \hline
+		\SourceCode{AbstractMonitor} & \SourceCode{AbstractMonitor(const QString\& address, const QString\& connectionBase)} \\ \hline
+		\SourceCode{AbstractPinger} & \SourceCode{AbstractPinger(const QString\& address, const QString\& connectionBase)} \\ \hline
+		\SourceCode{Device} & \SourceCode{Device(QDataStream\& stream, QObject \*parent = 0)} \\ \hline
+		\SourceCode{PeerHood} & \SourceCode{int registerService(const QString\& name, const QStringList\& attributes = QStringList(), unsigned int port = 0) \linebreak \linebreak bool unregisterService(const QString\& name, unsigned int port = 0) \linebreak \linebreak void connectNotify(const char\* signal) \linebreak \linebreak void disconnectNotify(const char\* signal)} \\ \hline
+	\end{tabular}
+}
+
+\Paragraph{Возможность контроля работы PeerHood и одновременная поддержка клиентов}
+%
+Контроль работы \PeerHood заключается в возможности изменения режима его работы, например перевода в состояние пониженного энергопотребления. 
+%
+Компоненты \Abbreviation{API}, отвечающие за данную функциональность, с точки зрения безопасности реализованы корректно. 
+%
+То же самое можно сказать про одновременную поддержку нескольких клиентов. 
+%
+Она корректно реализована при помощи примитивов синхронизации (\SourceCode{QMutex}). 
+%
+Ревизия участков кода \PeerHood, отвечающих за использование ресурсов приложения, уязвимостей состояния гонки также не выявила. 
