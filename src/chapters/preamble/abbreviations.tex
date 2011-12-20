@@ -1,24 +1,57 @@
 \PreambleSectionTitle{\AbbreviationsTitle}
 
 % here is a list of definitions of all abbreviations used in the thesis
-\begin{acronym}[ABCDEFGH] % ABCDEFGH is the longest acronym used
-	% english abbreviations
-	\acro{API}{Application Program Interface}
-	\acro{DoS}{Denial of Service}
-	\acro{GPRS}{General Packet Radio Service}
-	\acro{P2P}{Peer-to-Peer}
-	\acro{QoS}{Quality of Service}
-	\acro{WLAN}{Wireless Local Area Network}
-	\acro{XSS}{Cross-Site Scripting}
-	
-	% russian abbreviations
-	%\acro{БД}{База Данных}
-	%\acro{КПК}{Карманный Персональный Компьютер}
-	%\acro{ООП}{Объектно-Ориентированное Программирование}
-	%\acro{ОС}{Операционная Система}
-	%\acro{ПДУ}{Персональное Доверенное Устройство}
-	%\acro{ПО}{Программное Обеспечение}
-\end{acronym}
+
+\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }
+{
+	% for erussian version
+
+	\begin{acronym}[ABCDEFGH] % ABCDEFGH is the longest acronym used
+		% english abbreviations
+		\acro{API}{Application Program Interface}
+		\acro{DoS}{Denial of Service}
+		\acro{GPRS}{General Packet Radio Service}
+		\acro{P2P}{Peer-to-Peer}
+		\acro{QoS}{Quality of Service}
+		\acro{WLAN}{Wireless Local Area Network}
+		\acro{XSS}{Cross-Site Scripting}
+	\end{acronym}
+
+	\begin{tabular}{@{}p{2.5cm} l}
+		\RussianText{
+			\doublespace
+			\Bold{\textsf{БД}} & База Данных \\
+			\doublespace
+			\Bold{\textsf{КПК}} & Карманный Персональный Компьютер \\
+			\doublespace
+			\Bold{\textsf{ООП}} & Объектно-Ориентированное Программирование \\
+			\doublespace
+			\Bold{\textsf{ОС}} & Операционная Система \\
+			\doublespace
+			\Bold{\textsf{ПДУ}} & Персональное Доверенное Устройство \\
+			\doublespace
+			\Bold{\textsf{ПО}} & Программное Обеспечение \\
+		}
+	\end{tabular}
+}
+{
+	% for english version
+
+	\begin{acronym}[ABCDEFGH] % ABCDEFGH is the longest acronym used
+		\acro{API}{Application Program Interface}
+		\acro{DB}{Data Base}
+		\acro{DoS}{Denial of Service}
+		\acro{GPRS}{General Packet Radio Service}
+		\acro{OOP}{Object Oriented Programming}
+		\acro{OS}{Operating System}
+		\acro{P2P}{Peer-to-Peer}
+		\acro{PDA}{Personal Digital Assistant}
+		\acro{PTD}{Personal Trusted Device}
+		\acro{QoS}{Quality of Service}
+		\acro{WLAN}{Wireless Local Area Network}
+		\acro{XSS}{Cross-Site Scripting}
+	\end{acronym}
+}
 %
 \begin{comment}
 FINAL THESIS INSTRUCTIONS.
