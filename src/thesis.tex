@@ -37,6 +37,7 @@
 \usepackage{environ} % to define environments in command style
 \usepackage{etoolbox} % to eliminate \hbox badnesses in bibliography area
 \usepackage{fancyhdr} % to format page headers
+\usepackage[T1]{fontenc} % to enable European quoting style
 \usepackage{geometry} % to define custom margins of each page
 \usepackage{graphicx} % to use png graphic format for pictures
 \usepackage{hyperref} % to make references as hyperlinks
@@ -46,7 +47,6 @@
 \usepackage{listings} % to format listings of source code
 \usepackage{multicol} % to use multiple columns
 \usepackage{setspace} % to set line spacing
-\usepackage[T1]{fontenc} % to enable European quoting style
 \usepackage{verbatim} % to hide 'comment' environments in output file
 \usepackage{xifthen} % provides \isempty test
 \usepackage{xstring} % to performs basic string operations
@@ -131,6 +131,10 @@
 \IncludeChapter{references}
 
 % Appendices
+
+\makeatletter
+\def\@seccntformat#1{\protect\makebox[0pt][l]{\csname\endcsname\quad}}
+\makeatother
 
 \newpage
 \IncludeChapter{appendices}

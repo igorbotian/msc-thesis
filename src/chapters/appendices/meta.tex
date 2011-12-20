@@ -63,35 +63,38 @@
 		\cleardoublepage
 		\phantomsection
 		\addcontentsline{toc}{section}{\MakeUppercase{\AppendicesTitle}}
+		\appendix
+		\renewcommand*{\thesection}{\arabic{section}}
 	}
 	{
 		% nothing
 	}
 
 	\addtocounter{AppendixCounter}{1}
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 	\addtocontents{toc}{\TheAppendixTocTitle{#1}}
-	\section*{\TheAppendixPageTitle{#1}}
-	\PlaceReferenceToAppendix{appendix_#2}
+	\section{\TheAppendixPageTitle{#1}}
+	\PlaceReferenceToAppendix{#2}
 	
 	\renewcommand{\TheAppendixTitle}{\TheAppendixTocTitle{#1}}
 }
 %
 \newpage
-\TheAppendix{\PeerHoodAPITitle}{peerhood_api}
+\TheAppendix{\PeerHoodAPITitle}{appendix_peerhood_api}
 \IncludeAppendix{peerhood_api}
 %
 \newpage
-\TheAppendix{\CppcheckOutputTitle}{cppcheck_output}
+\TheAppendix{\CppcheckOutputTitle}{appendix_cppcheck_output}
 \IncludeAppendix{cppcheck_output}
 %
 \newpage
-\TheAppendix{\RATSOutputTitle}{rats_output}
+\TheAppendix{\RATSOutputTitle}{appendix_rats_output}
 \IncludeAppendix{rats_output}
 %
 \newpage
-\TheAppendix{\ValgrindOutputTitle}{valgrind_output}
+\TheAppendix{\ValgrindOutputTitle}{appendix_valgrind_output}
 \IncludeAppendix{valgrind_output}
 %
 \newpage
-\TheAppendix{\HelgrindOutputTitle}{helgrind_output}
+\TheAppendix{\HelgrindOutputTitle}{appendix_helgrind_output}
 \IncludeAppendix{helgrind_output}
