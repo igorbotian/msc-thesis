@@ -82,7 +82,7 @@
 }
 
 \newcommand{\PlaceReferenceToAppendix} [1] {%
-	\label{sec:#1}%
+	\label{appendix:#1}%
 }
 
 \newcommand{\PlaceReferenceToFigure} [1] {%
@@ -98,11 +98,15 @@
 }
 
 \newcommand{\InReferenceToTable} [1] {%
-	\TableWord~\ref{tab:#1}%
+	\InTableWord~\ref{tab:#1}%
 }
 
 \newcommand{\ReferenceToFigure} [1] {%
-	\figurename~\ref{fig:#1}%
+	\FigureWord~\ref{fig:#1}%
+}
+
+\newcommand{\OnReferenceToFigure} [1] {%
+	\OnFigureWord~\ref{fig:#1}%
 }
 
 \newcommand{\ReferenceToSection} [1] {%
@@ -114,7 +118,11 @@
 }
 
 \newcommand{\ReferenceToAppendix} [1] {%
-	\AppendixWord~\ref{sec:#1}%
+	\AppendixWord~\ref{appendix:#1}%
+}
+
+\newcommand{\InReferenceToAppendix} [1] {%
+	\InAppendixWord~\ref{appendix:#1}%
 }
 
 % to place an image
