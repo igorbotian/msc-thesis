@@ -64,7 +64,7 @@
 \definecolor{suggestioncolor}{RGB}{235,140,0} % dark orange
 \definecolor{websitecolor}{gray}{0.4}
 
-% to use citations to bibliography items
+% to use citations to bibliography items and citations under chapter titles
 % requires the 'color' package
 
 \newcommand{\Reference} [1] {%
@@ -74,6 +74,12 @@
 \newcommand{\WebSite} [1] {%
 	%\textcolor{websitecolor}{\cite{#1}}%
 	\Reference{#1}%
+}
+
+\newcommand{\Citation} [2] {%
+	\hfill \Italic{#1}.
+
+	\hfill #2
 }
 
 % to define and add references
