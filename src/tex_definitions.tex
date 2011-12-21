@@ -44,7 +44,7 @@
 	\vspace*{1em}%
 }
 
-% to define own delimiters between paragraphs and delimiters
+% to define own delimiters between paragraphs and sentences
 
 \newcommand{\Paragraph} [1] {
 	\ifthenelse{\isempty{#1}}
@@ -72,7 +72,8 @@
 }
 
 \newcommand{\WebSite} [1] {%
-	\textcolor{websitecolor}{\cite{#1}}%
+	%\textcolor{websitecolor}{\cite{#1}}%
+	\Reference{#1}%
 }
 
 % to define and add references
@@ -157,6 +158,8 @@
 	\PlaceImageFigure{#1 \Reference{#3}}{#2}{#2}%
 }
 
+% to use source code listings in the thesis
+
 \newcommand{\Listing} [3] {
 	\Paragraph{}
 	\lstinputlisting[
@@ -189,11 +192,6 @@
 \newcommand{\RussianAbbreviation} [1] {%
 	#1%
 	%\ac{#1}
-}
-
-\newcommand{\RussianAbbreviationShort} [1] {%
-	\RussianText{#1}%
-	%\RussianText{\acs{#1}}
 }
 
 % to print the current year
