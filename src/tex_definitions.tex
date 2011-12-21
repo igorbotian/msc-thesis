@@ -129,11 +129,12 @@
 % requires the 'graphicx' package
 
 \newcommand{\TableFigure} [3] {
+	\Paragraph{}
 	\begin{table}[placement=h]
 		\begin{center}
 			#3
-			\caption{#1}
-			\PlaceReferenceToTable{#2}
+			\caption{#1}%
+			\PlaceReferenceToTable{#2}%
 		\end{center}
 	\end{table}
 }

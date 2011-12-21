@@ -138,7 +138,7 @@
 %
 Данное инструментальное средство приводит несколько предостережений безопасности, но ревизия соответствующих участков кода ошибок не выявила (см. \ReferenceToAppendix{appendix_rats_output}). 
 %
-Первое из них связано с возможностью переполнения буфера, содержащего данные передаваемого сетевым расширением \EnglishText{ICMP}-пакета. 
+Первое из них связано с возможностью переполнения буфера, содержащего данные передаваемого сетевым расширением \IT{ICMP}-пакета. 
 %
 Его использование выполняется в рамках безопасности. 
 %
@@ -295,7 +295,7 @@
 %
 Целью проведения ревизии кода \IT{PeerHood} является поиск \Important{уязвимостей}, влияющих на его безопасность.  
 %
-Согласно \Reference{NISTSP500268} \Reference{Michael2005}, данный процесс состоит следующих шагов: установления цели ревизии, выбора классов потенциальных уязвимостей и их дальнейший поиск в коде. 
+Согласно \Reference{Michael2005} \Reference{NISTSP500268}, данный процесс состоит следующих шагов: установления цели ревизии, выбора классов потенциальных уязвимостей и их дальнейший поиск в коде. 
 %
 Целью ревизии \IT{PeerHood} является оценка составляющих его безопасности, перечисленных в \InReferenceToSection{peerhood_analysis_security_testing_method_choosing}. 
 %
@@ -399,12 +399,12 @@
 	\begin{tabular}{ | p{4cm} | p{10cm} | }
 		\hline
 		\Bold{Класс} & \Bold{Методы/конструкторы} \\ \hline
-		\SourceCode{Service} & \SourceCode{const QString\& name() \linebreak \linebreak const QStringList\& attributes() \linebreak \linebreak const QStringList\& attributes()} \\ \hline
+		\SourceCode{Service} & \SourceCode{const QString\& name() \linebreak const QStringList\& attributes() \linebreak const QStringList\& attributes()} \\ \hline
 		\SourceCode{AbstractConnection} & \SourceCode{const QString remoteAddress()} \\ \hline
 		\SourceCode{AbstractCreator} & \SourceCode{const QString\& connectionBase()} \\ \hline
-		\SourceCode{AbstractMonitor} & \SourceCode{const QString\& connectionBase() \linebreak \linebreak const QString\& address()} \\ \hline
-		\SourceCode{AbstractPinger} & \SourceCode{const QString\& connectionBase() \linebreak \linebreak const QString\& address()} \\ \hline
-		\SourceCode{Device} & \SourceCode{const QString\& name() \linebreak \linebreak const QString\& prototype() \linebreak \linebreak const QString\& address() \linebreak \linebreak QList<Service\*>\& serviceList()} \\ \hline
+		\SourceCode{AbstractMonitor} & \SourceCode{const QString\& connectionBase() \linebreak const QString\& address()} \\ \hline
+		\SourceCode{AbstractPinger} & \SourceCode{const QString\& connectionBase() \linebreak const QString\& address()} \\ \hline
+		\SourceCode{Device} & \SourceCode{const QString\& name() \linebreak const QString\& prototype() \linebreak const QString\& address() \linebreak QList<Service\*>\& serviceList()} \\ \hline
 		\SourceCode{AbstractAdverter} & \SourceCode{const QString\& connectionBase()} \\ \hline
 	\end{tabular}
 }
@@ -429,14 +429,14 @@
 	\begin{tabular}{ | p{4cm} | p{10cm} | }
 		\hline
 		\Bold{Класс} & \Bold{Методы/конструкторы} \\ \hline
-		\SourceCode{Service} & \SourceCode{void setPort(unsigned int) \linebreak \linebreak Service(const QString\& name, const QStringList\& attributes, unsigned int port, quint64 pid = 0, QObject\* parent=0)} \\ \hline
+		\SourceCode{Service} & \SourceCode{void setPort(unsigned int) \linebreak Service(const QString\& name, const QStringList\& attributes, unsigned int port, quint64 pid = 0, QObject\* parent=0)} \\ \hline
 
-		\SourceCode{AbstractConnection} & \SourceCode{AbstractConnection(const QString\& connectionBase, const QHostAddress\& address = QHostAddress::Any, QObject\* parent = 0) \linebreak \linebreak bool listen(quint16 port)} \\ \hline
-		\SourceCode{AbstractCreator} & \SourceCode{AbstractMonitor\* createMonitor(const QString\& address) \linebreak \linebreak AbstractPinger\* createPinger(const QString\& address)} \\ \hline
+		\SourceCode{AbstractConnection} & \SourceCode{AbstractConnection(const QString\& connectionBase, const QHostAddress\& address = QHostAddress::Any, QObject\* parent = 0) \linebreak bool listen(quint16 port)} \\ \hline
+		\SourceCode{AbstractCreator} & \SourceCode{AbstractMonitor\* createMonitor(const QString\& address) \linebreak AbstractPinger\* createPinger(const QString\& address)} \\ \hline
 		\SourceCode{AbstractMonitor} & \SourceCode{AbstractMonitor(const QString\& address, const QString\& connectionBase)} \\ \hline
 		\SourceCode{AbstractPinger} & \SourceCode{AbstractPinger(const QString\& address, const QString\& connectionBase)} \\ \hline
 		\SourceCode{Device} & \SourceCode{Device(QDataStream\& stream, QObject \*parent = 0)} \\ \hline
-		\SourceCode{PeerHood} & \SourceCode{int registerService(const QString\& name, const QStringList\& attributes = QStringList(), unsigned int port = 0) \linebreak \linebreak bool unregisterService(const QString\& name, unsigned int port = 0) \linebreak \linebreak void connectNotify(const char\* signal) \linebreak \linebreak void disconnectNotify(const char\* signal)} \\ \hline
+		\SourceCode{PeerHood} & \SourceCode{int registerService(const QString\& name, const QStringList\& attributes = QStringList(), unsigned int port = 0) \linebreak bool unregisterService(const QString\& name, unsigned int port = 0) \linebreak void connectNotify(const char\* signal) \linebreak void disconnectNotify(const char\* signal)} \\ \hline
 	\end{tabular}
 }
 

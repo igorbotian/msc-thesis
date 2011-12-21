@@ -1,0 +1,370 @@
+% for articles. use bibname for reports and books instead
+\renewcommand{\refname}{\MakeUppercase{\ReferencesTitle}}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{\MakeUppercase{\ReferencesTitle}}
+
+\begin{comment}
+INSTRUCTIONS FOR WRITING A MASTER'S THESIS
+
+References are either in alphabetical order (according to the first author) or in the order of
+citing. All references are in one list only. All bibliographic information is included. If a
+reference is a thesis then the type of the thesis is included in the reference, i.e. mention
+either “bachelor’s thesis”, “master’s thesis” or “doctoral thesis”.
+\end{comment}
+
+\begin{thebibliography}{9}
+
+% === MASTER'S THESES ===
+
+	\BibMastersThesis{Younan2003}
+		{\BibAuthor{Younan}{Yves}{}}
+		{An Overview of Common Programming Security Vulnerabilities and Possible Solutions}
+		{Vrije Universiteit Brussel}
+		{Belgium}
+		{2003}
+		{135}
+	
+	\BibMastersThesis{Polepeddi2005}
+		{\BibAuthor{Polepeddi}{Sriram}{}}
+		{Software Vulnerability Taxonomy Consolidation}
+		{Lawrence Livermore National Laboratory}
+		{USA}
+		{2005}
+		{45}
+	
+	\BibMastersThesis{Martinsson2006}
+		{\BibAuthor{Martinsson}{Roy}{}}
+		{Software Vulnerability Assessment}
+		{School of Engineering at Blekinge Institute of Technology}
+		{Sweden}
+		{2006}
+		{25}
+
+	\BibMastersThesis{Pham2010}
+		{\BibAuthor{Pham}{Nam}{H.}}
+		{Detection of Recurring Software Vulnerabilities}
+		{Iowa State University}
+		{USA}
+		{2010}
+		{58}
+
+% === DISSERTATIONS ===
+
+	\BibDissertation{Krsul1998}
+		{\BibAuthor{Krsul}{Ivan}{Victor}}
+		{Software Vulnerability Analysis}
+		{Purdue University}
+		{USA}
+		{1998}
+		{188}
+
+	\BibDissertation{Jappinen2004}
+		{\BibAuthor{J\"appinen}{Pekka}{}}
+		{ME -- Mobile Electronic Personality}
+		{Lappeenranta University of Technology}
+		{Finland}
+		{2004}
+		{68}
+		
+	\BibDissertation{Flechais2005}
+		{\BibAuthor{Fl{\'{e}}chais}{Ivan}{}}
+		{Designing Secure and Usable Systems}
+		{University of London}
+		{United Kingdom}
+		{2005}
+		{153}
+		
+	\BibDissertation{Livshits2006}
+		{\BibAuthor{Livshits}{Benjamin}{}}
+		{Improving Software Security with Precise Static and Runtime Analysis}
+		{Stanford University}
+		{USA}
+		{2006}
+		{250}
+	
+	\BibDissertation{Espelid2008}
+		{\BibAuthor{Espelid}{Yngve}{}}
+		{Practices in Software Securitys}
+		{University of Bergen}
+		{Norway}
+		{2008}
+		{113}
+
+% === BOOKS ===
+
+	\BibBook{Oram2001}
+		{\BibAuthor{Oram}{Andy}{}}
+		{Peer-to-Peer : Harnessing the Power of Disruptive Technologies}
+		{}
+		{O'Reilly}
+		{USA}
+		{2001}
+		{448}
+		{059600110X}
+		
+	\BibBook{Collin2002}
+		{} % S.M.H. Collin
+		{Dictionary of {I}nformation {T}echnology}
+		{3rd}
+		{Peter Collin Publishing}
+		{United Kingdom}
+		{2002}
+		{442}
+		{1901659550}
+		
+	\BibBook{Whittaker2002}
+		{\BibAuthor{Whittaker}{James}{A.}}
+		{How to Break Software. A Practical Guide to Testing}
+		{}
+		{Addison Wesley Longman}
+		{USA}
+		{2003}
+		{208}
+		{0201796198}
+
+	\BibBook{Collins2003}
+		{}
+		{Collins {E}nglish {D}ictionary}
+		{6th}
+		{Collins}
+		{United Kingdom}
+		{2003}
+		{1888}
+		{0007109822}
+
+	\BibBook{Skoudis2005}
+		{\BibAuthor{Scoudis}{Ed}{}
+			\BibAnd
+			\BibAuthor{Liston}{Tom}{}}
+		{Counter Hack Reloaded, Second Edition. A Step-by-Step Guide to Computer Attacks and Effective Defenses}
+		{}
+		{Prentice Hall}
+		{USA}
+		{2005}
+		{784}
+		{0-13-148104-5}
+	
+	\BibBook{Stamp2006}
+		{\BibAuthor{Stamp}{Mark}{}}
+		{Information Security. Principles and Practice}
+		{}
+		{John Wiley and Sons}
+		{USA}
+		{2006}
+		{413}
+		{0-471-73848-4}
+	
+	\BibBook{Howard2006}
+		{\BibAuthor{Howard}{Michael}{}
+			\BibAnd
+			\BibAuthor{Lipner}{Steve}{}}
+		{The Security Development Lifecycle. A Process for Developing Demonstrably More Secure Software}
+		{}
+		{Microsoft Press}
+		{USA}
+		{2006}
+		{304}
+		{0-7356-2214-0}
+
+	\BibBook{LeBlanc2007}
+		{\BibAuthor{LeBlanc}{David}{}
+			\BibAnd
+			\BibAuthor{Howard}{Michael}{}}
+		{Writing Secure Code for {W}indows {V}ista}
+		{}
+		{Microsoft Press}
+		{USA}
+		{2007}
+		{222}
+		{0735623937}
+	
+	\BibBook{Foreman2010}
+		{\BibAuthor{Foreman}{Park}{}}
+		{Vulnerability Management}
+		{}
+		{CRC Press}
+		{USA}
+		{2010}
+		{331}
+		{978-1-4398-0150-5}
+	
+% === ARTICLES ===
+	
+	\BibArticle{Lindqvist1998}
+		{\BibAuthor{Lindqvist}{Ulf}{}
+			\BibAnd
+			\BibAuthor{Jonsson}{Erland}{}}
+		{A Map of Security Risks Associated with Using {COTS}}
+		{Computer}
+		{31}
+		{6}
+		{USA}
+		{\BibDate{06}{1998}}
+		{60--66}
+	
+	\BibArticle{Evans2002}
+		{\BibAuthor{Evans}{David}{}
+			\BibAnd
+			\BibAuthor{Larochelle}{David}{}}
+		{Improving Security Using Extensible Lightweight Static Analysis}
+		{{IEEE} Software}
+		{19}
+		{}
+		{USA}
+		{\BibDate{01}{2002}}
+		{42--51}
+
+	\BibArticle{Wildmoser2005}
+		{\BibAuthor{Wildmoser}{Martin}{}
+			\BibAnd
+			\BibAuthor{Chaieb}{Amine}{}
+			\BibAnd
+			\BibAuthor{Nipkow}{Tobias}{}}
+		{Bytecode Analysis for Proof Carrying Code}
+		{Electronic Notes in Theoretical Computer Science ({ENTCS})}
+		{141}
+		{1}
+		{USA}
+		{\BibDate{12}{2005}}
+		{}
+	
+	\BibArticle{Goertzel2008}
+		{\BibAuthor{Goertzel}{Karen}{Mercedes}}
+		{Enhancing the Development Life Cycle to Produce Secure Software}
+		{CrossTalk}
+		{21}
+		{9}
+		{USA}
+		{\BibDate{09}{2008}}
+		{24--25}
+
+% === CONFERENCE PROCEEDINGS ===
+
+	\BibProceedings{Gilliam2003}
+		{\BibAuthor{Gilliam}{David}{P.}
+			\BibAnd
+			\BibAuthor{Wolfe}{Thomas}{L.}
+			\BibAnd
+			\BibAuthor{Sherif}{Josef}{S.}}
+		{Software Security Checklist for the Software Life Cycle}
+		{In Proceedings of the Twelfth {IEEE} International Workshop on Enabling Technologies. Infrastructure for Colaborative Enterprises ({WETICE}'03)}
+		{USA}
+		{2003}
+		% pages = 243--248
+	
+	\BibProceedings{Godefroid2008}
+		{\BibAuthor{Godefroid}{Patrice}{}
+			\BibAnd
+			\BibAuthor{Levin}{Michael}{Y.}
+			\BibAnd
+			\BibAuthor{Molnar}{David}{A.}}
+		{Automated Whitebox Fuzz Testing}
+		{Network Distributed Security Symposium ({NDSS})}
+		{San Diego, CA, USA}
+		{2008}
+
+% === MANUALS ===
+
+	\BibManual{FIBSPUB200}
+		{National Institute of Standards and Technology, USA}
+		{Minimum Security Requirements for Federal Information and Information Systems ({FIPS PUB} 200)}
+		{\BibDate{03}{2006}}
+		{http://csrc.nist.gov/publications/fips/fips200/FIPS-200-final-march.pdf}
+	
+% === TECHNICAL REPORTS ===
+		
+	\BibTechReport{Wenliang1998}
+		{\BibAuthor{Du}{Wenliang}{}
+			\BibAnd
+			\BibAuthor{Mathur}{Aditya}{P.}}
+		{Vulnerability Testing of Software System Using Fault Injection}
+		{Purdue University}
+		{USA}
+		{\BibDate{04}{1998}}
+		% http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.159.1829&rep=rep1&type=pdf
+		
+	\BibTechReport{Guttman2004}
+		{\BibAuthor{Guttman}{Barbara}{}}
+		{An Introduction to Computer Security. The {NIST} Handbook}
+		{National Institute of Standards and Technology}
+		{USA}
+		{\BibDate{10}{2004}}
+		% isbn = 0788128302
+		% http://csrc.nist.gov/publications/nistpubs/800-12
+
+% === WEB RESOURCES ===
+
+% ARTICLES
+
+	\BibWebArticle{Shriraghavan2003}
+		{\BibAuthor{Shriraghavan}{Sowmya}{}
+			\BibAnd
+			\BibAuthor{Sundaragopalan}{Srikanth}{}
+			\BibAnd
+			\BibAuthor{Yang}{Fan}{}
+			\BibAnd
+			\BibAuthor{Jun}{Jinsuk}{}}
+		{Security in Mobile Computing}	
+		{2003}	
+		{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.89.6519\&rep=rep1\&type=pdf}
+	
+	\BibWebArticle{Vroonhoven2006}
+		{\BibAuthor{Van Vroonhoven}{Jochem}{}}
+		{Peer to Peer Security}	
+		{2006}
+		{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.3334\&rep=rep1\&type=pdf}
+
+	%\BibWebArticle{CWEWebTopTen2007}
+	%	{The MITRE Corporation}
+	%	{The Ten Most Critical Web Application Security Vulnerabilities}
+	%	{2007}
+	%	{http://cwe.mitre.org/top10/}	
+	
+
+	\BibWebArticle{Whittaker2008}
+		{\BibAuthor{Whittaker}{James}{A.}}
+		{Security Briefs: Penetration Testing}
+		{MSDN Magazine, \BibDate{05}{2008}}
+		{http://msdn.microsoft.com/en-gb/magazine/cc507646.aspx}
+	
+		
+	\BibWebArticle{TopSixMobileSecurityThreats2010}
+		{\BibAuthor{Mehling}{Herman}{}}
+		{Top Six Mobile Security Threats and How to Prevent Them}
+		{2010}
+		{http://www.enterprisemobiletoday.com/features/security/article.php/3900806/Top-Six-Mobile-Security-Threats-and-How-to-Prevent-Them.htm}
+
+% DOCUMENTS
+
+	\BibWebDocument{RGTM2004}
+		{The Rather General Theory of Management. Course Materials of Saint Petersburg State
+			University}
+		{2004}
+		{http://dotu.ru/files/20040623-DOTU.pdf}
+
+	\BibWebDocument{TalesOfTheUnknown2006}
+		{Tales of the Unknown}
+		{2006}
+		{http://www.felinemenace.org/~mercy/papers/UBehavior/Undefined\%20Behavior.pdf}		
+
+	\BibWebDocument{PeerHoodProject}
+		{PeerHood Specification}
+		{2009}
+		{http://www2.it.lut.fi/wiki/doku.php/peerhood/start}
+	
+% === WEB-SITES ===
+
+	\BibWebSite{HTTP}
+		{HTTP: Hypertext Transfer Protocol}
+		{http://www.w3.org/Protocols/}
+
+	\BibWebSite{Ubuntu}
+		{Ubuntu Operating System}
+		{http://www.ubuntu.com/}
+
+	\BibWebSite{WiFi}
+		{Wi-Fi Alliance}
+		{http://www.wi-fi.org/}
+
+\end{thebibliography}
