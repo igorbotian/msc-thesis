@@ -91,6 +91,12 @@
 	{#1}%
 }
 
+\newcommand{\RussianOrEnglishText} [2] {%
+	\ifthenelse { \equal{\arabic{ThesisVersion}}{1} }%
+	{#1}%
+	{#2}%
+}
+
 % to print the date of the thesis submission
 % requires the 'datetime' package
 
