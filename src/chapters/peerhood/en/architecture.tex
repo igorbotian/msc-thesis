@@ -1,1 +1,35 @@
-\TODO{Architecture}
+\Paragraph{A list of PeerHood components}
+%
+From architectural point of view PeerHood is comprised of the following components: daemon, shared library and a set of network plug-ins. 
+%
+They are represented on \OnReferenceToFigure{peerhood_components}. 
+%
+The components together are \T{the} middleware that provides communications in mobile \Abbreviation{P2P} environment regardless of underlying network technology. 
+
+\ReproducedImageFigure{The PeerHood components}{peerhood_components}{Kolehmainen2010}
+
+\Paragraph{PeerHood components}
+%
+PeerHood daemon is an independent process which is directly responsible for providing communication between devices using a given network technology. 
+%
+It is accomplished by utilization of network plug-ins. 
+%
+PeerHood library is an component which is responsible for interaction with user applications via specified \Abbreviation{API} and have a role to play as glue between daemon and applications. 
+%
+That is the way a process of communication between devices is encapsulated for applications. 
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Демон}{peerhood_architecture_daemon}
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Программная библиотека}{peerhood_architecture_library}
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Сетевые расширения}{peerhood_architecture_plugins}
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Пользовательские приложения}{peerhood_architecture_applications}
