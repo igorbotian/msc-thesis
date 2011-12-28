@@ -1,1 +1,51 @@
-\TODO{Concept}
+\Paragraph{General information}
+%
+The aim of PeerHood is to carry out personal communications between devices in a network neighbourhood regardless of underylying network technology. 
+%
+Because it is intended for a \Abbreviation{PTD}, it is supposed to use the software mainly in mobile environments. 
+%
+Therefore the PeerHood concept can be considered as mobile \Abbreviation{P2P} neighbourhood \Reference{PorrasP2P2004}. 
+
+\Paragraph{The concept of PeerHood middleware}
+%
+PeerHood is middleware responsible for providing transparency of unitilization of user services, both remote and local. 
+%
+User applications are located on a higher level in regard to PeerHood. 
+%
+Network plug-ins are located on a lower level in regard to PeerHood. 
+%
+They perform operations specific to a network technology directly. 
+%
+The concept is schematically represented on \OnReferenceToFigure{peerhood_concept}. 
+
+\ReproducedImageFigure{The concept of PeerHood}{peerhood_concept}{PorrasP2P2004}
+
+\Paragraph{Functionality}
+%
+PeerHood carries out tracking of other devices in network neighborhood in proactive manner switching between network technologies supported by a given mobile device. 
+%
+Also, is has the following function characteristics \Reference{Kolehmainen2010}: 
+\begin{itemize}
+	\item detection of other devices using different network technologies
+	\item discovery of services from other devices
+	\item advertising own local services to other devices
+	\item monitoring status of devices in network neighborhood
+\end{itemize}
+
+\Paragraph{Information about development of the project}
+%
+\T{The} development of a project based on the concept described above has been being conducting in Communications Software Laboratory of Lappeenranta University of Technology for several years. 
+%
+Initially the project was being developed with the participation of Nokia company \WebSite{Nokia}. 
+%
+A problem related to performing of social communications using PeerHood was studied \Reference{Karki2008}. 
+%
+User applications for UMSIC project \WebSite{UMSIC} were implemented \Reference{Laakkonen2009}. 
+%
+At this moment PeerHood is a free software, it is distributed under GPL 2 license \WebSite{GPL2} \WebSite{PeerHoodGitorious}. 
+
+\Paragraph{Current implementation}
+%
+Current PeerHood implementation can be utilized both on desktops and mobile devices. 
+%
+It is obtained by the fact that it's components are based on Qt framework \WebSite{Qt}, which is intended to develop \A cross-platform software. 
