@@ -1,98 +1,140 @@
 \Paragraph{Goals}
-\TODO{Goals}
-
-\begin{comment}
-\Paragraph{Key requirements}
-\TODO{Key requiremenets}
+%
+The motivation to develop this project is a need to solve a variety of problems. 
+%
+According to PeerHood specification, it's development is intended to achieve the following goals \Reference{PeerHoodSpecification}: 
 \begin{description}
-	\item[Device discovery]. System must be able to discovery other PeerHood capable devices 
-		within range and the same device neighborhood.
-		%
-		Device detection can be depend used network technology.
-
-		\item[Service discovery]. System must be able to discovery services from the local device 
-		and other PeerHood devices in the device neighborhood.
-		%
-		System must have capability to read service attributes as well with service discovery.
-
-		\item[Service sharing]. PeerHood must provide mechanism to register services and use them 
-		by applications or middleware components. 
-		%
-		Services can locate on local or remote device. 
-		%
-		The PeerHood system must advertise registered services to other devices in a PeerHood 
-		neighborhood.
-
-		\item[Connection establishment]. PeerHood must provide ability of connect to one or more 
-		other PeerHood device in a PeerHood neighborhood. 
-		%
-		Connect establishment must be transparent for used underlying network technology.
-
-		\item[Active monitoring of a device]. PeerHood must provide way to set a selected device 
-		in the PeerHood neighborhood under active monitoring. 
-		%
-		In the active monitoring state, a PeerHood client is notified when the device under 
-		monitoring is out of range or when it comes back in the range. 
-		%
-		Proper response time and range are network technology dependent attributes.
-
-		\item[Data transmission between devices]. PeerHood must provide data transmission between 
-		connected PeerHood devices. 
-		%
-		PeerHood should not take care of data being transferred. 
-		%
-		User of the PeerHood must take care of data endianess and word length of data.
-
-		\item[Seamless connectivity]. PeerHood should provide way to change used active network 
-		technology automatically if established connection weakens or breaks. 
-		%
-		PeerHood should provide always the best possible connections for the user. 
-		%
-		Established connection should be possible to monitoring for detecting connection changes, 
-		which might cause change of used network technology.
-
-		\item[Network management]. PeerHood should be able to manage a specific network and events 
-		from the network. 
-		%
-		In addition, PeerHood should check availability of network and get notifications of changes 
-		of the network.
-
-		\item[Component management]. PeerHood should provide events to PeerHood client of changes 
-		and suspensions of discovering functionalities. 
-		%
-		The PeerHood operates on mobile devices where memory and power consumptions have to take 
-		care. 
-		%
-		Due to that, used device environment is dynamic. 
-		%
-		As, if network interface might go power saving state or it can be closed for freeing memory 
-		to other applications.
-
-		\item[Communication concurrency base]. PeerHood must support concurrent execution, in that 
-		multiple connections are used and they need to get execution time evenly. 
-		%
-		The only exception for use of multiple simultaneous connections is if used network 
-		technology limits multiple connections on the hardware level.
-
-		\item[Event interface]. PeerHood must provide event interface for be able to notify 
-		dynamic changes to PeerHood client and itself.
-
-		\item[Plugin architecture for networks]. PeerHood must provide interface for its 
-		functionalities to plugins. 
-		%
-		Network plugins implements abstractions of connectivity and device monitoring 
-		functionalities. 
-		%
-		In addition, plugins handles device detection and service sharing.
-
-		\item[User control]. PeerHood could provide ability to control PeerHood functionalities
-		\begin{enumerate}
-			\item Is PeerHood active
-			\item What services are provided
-			\item What services are accepted
-		\end{enumerate}
-
-		This is a new requirement and that is not yet implemented in the existing PeerHood 
-		implementation.
+	\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parsep}{0pt}%
+	
+	\item[Proactivity] Proactive service discovery on mobile devices.
+	
+	\item[Connectivity] To provide transparent communication between application regardless of underlying network technology. 
+	
+	\item[Reactivity] To provide information events related to services, connections or device resources. 
 \end{description}
-\end{comment}
+
+\Paragraph{Steps to achieve the goals}
+%
+To achieve the goals listed above it is necessary to solve a set of tasks. 
+%
+They are the following \Reference{PorrasEnhancing2005}: 
+%
+\begin{itemize}
+	
+	\item To provide a communication environment where communication between devices is based on \Abbreviation{P2P} approach. 
+	%
+	It allows devices to communicate without utilization of central servers
+	
+	\item To provide a special software library to allow applications use a network technology through unified interface. 
+	%
+	It leads to facilitation of development of new applications because they does not depend on underlying network technologies. 
+\end{itemize}
+
+\Paragraph{Functional requirements}
+%
+It is necessary for PeerHood to have such functional characteristics which enable support of proactivity, connectivity, and reactivity. 
+%
+Supporting them by PeerHood leads to proper operating of user applications. 
+%
+A set of requirements to the project can be referred as these characteristics \Reference{Krutchen2000}. 
+%
+A set of functional requirements to the PeerHood project are listed below \Reference{PeerHoodSpecification} \Reference{PorrasComparison2005}: 
+\begin{description}
+	\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parsep}{0pt}%
+
+	\item[Device discovery] System must be able to discovery other PeerHood capable devices within range and the same device neighborhood.
+	%
+	Device detection can be depend used network technology.
+		
+	\item[Service discovery] System must be able to discovery services from the local device and other PeerHood devices in the device neighborhood.
+	%
+	System must have capability to read service attributes as well with service discovery.
+
+	\item[Service sharing] PeerHood must provide mechanism to register services and use them by applications or middleware components. 
+	%
+	Services can locate on local or remote device. 
+	%
+	The PeerHood system must advertise registered services to other devices in a PeerHood neighborhood.
+
+	\item[Connection establishment] PeerHood must provide ability of connect to one or more other PeerHood device in a PeerHood neighborhood. 
+	%
+	Connect establishment must be transparent for used underlying network technology.
+
+	\item[Active monitoring of a device] PeerHood must provide way to set a selected device in the PeerHood neighborhood under active monitoring. 
+	%
+	In the active monitoring state, a PeerHood client is notified when the device under monitoring is out of range or when it comes back in the range. 
+	%
+	Proper response time and range are network technology dependent attributes.
+
+	\item[Data transmission between devices] PeerHood must provide data transmission between connected PeerHood devices. 
+	%
+	PeerHood should not take care of data being transferred. 
+	%
+	User of the PeerHood must take care of data endianess and word length of data.
+
+	\item[Seamless connectivity] PeerHood should provide way to change used active network technology automatically if established connection weakens or breaks. 
+	%
+	PeerHood should provide always the best possible connections for the user. 
+	%
+	Established connection should be possible to monitoring for detecting connection changes, which might cause change of used network technology.
+\end{description}
+
+\Paragraph{A new functional requirement}
+%
+A new additional functional requirement was added to the specification (but it is not supported by current implementation of PeerHood) \Reference{Kolehmainen2010}: 
+\begin{description}
+	\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parsep}{0pt}%	
+	
+	\item[User control] PeerHood could provide ability to control the following PeerHood functionalities: whether PeerHood is active, a list of provided services, a list of accepted services.
+\end{description}
+
+\Paragraph{Non-functional requirements}
+%
+Also, there is a set of non-functional requirements to the PeerHood project. 
+%
+They are listed below \Reference{PeerHoodSpecification}: 
+\begin{description}
+	\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parsep}{0pt}%	
+	
+	\item[Network management] PeerHood should be able to manage a specific network and events from the network. 
+	%
+	In addition, PeerHood should check availability of network and get notifications of changes of the network.
+
+	\item[Component management] PeerHood should provide events to PeerHood client of changes and suspensions of discovering functionalities. 
+	%
+	The PeerHood operates on mobile devices where memory and power consumptions have to take care. 
+	%
+	Due to that, used device environment is dynamic. 
+	%
+	As, if network interface might go power saving state or it can be closed for freeing memory to other applications.
+
+	\item[Communication concurrency base] PeerHood must support concurrent execution, in that multiple connections are used and they need to get execution time evenly. 
+	%
+	The only exception for use of multiple simultaneous connections is if used network technology limits multiple connections on the hardware level.
+
+	\item[Event interface] PeerHood must provide event interface for be able to notify dynamic changes to PeerHood client and itself.
+
+	\item[Plugin architecture for networks] PeerHood must provide interface for its functionalities to plugins. 
+	%
+	Network plugins implements abstractions of connectivity and device monitoring functionalities. 
+	%
+	In addition, plugins handles device detection and service sharing.
+\end{description}
+
+\Paragraph{Connection between requirements and architecture}
+%
+As it was noted above, all these requirements should be met to achieve the goals of PeerHood. 
+%
+Functional requirements are required to define a list of features which should be supported by \T{a} developing software, and a list of it's future components as well. 
+%
+Whereas development of non-functional requirements in the first place defines \T{an} architecture of \T{a} developing software \Reference{Stellman2005}. 
+%
+The architecture of PeerHood is considered in the next subsection. 
