@@ -1,559 +1,555 @@
 \newcommand{\Word} [2] {%
-		\Italic{#1} & #2 \\%
+	%\Italic{#1} & #2 \\%
+	\Italic{#1}     #2\\
 }
 
 \newcommand{\Letter} [1] {%
-	 &  \\
-	\Bold{#1} & \\
+	\newline
+	\newline
+	\Bold{#1}
+	\newline
+	% &  \\
+	%\Bold{#1} & \\
 }
 
-\newenvironment{letter}{\begin{tabular}{l l}}{\end{tabular}}
+\newenvironment{letter}
+	{%
+		%\begin{tabular}{l l}%
+	}
+	{%
+		%\end{tabular}%
+	}
 
 \begin{letter}
 	\Letter{A}
-	\Word{административный}{}
-	\Word{аварийное завершение}{}
-	\Word{автономность}{}
-	\Word{а именно}{}
-	\Word{активно}{}
-	\Word{актуальный}{}
-	\Word{аномальный}{}
-	\Word{ассортимент}{}
+	\Word{административный}{administrative, executorial}
+	\Word{аварийное завершение}{abnormal termination}
+	\Word{автономность}{autonomy}
+	\Word{а именно}{namely}
+	\Word{активно}{actively}
+	\Word{активно участвовать}{to take an active part (in)}
+	\Word{актуальный}{actual, urgent, topical}
+	\Word{аномальный}{abnormal, irregular, anomalous}
+	\Word{ассортимент}{stock, assortment, range (of goods)}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Б}
-	\Word{без исключения}{}
-	\Word{бизнес-среда}{}
-	\Word{благодаря}{}
-	\Word{благотворно}{}
-	\Word{большинство}{}
-	\Word{быть ответственным за}{}
+	\Word{без исключения}{without exception}
+	\Word{бизнес-среда}{business environment}
+	\Word{благодаря}{because of, thanks to, due to the fact that, owing to}
+	\Word{благотворно}{beneficially}
+	\Word{действовать благотворно}{have a wholesome effect (on)}
+	\Word{большинство}{majority (of), mass, most (of)}
+	\Word{быть ответственным за}{critical, to be responsible (to smb. for smth.)}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{В}
-	\Word{вариант}{}
-	\Word{введение}{}
-	\Word{вводный}{}
-	\Word{велик}{}
-	\Word{вероятность}{}
-	\Word{взаимодействие}{}
-	\Word{взаимодполняющий}{}
-	\Word{в независимости от}{}
-	\Word{внимание}{}
-	\Word{возможность}{}
-	\Word{возможный}{}
-	\Word{вопрос}{}
-	\Word{в зависимости}{}
-	\Word{в качестве}{}
-	\Word{вместе с тем}{}
-	\Word{вмешательство}{}
-	\Word{вмешиваться}{}
-	\Word{в некоем смысле}{}
-	\Word{внесение}{}
-	\Word{в общем случае}{}
-	\Word{в общем смысле}{}
-	\Word{возникнование}{}
-	\Word{во-первых}{}
-	\Word{воспроизводимой}{}
-	\Word{в отличии}{}
-	\Word{впоследствии}{}
-	\Word{в рамках}{}
-	\Word{в свою очередь}{}
-	\Word{в связи с}{}
-	\Word{всесторонний}{}
-	\Word{вследствие}{}
-	\Word{в совокупности}{}
-	\Word{встроенный}{}
-	\Word{в том числе}{}
-	\Word{второстепенный}{}
-	\Word{в условии}{}
-	\Word{входящий}{}
-	\Word{выбор}{}
-	\Word{выдавать}{}
-	\Word{выдавать себя за другого}{}
-	\Word{выделять}{}
-	\Word{вынуждать}{}
-	\Word{вынужденный}{}
-	\Word{выражаться}{}
-	\Word{выступать в качестве}{}
-	\Word{выступать}{}
-	\Word{выявлять}{}
-	\Word{выяснение}{}
-	\Word{выяснять}{}
+	\Word{вариант}{alernative, variant}
+	\Word{введение}{establishment, introduction, putting into operation, bringing into service}
+	\Word{вводный}{introductory}
+	\Word{велик}{grand, great, big}
+	\Word{вероятность}{chance, probability}
+	\Word{взаимодействие}{interaction, reaction, cooperation, intercommunication}
+	\Word{взаимодполняющий}{mutually complementary}
+	\Word{в независимости от}{independently (of), regardless (of)}
+	\Word{внимание}{focus, attention}
+	\Word{возможность}{chance, capacity, feature}
+	\Word{возможный}{possible, (осуществимый) feasible, (вероятный) probable}
+	\Word{вопрос}{matter, question, subject, issue, problem}
+	\Word{в зависимости}{depending (on), according (to)}
+	\Word{в качестве}{as, by way (of)}
+	\Word{вместе с тем}{at once, at the same time}
+	\Word{вмешательство}{interference, intervention}
+	\Word{вмешиваться}{interfere, interpose, intervene}
+	\Word{в некоем смысле}{in terms of}
+	\Word{внесение}{entry, introduction, entering, carrying in}
+	\Word{в общем случае}{in the general case}
+	\Word{в общем смысле}{at large}
+	\Word{возникнование}{appearance, origination, emergence, rise, origin, initiation, occurence}
+	\Word{во-первых}{first, firstly, in the first place}
+	\Word{воспроизводимый}{reproducible, renewable}
+	\Word{в отличие}{unlike, in contrast to, as distinct from}
+	\Word{впоследствии}{after, afterward(s), later, later on, subsequently}
+	\Word{в рамках}{within, in the network, within the limits of, in the context of}
+	\Word{в свою очередь}{by-turn, in turn, in return}
+	\Word{в связи с}{in connection with, because of, in connexion with, as a result of, on the grounds of}
+	\Word{всесторонний}{comprehensive, overall, thorough}
+	\Word{вследствие}{in consideration of, in consequence of, through}
+	\Word{в совокупности}{in the aggregate, in aggregatem, as a whole}
+	\Word{встроенный}{built-in, incorporated, embedded}
+	\Word{в том числе}{including}
+	\Word{второстепенный}{auxiliary, collateral, secondary, minor}
+	\Word{в условии}{by}
+	\Word{входящий}{incoming, entering}
+	\Word{выбор}{choice, (из двух возможных) alternative, (отбор) selection, (вариант выбора) option}
+	\Word{выдавать}{(давать) hand, give out, (обнаруживать) give away, betray, (объявлять не тем, что есть на самом деле) pass for, set up for}
+	\Word{выдавать себя за другого}{to pass for, to set up for}
+	\Word{выделять}{(отличать среди других) to single out, to mark out, (совершать отбор) sort out; to extract}
+	\Word{вынуждать}{to force, to constrain, to enforce, to obliged}
+	\Word{вынужденный}{(не по своей воле) forced, bound, obliged, stimulated}
+	\Word{выражаться}{manifest itself, to be expressed, to be manifested, to work out, to come across}
+	\Word{выступать в качестве}{stand}
+	\Word{выступать}{to advance, (действовать) to act, to protrude}
+	\Word{выявлять}{(делать явным, обнаруживать) to reveal, to expose, (разоблачать) to unmask}
+	\Word{выяснение}{clarification, elucidation, establishment, clearing-up, clearing, exploring}
+	\Word{выяснять}{(узнавать) to find out, (прояснять) to clarify, (устанавливать) find out, to ascertain}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Г}
-	\Word{гарантия безопасности}{}
-	\Word{гетерогенность}{}
-	\Word{гораздо}{}
-	\Word{граничный}{}
+	\Word{гарантия безопасности}{safety, dependability}
+	\Word{гетерогенность}{heterogenity}
+	\Word{гораздо}{much, far, by far, considerably}
+	\Word{граничный}{boundary, bounding}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Д}
-	\Word{дальнейший}{}
-	\Word{для этого}{}
-	\Word{доверие}{}
-	\Word{доверять}{}
-	\Word{довольно}{}
-	\Word{допускать ошибку}{}
-	\Word{допустить}{}
-	\Word{дорогостоящий}{}
-	\Word{достигать}{}
-	\Word{достаточно}{}
-	\Word{достижение}{}
-	\Word{достоверность}{}
-	\Word{другими словами}{}
-	\Word{дублироваться}{}
+	\Word{дальнейший}{further, subsequent}
+	\Word{для этого}{therefor, for (the sake of)}
+	\Word{доверие}{trust, confidence}
+	\Word{доверять}{(вверять) to trust (smb with or smth to), (верить) to believe}
+	\Word{довольно}{(достаточно) enough, (весьма) quit, rather, reasonably}
+	\Word{допускать ошибку}{make an error}
+	\Word{допустить}{(предполагать, считать возможным) to find, to concede}
+	\Word{дорогостоящий}{expensive, (ценный) valuable, (затратный) costly}
+	\Word{достигать}{reach, (добиваться) to attain, to achieve}
+	\Word{достаточно}{enough, (в необходимой степени) sufficiently, (довольно-таки) rather, reasonably}
+	\Word{достижение}{achievment, advance, obtaining}
+	\Word{достоверность}{trustworthiness, reliability, validity, authenticity}
+	\Word{другими словами}{in other words}
+	\Word{дублироваться}{to duplicate, to replicate}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Е}
-	\Word{единое целое}{}
+	\Word{единое целое}{unit, whole, comprehensive whole}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Ж}
-	\Word{жертва}{}
+	\Word{жертва}{victim, sacrifice}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{З}
-	\Word{зависеть}{}
-	\Word{зависимость}{}
-	\Word{задейстовать}{}
-	\Word{заключаться}{}
-	\Word{заключительный}{}
-	\Word{законодательный}{}
-	\Word{заранее}{}
-	\Word{затрагивать}{}
-	\Word{затратный}{}
-	\Word{захват}{}
-	\Word{зачастую}{}
-	\Word{защита}{}
-	\Word{злоумышленник}{}
-	\Word{значение}{}
-	\Word{значительный}{}
+	\Word{зависеть}{to depend on}
+	\Word{зависимость}{dependence, relation, relationship}
+	\Word{задейстовать}{bring into play, involve, to set in motion}
+	\Word{заключаться}{to consist in}
+	\Word{заключительный}{conclusive, final, closing}
+	\Word{законодательный}{legislative, constituent}
+	\Word{заранее}{beforehand, (своевременно) in good time, in advance, previously, a priori}
+	\Word{затрагивать}{to affect, to touch, to deal with}
+	\Word{затратный}{cost-based}
+	\Word{захват}{capture, claw, acquisition}
+	\Word{зачастую}{often, frequently}
+	\Word{защита}{defence, protection}
+	\Word{злоумышленник}{threat agent, malicious person, intruder, hacker, abuser, malefactor, (человек, пытающийся незаконно проникнуть в защищённую систему) violator}
+	\Word{значение}{(смысл) meaning, sense, (важность) significance, importance}
+	\Word{значительный}{(довольно большой) considerable, sizeable, (выразительный) meaningful, (важный) improtant}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{И}
-	\Word{игнорирование}{}
-	\Word{избежать}{}
-	\Word{избыточность}{}
-	\Word{извещение}{}
-	\Word{излишний}{}
-	\Word{изменение}{}
-	\Word{изначально}{}
-	\Word{изучать}{}
-	\Word{информационно}{}
-	\Word{исследование}{}
-	\Word{исследовать}{}
-	\Word{исходя из}{}
-	\Word{исчерпывающий}{}
+	\Word{игнорирование}{eliminating, skipping, dropping}
+	\Word{избегать}{to avoid}
+	\Word{избыточность}{redundancy, excess}
+	\Word{извещение}{notification, notice, alert, announcement}
+	\Word{излишний}{(лишний) excessive, superfluous, (ненужный) needless, unnecessary}
+	\Word{изменение}{change, (частичное) alteration}
+	\Word{изначально}{initially}
+	\Word{изучать}{(познавать) to learn, to study, (рассматривать) examine, (исследовать, вникать) to study}
+	\Word{информационно}{informationally}
+	\Word{исследование}{(научное изучение) study, research, (какого-либо вопроса) investigation, (анализ) analysis, (обследование) examination}
+	\Word{исходя из}{on the assumption of, out of, proceeding from, based on, in terms of}
+	\Word{исчерпывающий}{exhaustive, comprehensive}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{К}
-	\Word{каждый}{}
-	\Word{как ..., так и ...}{}
-	\Word{каким образом}{}
-	\Word{касательно}{}
-	\Word{качественный}{}
-	\Word{ключевой}{}
-	\Word{коммуникабельный}{}
-	\Word{компетентный}{}
-	\Word{комплексный}{}
-	\Word{компрометация}{}
-	\Word{конкретный}{}
-	\Word{корректно}{}
-	\Word{кратковременность}{}
-	\Word{критичность}{}
-	\Word{критичный}{}
-	\Word{кроме}{}
-	\Word{круг проблем}{}
+	\Word{каждый}{each, every}
+	\Word{как ..., так и ...}{both ... and}
+	\Word{каким образом}{the manner in which}
+	\Word{касательно}{concerning, relative to, touching}
+	\Word{качественный}{qualitative}
+	\Word{ключевой}{key}
+	\Word{коммуникабельный}{communicative, sociable, associative}
+	\Word{компетентный}{competent, adequate, qualified}
+	\Word{комплексный}{complex, combined, integrated, comprehensive}
+	\Word{компрометация}{compromise}
+	\Word{конкретный}{specific, concrete}
+	\Word{корректно}{reasonably, properly, correctly}
+	\Word{кратковременность}{short-time, momentary, short-term, brief, transitory}
+	\Word{критичность}{criticality}
+	\Word{критичный}{critical}
+	\Word{кроме}{(исключая) except, (помимо, сверх) besides}
+	\Word{круг проблем}{a set of problems, a variety of problems}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Л}
-	\Word{лёгкость}{}
-	\Word{либо ..., либо ...}{}
-	\Word{лишний}{}
-	\Word{любой}{}
+	\Word{лёгкость}{easiness}
+	\Word{либо ..., либо ...}{either ... or (either one or the other)}
+	\Word{лишний}{(избыточный) excess, (ненужный) unnecessary, (дополнительный) additional, another}
+	\Word{любой}{any, (каждый) every}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{М}
-	\Word{маскирующийся}{}
-	\Word{массовость}{}
-	\Word{мгновенный}{}
-	\Word{мероприятие}{}
-	\Word{мера}{}
-	\Word{месторасположение}{}
+	\Word{маскирующийся}{masked}
+	\Word{массовость}{generality, mass, massiveness}
+	\Word{мгновенный}{instantaneous, momentary, instant}
+	\Word{мероприятие}{activity, event, procedure}
+	\Word{мера}{measure, step, extent}
+	\Word{месторасположение}{position, location}
 	\Word{мощность}{power}
-	\Word{мышление}{}
+	\Word{мышление}{thinking, reasoning}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Н}
-	\Word{набор}{}
-	\Word{навык работы}{}
-	\Word{надёжность}{}
-	\Word{наконец}{}
-	\Word{наличие}{}
-	\Word{намеренно}{}
-	\Word{наносить вред}{}
-	\Word{направленный}{}
-	\Word{направленность}{}
-	\Word{напротив}{}
-	\Word{нарушение}{}
-	\Word{насколько}{}
-	\Word{начинать}{}
-	\Word{невозможность отказа от авторства}{}
-	\Word{недопустимо}{}
-	\Word{недосмотр}{}
-	\Word{недостаточный}{}
-	\Word{незашифрованный}{}
-	\Word{нелинейность}{}
-	\Word{необходимо}{}
-	\Word{необходимость}{}
-	\Word{необходимый}{}
-	\Word{неотъемлемый}{}
-	\Word{непосредственно}{}
-	\Word{непредусмотренный}{}
-	\Word{непрерывность}{}
-	\Word{несанкционированный}{}
-	\Word{неслучайность}{}
-	\Word{несмотря на}{}
-	\Word{неустойчивость}{}
-	\Word{ничем}{}
-	\Word{нужный}{}
+	\Word{набор}{set, collection, kit}
+	\Word{навык работы}{habit, practice, skill (=> skilled)}
+	\Word{надёжность}{reliability, dependability, safety}
+	\Word{наконец}{finally, in the end, (после всего) at last, (при перечисление) after all}
+	\Word{наличие}{presence, availability, occurence, existence}
+	\Word{намеренно}{intentionally}
+	\Word{наносить вред}{to damage}
+	\Word{направленный}{(предназначенный для чего-либо) aimed at, intended for}
+	\Word{направленность}{orientation, direction, (тенденция) trend}
+	\Word{напротив}{on the contrary}
+	\Word{нарушение}{violation, failure to comply}
+	\Word{насколько}{how, how much, (в той степени, в какой) as far as, fo far as}
+	\Word{начинать}{to begin, to start, to initiate}
+	\Word{невозможность отказа от авторства}{non-repudation}
+	\Word{недопустимо}{inadmissibly, illegally}
+	\Word{недосмотр}{oversight, miss}
+	\Word{недостаточный}{insufficient, inadequate, scarce}
+	\Word{незашифрованный}{plain, unencrypted}
+	\Word{нелинейность}{nonlinear nature, non-linearity}
+	\Word{необходимо}{is is necessary to}
+	\Word{необходимость}{necessity, need, requirement}
+	\Word{необходимый}{necessary, essential, required}
+	\Word{неотъемлемый}{integral, essential, constitive}
+	\Word{непосредственно}{directly, straight}
+	\Word{непредусмотренный}{abnormal, illegal}
+	\Word{непрерывность}{continuity, regularity}
+	\Word{несанкционированный}{unauthorized, nonauthorized}
+	\Word{неслучайность}{nonrandomness}
+	\Word{несмотря на}{in spite of}
+	\Word{неустойчивость}{instability, (алгоритма) nonrobustness}
+	\Word{ничем}{nothing}
+	\Word{нужный}{necessary}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{О}
-	\Word{обеспечивать}{}
-	\Word{область действия}{}
-	\Word{облегчать}{}
-	\Word{обмен}{}
-	\Word{обнаружение}{}
-	\Word{обрабатывать}{}
-	\Word{обстоятельство}{}
-	\Word{общий}{}
-	\Word{объёмный}{}
-	\Word{обыденный}{}
-	\Word{ограничивать}{}
-	\Word{одновременно}{}
-	\Word{определённый}{}
-	\Word{опускать}{}
-	\Word{опыт}{}
-	\Word{основа}{}
-	\Word{основной}{}
-	\Word{особенность}{}
-	\Word{остро}{}
-	\Word{осуществлять}{}
-	\Word{отвечать}{}
-	\Word{отдельный}{}
-	\Word{отличие}{}
-	\Word{отличаться}{}
-	\Word{отличительный}{}
-	\Word{относить}{}
-	\Word{относиться}{}
-	\Word{отношение}{}
-	\Word{отказ в работе}{}
-	\Word{отказоустойчивость}{}
-	\Word{отслеживаемость}{}
-	\Word{отсутствие}{}
-	\Word{отчасти}{}
-	\Word{отчёт}{}
-	\Word{оценка}{}
-	\Word{очевидный}{}
-	\Word{очертить границы}{}
+	\Word{обеспечивать}{to ensure, to provide}
+	\Word{область действия}{scope}
+	\Word{облегчать}{facilitate, make easier, simplify}
+	\Word{обмен}{exchange}
+	\Word{обнаружение}{disclosure, detection, discovery, revealing}
+	\Word{обрабатывать}{to process}
+	\Word{обстоятельство}{circumstance, case, condition}
+	\Word{общий}{general, common}
+	\Word{объёмный}{voluminous}
+	\Word{обыденный}{everyday, ordinary}
+	\Word{ограничивать}{to limit, to restrict}
+	\Word{одновременно}{simultaneously, at the same time}
+	\Word{определённый}{defined, specified, (ясный) definite, (установленный) appointed, (некоторый) certain}
+	\Word{опускать}{to lower, to drop, (пропускать) to omit, to skip}
+	\Word{опыт}{experience}
+	\Word{основа}{base, basis, (основные положения) principles, fundamentals}
+	\Word{основной}{(основополагающий) fundamental, basic, (главный) principal, main}
+	\Word{особенность}{feature, singularity, characteristic, peculiarity}
+	\Word{остро}{acutely}
+	\Word{осуществлять}{to carry out, to realize, to implement, to put into practice, to accomplish, to fulfil}
+	\Word{отвечать}{(нести ответственность) to answer for, to be responsible for, (соответствовать) to meet, to asnwer to}
+	\Word{отдельный}{(самостоятельный) separate, independent, (единичный, некоторый) certain, individual}
+	\Word{отличие}{difference, distinction}
+	\Word{отличаться}{to differ from, (характеризоваться) to be notable for, (выделяться) to excel, to distinguish oneself}
+	\Word{отличительный}{discriminating, distinctive}
+	\Word{относить}{(считать, приписывать) to attribute to, to refer to, to relate to}
+	\Word{относиться}{to refer}
+	\Word{отношение}{(связь) relationship, relation}
+	\Word{отказ в работе}{fail, failrure}
+	\Word{отказоустойчивость}{fault-tolerance, fail safety}
+	\Word{отслеживаемость}{traceability}
+	\Word{отсутствие}{absence, shortage, unavailability}
+	\Word{отчасти}{partly, in part}
+	\Word{отчёт}{report, statement, record}
+	\Word{оценка}{(численный расчёт) estimation, (определение характера, степени) assessment}
+	\Word{очевидный}{obvious, evident, apparent, tribial, clear}
+	\Word{очертить границы}{mark, to define one's scope, to establish a framework that}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{П}
-	\Word{парадигма}{}
-	\Word{перебор}{}
-	\Word{передача данных}{}
-	\Word{перехват}{}
-	\Word{перечислять}{}
-	\Word{перспективный}{}
-	\Word{подвергаться}{}
-	\Word{подводить итоги}{}
-	\Word{поддерживать}{}
-	\Word{поддержка}{}
-	\Word{подавляющий}{}
-	\Word{подбирать}{}
-	\Word{по данным}{}
-	\Word{подозрительность}{}
-	\Word{подразумевать}{}
-	\Word{подробно}{}
-	\Word{подрыв}{}
-	\Word{позволять}{}
-	\Word{поиск}{}
-	\Word{полезный}{}
-	\Word{полнота}{}
-	\Word{полный}{}
-	\Word{получение}{}
-	\Word{польза}{}
-	\Word{помимо}{}
-	\Word{понимание}{}
-	\Word{понятие}{}
-	\Word{по отдельности}{}
-	\Word{по причине}{}
-	\Word{популярность}{}
-	\Word{по своей природе}{}
-	\Word{по своей сути}{}
-	\Word{посвящать}{}
-	\Word{по сравнению}{}
-	\Word{посредник}{}
-	\Word{поставленный}{}
-	\Word{поставщик}{}
-	\Word{постоянный}{}
-	\Word{потребитель}{}
-	\Word{пошаговый}{}
-	\Word{поэтому}{}
+	\Word{парадигма}{paradigm}
+	\Word{перебор}{exhaustive search, exhaustion, search}
+	\Word{передача данных}{data transfer, data communication, data transmission}
+	\Word{перехват}{interception, capture, tapping, intercept, wiretap}
+	\Word{перечислять}{to enumerate, to specify}
+	\Word{перспективный}{perspective, prospective, long-term, promising}
+	\Word{подвергаться}{to go through, to undergo, to be subjected, to be exposed to}
+	\Word{подводить итоги}{to resume, to sum, to summarize}
+	\Word{поддерживать}{to bear, to support, to maintain, to help}
+	\Word{поддержка}{support, prop, stay, assistance, aid, boost}
+	\Word{подавляющий}{overwhelming, overpowering, (science) damping, inhibiting, repelling}
+	\Word{подбирать}{(выбирать) to choose, to select, to collect, to match}
+	\Word{по данным}{per ones' design, these}
+	\Word{подозрительность}{suspiciousness}
+	\Word{подразумевать}{to imply, to mean}
+	\Word{подробно}{in detail}
+	\Word{подрыв}{undermining, disruption, blasting}
+	\Word{позволять}{(разрешать) to allow, to permit, (давать возможность) make it possible for + to, to enable to, to permit to}
+	\Word{поиск}{search, look-up, retrieval}
+	\Word{полезный}{useful, helpful, usable}
+	\Word{полнота}{completeness, complement}
+	\Word{полный}{complete, comprehensive, general, overall, total}
+	\Word{получение}{receipt, gaining, receive, acquisition}
+	\Word{польза}{use, benefit, good, profit}
+	\Word{помимо}{(сверх) besides, (исключая) apart from, (без ведома) withoud smb's knowledge}
+	\Word{понимание}{(способность понять смысл чего-либо) understanding, (осознание) realization, conception, (толкование, точка зрения) interpretation}
+	\Word{понятие}{idea, notion, conception, concept}
+	\Word{по отдельности}{separately}
+	\Word{по причине}{on the score of, by reason of}
+	\Word{популярность}{popularity}
+	\Word{по своей природе}{by nature}
+	\Word{по своей сути}{per se, by its very nature}
+	\Word{посвящать}{(предназначать) to devote to, (наполнять каким-либо содержанием) to devote to, to be covered}
+	\Word{по сравнению}{to be compared to}
+	\Word{посредник}{broker, intermediary, agent}
+	\Word{поставленный}{delivered, formulated}
+	\Word{поставщик}{supplier, provider, vendor}
+	\Word{постоянный}{(неизменный по величине) constant, (не временный) permanent, consistent, (обычный) regular, (часто повторяющийся) constant, continual}
+	\Word{потребитель}{consumer, user, customer}
+	\Word{пошаговый}{stepped, stepwise, step-by-step}
+	\Word{поэтому}{therefore, (and) so}
 	\Word{появление}{emergence, appearance}
-	\Word{по этой причине}{}
-	\Word{практически}{}
-	\Word{предметная область}{}
-	\Word{предовтращение}{}
-	\Word{предполагать}{}
-	\Word{предоставлять}{}
-	\Word{предостережение}{}
-	\Word{предполагать}{}
-	\Word{предпосылка}{}
-	\Word{представитель}{}
-	\Word{предусматривать}{}
-	\Word{преимущественно}{}
-	\Word{преследовать}{}
-	\Word{привилегированный}{}
-	\Word{при ...}{}
-	\Word{при помощи}{}
-	\Word{привести}{}
-	\Word{приводить}{}
-	\Word{пригодный}{}
-	\Word{применяться}{}
-	\Word{применительно}{}
-	\Word{принципиально}{}
-	\Word{приоритетный}{}
-	\Word{присваивать}{}
-	\Word{присвоение}{}
-	\Word{присутствовать}{}
-	\Word{причём}{}
-	\Word{причина}{}
-	\Word{при этом}{}
-	\Word{проведение}{}
-	\Word{проводить}{}
-	\Word{прогнозируемый}{}
-	\Word{прозводитель}{}
-	\Word{произвольно}{}
-	\Word{происходить}{}
-	\Word{происхождение}{}
-	\Word{приобретать}{}
-	\Word{присутствие}{}
-	\Word{просмотр}{}
-	\Word{простота}{}
-	\Word{просто}{}
-	\Word{процедурный}{}
-	\Word{проявляться}{}
+	\Word{по этой причине}{on the score of, for this reason}
+	\Word{практически}{(на практике) practically, in practice, (почти) practically, virtually}
+	\Word{предметная область}{knowledge domain, object domain}
+	\Word{предовтращение}{prevention, avoidance}
+	\Word{предоставлять}{(давать) to give, to grant, (позволять) to let}
+	\Word{предостережение}{warning, caution}
+	\Word{предполагать}{(считать) to suppose to, (допускать) to assume}
+	\Word{предпосылка}{precondition, prerequisite, background, premiss}
+	\Word{представитель}{representative}
+	\Word{предусматривать}{(предвидеть) to foresee, to provide for, (содержать какие-либо положения) to provide for, to cover}
+	\Word{преимущественно}{mainly, chiefly}
+	\Word{преследовать}{(стремиться к чему-либо) to strive for, to pursue, to chase}
+	\Word{привилегированный}{privileged, chartered}
+	\Word{при ...}{by, when}
+	\Word{при помощи}{by means of, with the help of}
+	\Word{приводить}{to lead to, to bring to, to result in}
+	\Word{пригодный}{fit to/for, suitable for, good for, applicable, available, useful}
+	\Word{применяться}{to be used, to be employed}
+	\Word{применительно}{(относительно) with regard to, in respect to, concerning, (в зависимости от) depending on}
+	\Word{принципиально}{(из принципа) on principle, (по существу) in the main, in essence}
+	\Word{принципиально новый}{a fundamentally new, essentially a new}
+	\Word{приоритетный}{priority, privileged, foreground}
+	\Word{присваивать}{to assing}
+	\Word{присвоение}{assignment}
+	\Word{присутствовать}{to be present at, to attend}
+	\Word{причём}{(к тому же) and ... at that, (хотя) though}
+	\Word{причина}{(обстоятельство, вызвавщее последствие) cause, (основание) reason, (побуждение) motive}
+	\Word{при этом}{meanwhile, herewith}
+	\Word{проведение}{conduct, carrying out, implementation, execution}
+	\Word{проводить}{(выражать) advance, (осуществлять) to carry out, to implement, to realize, (сопровождать кого-либо) to lead, to conduct, to see off}
+	\Word{прогнозируемый}{predictable}
+	\Word{прозводитель}{producer, manufacturer, vendor}
+	\Word{произвольно}{intentionally, (случайно) randomly, arbitrarily}
+	\Word{происходить}{to come from, to happen, (по причине) to be the result of, to arise from}
+	\Word{происхождение}{origin, nature}
+	\Word{приобретать}{to acquire, to gain}
+	\Word{присутствие}{presence}
+	\Word{просмотр}{look, lookup, browsing, view, overview, scanning, look-up, revise}
+	\Word{простота}{simplicity, primality}
+	\Word{просто}{easily, simply}
+	\Word{процедурный}{procedural}
+	\Word{проявляться}{to appear, to show, to become apparent}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Р}
-	\Word{различный}{}
-	\Word{различного рода}{}
-	\Word{разнообразие}{}
-	\Word{разновидность}{}
-	\Word{разыменование}{}
-	\Word{раньше}{}
-	\Word{располагаться}{}
-	\Word{распространение}{}
-	\Word{распространённый}{}
-	\Word{рассматривать}{}
-	\Word{расчёт}{}
-	\Word{редкий}{}
-	\Word{ресурсоёмкий}{}
-	\Word{решать}{}
-	\Word{рискованный}{}
+	\Word{различный}{(неодинаковый) different, (разнообразный) diverse, various}
+	\Word{различного рода}{various}
+	\Word{разнообразие}{variety, diversity}
+	\Word{разновидность}{variety, (напр. типов команд) flavor, variation, variant}
+	\Word{разыменование}{dereferencing}
+	\Word{раньше}{earlier, before, formerly, previously, in the past}
+	\Word{располагаться}{to be situated, to be located, to locate}
+	\Word{распространение}{(передача другим, расширение сферы охвата) spreading, (область применения и существования) prevalence}
+	\Word{распространённый}{widespread, distributed}
+	\Word{рассматривать}{(внимательно смотреть) to take a good look, to examine, to scrutinize, (различать) to descry, to make out, (изучать, обсуждать) to consider, to examine, (считать) to regard as, to consider as}
+	\Word{расчёт}{(предположение) estimation, reckoning, (исчисление) calculation, computation, (приблизительная оценка) estimate}
+	\Word{редкий}{rare, infrequent. occasional}
+	\Word{ресурсоёмкий}{resource-intensive}
+	\Word{решать}{to solve, to resolve, to determine, to decide}
+	\Word{рискованный}{risky}
 	\Word{рост}{rise, growth}
-	\Word{ряд}{}
+	\Word{ряд}{a number of, series, variety}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{С}
-	\Word{сам}{}
-	\Word{саморепликация}{}
-	\Word{сам по себе}{}
-	\Word{свойство}{}
-	\Word{связующее звено}{}
-	\Word{связь}{}
-	\Word{связывать}{}
-	\Word{с другой стороны}{}
-	\Word{сигнализировать}{}
-	\Word{сказываться}{}
-	\Word{скорый}{}
-	\Word{следствие}{}
-	\Word{следующий}{}
-	\Word{слишком}{}
-	\Word{служить}{}
-	\Word{снижение}{}
-	\Word{соблюдать контракт}{}
-	\Word{собственно}{}
-	\Word{совместный}{}
-	\Word{современный}{}
-	\Word{содержать}{}
-	\Word{с одной стороны}{}
-	\Word{соответствие}{}
-	\Word{соответствовать}{}
-	\Word{соответствующий}{}
-	\Word{состав}{}
-	\Word{составлять}{}
-	\Word{со стороны}{}
-	\Word{состоять в}{}
-	\Word{специалист}{}
-	\Word{специально}{}
-	\Word{специфика}{}
-	\Word{спонтанность}{}
+	\Word{сам}{oneself, by onself, too, itself}
+	\Word{саморепликация}{self-replication}
+	\Word{сам по себе}{in itself}
+	\Word{свойство}{characteristic, quality, property, attribute, feature}
+	\Word{связующее звено}{glue, nexus, intelink}
+	\Word{связь}{relation, communication, connection, association}
+	\Word{связывать}{to tie, to restrict, to link, to connect with, to associate with}
+	\Word{с другой стороны}{on the other hand, on the other part}
+	\Word{сигнализировать}{to signal, to warn, to signalize}
+	\Word{сказываться}{to tell on/upon, to affect, to have an impact on}
+	\Word{скорый}{fast, quick, forthcoming}
+	\Word{следствие}{consequence}
+	\Word{следующий}{next, following}
+	\Word{слишком}{too}
+	\Word{служить}{to serve, (являться) to be, to serve as, (использоваться) to be in use}
+	\Word{снижение}{lowering, decrease, reduction}
+	\Word{соблюдать контракт}{to adhere, to follow, to comply}
+	\Word{собственно}{(в строгом смысле) proper, (собственно говоря) as a matter of fact, actually, in fact, properly}
+	\Word{совместный}{joint, combined, collateral, collective, shared}
+	\Word{современный}{contemporary, modern, up-to-date, actual, present}
+	\Word{содержать}{to contain}
+	\Word{с одной стороны}{on the one hand, on the one part}
+	\Word{соответствие}{correspondence, equivalence, conformity with, compilance with, compatibility}
+	\Word{соответствовать}{to correspond, to conform to, to fit}
+	\Word{соответствующий}{(пригодный для данного случая) proper, appropriate, suitable, compilant, fit, (относящийся к делу) relevant, (соотносящийся с упомянутым выше) respective}
+	\Word{состав}{compisition, compound, constitution}
+	\Word{составлять}{to compose, to compile, to compound, to form, to make}
+	\Word{со стороны}{laterally, from the direction of, from the outside}
+	\Word{состоять в}{to be}
+	\Word{специалист}{specialist in, expert in, engineer, technician}
+	\Word{специально}{specially, especially}
+	\Word{специфика}{specific character, specific, specificity}
+	\Word{спонтанность}{spontaneity}
 	\Word{способствовать}{promote, conduce, to make for, assist}
-	\Word{способность к восстановлению}{}
-	\Word{срабатывание}{}
-	\Word{средство}{}
-	\Word{срок}{}
-	\Word{степень}{}
-	\Word{стоит отметить}{}
-	\Word{стойкий}{}
-	\Word{сторонний}{}
-	\Word{строгий}{}
-	\Word{сужение}{}
-	\Word{существенно}{}
-	\Word{схематично}{}
-	\Word{считать}{}
+	\Word{способность к восстановлению}{reducing ability, reducibility, resettability}
+	\Word{срабатывание}{triggering, operation, response, wear}
+	\Word{средство}{(приём, способ достижения чего-либо) means, (информатика) tool, facility, arrangement, way, medium}
+	\Word{срок}{(определённый момент времени) date, term, time, (промежуток времени) period}
+	\Word{степень}{(мера) degree, extent, level, order, rate, ratio}
+	\Word{стоит отметить}{finally, at the same, it is worth noting, however, it should be pointed}
+	\Word{стойкий}{stable, (не подверженный воздействию чего-либо) resistant to, persistent}
+	\Word{сторонний}{3-rd party, off-site}
+	\Word{строгий}{pure, rigorous, strict}
+	\Word{сужение}{narrowing, contraction, confinement, reduction, restriction}
+	\Word{существенно}{considerably, fundamentally}
+	\Word{схематично}{schematically}
+	\Word{считать}{to consider, to think to be, to belive to be, (+что; придерживаться мнения) to think that, to believe that, to consider that}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Т}
-	\Word{также}{}
-	\Word{таким образом}{}
-	\Word{тема}{}
-	\Word{тем самым}{}
-	\Word{тенденция}{}
-	\Word{тесно}{}
-	\Word{тогда}{}
-	\Word{тогда как}{}
-	\Word{то есть}{}
-	\Word{только}{}
-	\Word{требовать}{}
-	\Word{трудность}{}
-	\Word{тщательный}{}
+	\Word{также}{also, as well, too (в конце предложения), either (в отрицательных предложениях, ставится в конце)}
+	\Word{таким образом}{thereby}
+	\Word{тема}{subject, topic}
+	\Word{тем самым}{eo ipso, ipso facto}
+	\Word{тенденция}{bias, determination, (усиливающиеся особенности) tendency, trend, (склонность к) tendency towards/to}
+	\Word{тесно}{(плотно) narrowly, tight, closely, (близко, непосредственно) closely, intimately}
+	\Word{тогда}{then}
+	\Word{тогда как}{when, where, whlie, whereas}
+	\Word{то есть}{that is}
+	\Word{только}{(единственно, исключительно) onle, solely}
+	\Word{требовать}{(настойчиво просить) to demand of/from, (создавать потребность в чём-то) to need, to require, to call for}
+	\Word{трудность}{difficulty, (препятствие) obstacle, (затруднение) trouble}
+	\Word{тщательный}{careful, thorough, rigorous, meticulous}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{У}
-	\Word{удовлетворять требованиям}{}
-	\Word{узнать}{}
-	\Word{указанный}{}
-	\Word{уменьшение}{}
-	\Word{универсализация}{}
-	\Word{унификация}{}
-	\Word{упомянуть}{}
-	\Word{упрощение}{}
-	\Word{устойчивость}{}
-	\Word{участник}{}
-	\Word{участок}{}
-	\Word{учитывание}{}
-	\Word{учитывать}{}
-	\Word{условно}{}
-	\Word{усложнение}{}
-	\Word{ущерб}{}
-	\Word{уязвимый}{}
+	\Word{удовлетворять требованиям}{to fulfil requirements, to meet requirements, to suit, to fill the bill}
+	\Word{узнать}{(опознавать) to recognize, to know, (получать новую информацию) to learn, to get to know, (выяснять) to find out, to inquire about}
+	\Word{указанный}{mentioned, said, specified}
+	\Word{уменьшение}{decrease, (сокращение) reduction, minimization}
+	\Word{универсализация}{universalization}
+	\Word{унификация}{unification}
+	\Word{упомянуть}{mention, refer to}
+	\Word{упрощение}{simplification}
+	\Word{устойчивость}{steadiness, stability, tolerance}
+	\Word{участник}{participant, member, partner}
+	\Word{участок}{part, area, section}
+	\Word{учитывание}{taking into account}
+	\Word{учитывать}{(принимать во внимание) take into account/consideration, take account of, allow for, (вести учёт) take stock of}
+	\Word{условно}{conditionally, (для удобства) for convenience}
+	\Word{усложнение}{complication, complexification}
+	\Word{ущерб}{(потеря, убыток) damage, loss, injury,  (вред) detriment}
+	\Word{уязвимый}{vulnerable, susceptible}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Ф}
-	\Word{фактический}{}
-	\Word{формировать}{}
-	\Word{функционал}{}
-	\Word{функционировать}{}
+	\Word{фактический}{actual, (основанный на фактах) factual, (действительный) virtual}
+	\Word{формировать}{to form, to compose, to generate, to make, to shape}
+	\Word{функционал}{functional}
+	\Word{функционировать}{to operate, to function}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Х}
-	\Word{характер}{}
-	\Word{характеризоваться}{}
-	\Word{характеристика}{}
-	\Word{хотя бы}{}
-	\Word{хранение}{}
-	\Word{хранить}{}
+	\Word{характер}{nature, type}
+	\Word{характеризоваться}{to be characterized by}
+	\Word{характеристика}{characteristic, property, feature}
+	\Word{хотя бы}{if only, though, even if}
+	\Word{хранение}{storage, storing}
+	\Word{хранить}{to keep, to store}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Ц}
-	\Word{цель}{}
-	\Word{целостность}{}
-	\Word{ценный}{}
-	\Word{централизованный}{}
+	\Word{цель}{objective, goal, ait, purpose}
+	\Word{целостность}{integrity}
+	\Word{ценный}{(дорогой) valuable, (значимый) valuable, precious, important}
+	\Word{централизованный}{centralized}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Ч}
-	\Word{часто встречающийся}{}
-	\Word{чаще всего}{}
-	\Word{черта}{}
-	\Word{чрезвычайно}{}
-	%\Word{}{}
-\end{letter}
-
-\begin{letter}
-	\Letter{Ш}
-	%\Word{}{}
-\end{letter}
-
-\begin{letter}
-	\Letter{Щ}
+	\Word{часто встречающийся}{frequent}
+	\Word{чаще всего}{more often than not}
+	\Word{черта}{(граница, предел) boundary, (свойство, особенность) trait}
+	\Word{чрезвычайно}{extraorinarly, (крайне) extremely}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Э}
-	\Word{этап}{}
-	%\Word{}{}
-\end{letter}
-
-\begin{letter}
-	\Letter{Ю}
+	\Word{этап}{stage, phase, period}
 	%\Word{}{}
 \end{letter}
 
 \begin{letter}
 	\Letter{Я}
-	\Word{являться}{}
-	\Word{яркий}{}
+	\Word{являться}{(быть, представлять собой) to be}
+	\Word{яркий}{(впечатляющий) impressive, dramatic}
 	%\Word{}{}
 \end{letter}
