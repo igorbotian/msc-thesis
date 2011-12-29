@@ -1,0 +1,87 @@
+\Paragraph{The software security analysis concept}
+%
+Software security analysis is a variety of software testing. 
+%
+But unlike other varieties of software testing it is not based on requirements to software, it is not functional \Reference{Winograd2008}. 
+%
+The main reason of this is the fact that success of tests and fulfilment of all requirements can not say that \The tested software does not contain security vulnerabilities. 
+%
+This is a complexity of assessment of security of \A software. 
+
+\Paragraph{Software security analysis characteristics}
+%
+Software security testing is intended for search of vulnerablities, not traditional errors. 
+%
+They are differed qualitatively. 
+%
+Traditional errors are detected by developer accidentally and generally does not influence on other users. 
+%
+On the contrary, unlike a normal user a malicious person has some security knowledge and experience, that is interacts with software differently and looks for security defectes intentionally. 
+%
+Consequences of his futher attack often influences on other users utilizing the attacking software. 
+%
+For this reason, software security testing is differed to traditional testing methods. 
+%
+Michael enumerates the following differences \Reference{Michael2005}: 
+\begin{itemize}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item code operating properly is not alwasy secure
+	\item most of security requirements can not be checked using traditional software testing methods
+	\item software security testing is intended for checking the fact that software should not do, whereas traditional software testing methods are intended for checking correctness of functionality of the software. 
+\end{itemize}
+
+\Paragraph{The goals of software security analysis}
+%
+From a formal point of view software security testing consists in verification of security-related characteristics. 
+%
+They are following \Reference{Goertzel2007}: 
+\begin{enumerate}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item behaviour of software is predictable and secure
+	\item software does not contain known security vulnerabilities
+	\item software is tolerant to defects and operates correctly in case of exception
+	\item software meets all non-function security requirements
+	\item software does not violate no one security factor
+\end{enumerate}
+
+\Paragraph{Software security analysis approaches}
+%
+There are two approaches to make software security analysis: testing of software security mechanisms and risk-based security testing (simulation of attacker's behaviour) \Reference{Potter2004}. 
+%
+The first approach does not differ to traditional testing methods but is aimed to security mechanisms. 
+%
+The second one is intended to decrease a level of risks to detect security vulnerability in software. 
+
+\Paragraph{Software security analysis characteristics}
+%
+While performing risk-based software security testing IA Triad principles (see \ReferenceToSection{software_security_concept}) can be utilized. 
+%
+The security analysis is performed in terms of security risks and a set of security requirements, if they exist. 
+%
+Sucessful peforming of security analysis, meanwhile, is quite difficult because it requires taking into account many details. 
+%
+Moreover, a person performing the analysis should be high-skilled. 
+
+\Paragraph{Which activities are performed during software security analysis}
+%
+Risk-based software security analysis consists in source code revision and utilization of various software security testing methods using appropriate tools \Reference{Goertzel2007}. 
+%
+Source code revision is performed from \An attacker position and aimed at most important components and interfaces beetween components, including interfaces for plug-ins \Reference{Winograd2008}. 
+%
+Software security methods are applied to testing techniques based on ``white-box'', ``gray-box'', and ``black-box'' principles. 
+
+\Paragraph{White-box, gray-box, and black-box testing methods}
+%
+The methods mentioned above have such names because they depend on artifacts available at the security analysis performing. 
+%
+While performing black-box testing only binary code is applied. 
+%
+While performing gray-box testing both source and binary code are applied. 
+%
+Finally, While performing white-box testing only source code is applied. 
