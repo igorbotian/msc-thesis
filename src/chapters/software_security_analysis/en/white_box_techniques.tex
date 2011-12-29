@@ -1,0 +1,118 @@
+\Paragraph{The white-box testing concept}
+%
+As it was noted above, availablity of source code is required to perform white-box testing. 
+%
+Applying of methods that utilizes source code are most useful and popular at development stage. 
+%
+These methods are the following: static and dynamic source code analysis, and property-based testing \Reference{Winograd2008}. 
+
+\Paragraph{Advantages and disadvantages}
+%
+White-box testing has a number of advantages and disadvantages \Reference{Sutton2007}. 
+%
+The main advantage is high degree of source code coverage owing it's availability. 
+%
+All possible paths of application executing are analyzed to find potential security vulnerabilities. 
+%
+Whereas the main disadvantage is complexity of performing this kind of analysis itself. 
+%
+It is not rare when an analyser gives a lot of false results, especially if testing software is sizeable. 
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Source code static analysis}
+	{software_security_analysis_blackbox_testing_techniques_static_code_analysis}
+
+\Paragraph{The main disadvantage of secure programming technique}
+%
+The secure programming technique \Reference{McConnell2004} is utilized to defense against invalid input data on all levels of implemented software. 
+%
+It promotes faster detection of errors and rise of software security integrally. 
+%
+But application of the analysis is not enough \Reference{Chess2007}. 
+%
+It is directed to check whether calling party complies with the contract of appropriate called party. 
+%
+Safety of transfering data is not assured. 
+
+\Paragraph{Example of the problem}
+%
+In the listing below code of function performing writing messages to a file is presented. 
+%
+Specially formed value of \SourceCode{msg} argument can be valid but leading to \SourceCode{fprintf()} format function vulnerability in it's body. 
+% !!! TODO: (see \ReferenceToSection{software_security_vulnerabilities_format_strings}). 
+%
+Such kind of vulnerabilities can be found by means of static analysis. 
+
+\Listing{Example of unsafe program}{C}
+	{listings/software_security_analysis/static_analysis.c}
+
+\Paragraph{The concept}
+%
+Carrying out of static analysis leads to search of various problems such as errors committed by accident, common programming errors, including security vulnerabilities \Reference{Chess2007}. 
+%
+Source code static analysis helps to reduce total number of such kind of errors as early as at development stage. 
+
+\Paragraph{Static analysis and source code revision}
+%
+Static analysis is often performed while source code is revising. 
+%
+In this case process of code revision is performed sequentially and involves the following steps: goals of revision are established, static analysis tools are utilized, then accoring to the reports of their work source code revision is performed itself, found errors are eliminated \Reference{Chess2007}. 
+
+\Paragraph{Static analysis disadvantages}
+%
+Carrying out of static analysis has a number of disadvantages \Reference{Winograd2008} \Reference{Chess2007}. 
+%
+It can be used only as an additional tool in the process of error detection. 
+%
+It can be explained by the fact that absence of errors in the reports does not mean that they does not exist in the testing application. 
+%
+For example, errors that does not exist in the code explicitly but become apparent during the application execution are referred to such kind of errors. 
+%
+Also, records of the tools often contain a lot of false positives. 
+%
+Threrefore the analysis should be performed by a security high-skilled expert. 
+
+\Paragraph{Well-known static analysis tools}
+%
+The well-known static analysis tools are the following \IT{Splint} \WebSite{Splint}, \IT{Cppcheck} \WebSite{Cppcheck}, \IT{RATS} \WebSite{RATS}, \IT{ITS4} \WebSite{ITS4}, \IT{PVS Studio} \WebSite{PVSStudio}, and others.
+%
+\IT{RATS} and \IT{PVS Studio} can be used to search concurrency problems, including race conditions. 
+%
+\IT{ITS4} and \IT{Splint} are intended for searching known vulnerabilities specific to \IT{C} and \IT{C++} programming languages, for example, buffer overflow, format function vulnerabilities, and others. 
+% !!! TODO: (see \ReferenceToSection{software_security_vulnerabilities_format_strings}). 
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Property-based testing}
+	{software_security_analysis_blackbox_testing_techniques_property_based_testing}
+
+\Paragraph{Description}
+%
+Purpose of any kind of software tests is to examine reliability and functionality of tested software. 
+%
+In other words, verification of software semantic characteristics is carried out. 
+%
+This kind of testing is a variety of formal analysis technique, threrefore it is utilized only after implementation of declared features of tested software \Reference{Winograd2008}. 
+
+\Paragraph{How it is performed}
+%
+To perform property-based testing the following steps are carried out \Reference{Fink1997}. 
+%
+Specification of tested software is analyzed. 
+%
+On the basis of the specification a list of properties of the tested software is formed. 
+%
+These properties, for example, correctness of authentication mechanism, should be verified. 
+%
+Then verification of each property is formalized, the appropriate test is prepared. 
+%
+The process of verification is performed using source code. 
+
+\Paragraph{Disadvantages}
+%
+The main disadvantage of propert-based testing is the fact that it requires a lot of time to perform all activities listed above \Reference{Winograd2008}. 
+%
+Especially, if the tested software is quite sizeable. 
+%
+The main reason of the disadvantage is \The requirement to prepare strictly formalized tests.
