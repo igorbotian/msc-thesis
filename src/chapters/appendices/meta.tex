@@ -63,17 +63,17 @@
 		\cleardoublepage
 		\phantomsection
 		\addcontentsline{toc}{section}{\MakeUppercase{\AppendicesTitle}}
-		\appendix
-		\renewcommand*{\thesection}{\arabic{section}}
+		%\appendix
+		%\renewcommand*{\thesection}{\arabic{section}}
 	}
 	{
 		% nothing
 	}
 
 	\addtocounter{AppendixCounter}{1}
-	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+	%\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 	\addtocontents{toc}{\TheAppendixTocTitle{#1}}
-	\section{\TheAppendixPageTitle{#1}}
+	%\section{\TheAppendixPageTitle{#1}}
 	\PlaceReferenceToAppendix{#2}
 	
 	\renewcommand{\TheAppendixTitle}{\TheAppendixTocTitle{#1}}
