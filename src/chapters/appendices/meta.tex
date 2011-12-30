@@ -62,7 +62,7 @@
 	\ifthenelse { \equal{\arabic{AppendixCounter}}{0} } {
 		\cleardoublepage
 		\phantomsection
-		\addcontentsline{toc}{section}{\MakeUppercase{\AppendicesTitle}}
+		\addcontentsline{toc}{section}{\texorpdfstring{\MakeUppercase{\AppendicesTitle}}{\AppendicesTitle}}
 		%\appendix
 		%\renewcommand*{\thesection}{\arabic{section}}
 	}
