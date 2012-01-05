@@ -9,20 +9,9 @@ $ valgrind --tool=helgrind ./ph2daemon
 
 % first page
 \ApplyAppendixFirstPageStyle{}
-
-\lstinputlisting[
-	basicstyle=\footnotesize\ttfamily, 
-	deletekeywords={and}, 
-	showstringspaces=false,
-	tabsize=2]
-	{listings/peerhood_analysis/helgrind1.log}
+\AppendixNonTitledListing{}{listings/peerhood_analysis/helgrind1.log}
 
 % second page
 \newpage
 \ApplyAppendixLastPageStyle{}
-
-\lstinputlisting[
-	basicstyle=\footnotesize\ttfamily, 
-	showstringspaces=false,
-	tabsize=2]
-	{listings/peerhood_analysis/helgrind2.log}
+\AppendixNonTitledListing{}{listings/peerhood_analysis/helgrind2.log}

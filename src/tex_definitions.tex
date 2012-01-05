@@ -197,15 +197,35 @@
 		{#3}
 }
 
-\newcommand{\NonTitledListing} [3] {
+\newcommand{\AppendixTitledListing} [3] {
 	\lstinputlisting[
 		title={\Bold{#1}}, 
-		basicstyle=\footnotesize\ttfamily, 
 		language=#2, 
-		showstringspaces=false,
+		breaklines=true, 
+		basicstyle=\footnotesize\ttfamily, 
+		commentstyle=\footnotesize\ttfamily, 
+		identifierstyle=, 
+		keywordstyle=, 
+		stringstyle=, 
+		showstringspaces=false, 
 		tabsize=2]
 		{#3}
 }
+
+\newcommand{\AppendixNonTitledListing} [2] {
+	\lstinputlisting[
+		language=#1, 
+		breaklines=true, 
+		basicstyle=\footnotesize\ttfamily, 
+		commentstyle=\footnotesize\ttfamily, 
+		identifierstyle=, 
+		keywordstyle=, 
+		stringstyle=, 
+		showstringspaces=false, 
+		tabsize=2]
+		{#2}
+}
+
 
 % to use abbreviations in the text
 % requires the 'acronym' package
