@@ -68,19 +68,31 @@
 % to mark a text translated possibly bad
 
 \newcommand{\T} [1] {%
-	\textcolor{possiblebadtranslationcolor}{#1 (?)}%
+	\textcolor{possiblebadtranslationcolor}{#1?}%
 }
 
 \newcommand{\A} {%
 	\textcolor{possiblebadtranslationcolor}{a?}
 }
 
+\newcommand{\AA} {%
+	\textcolor{possiblebadtranslationcolor}{A?}
+}
+
 \newcommand{\An} {%
 	\textcolor{possiblebadtranslationcolor}{an?}
 }
 
+\newcommand{\AAn} {%
+	\textcolor{possiblebadtranslationcolor}{An?}
+}
+
 \newcommand{\The} {%
 	\textcolor{possiblebadtranslationcolor}{the?}
+}
+
+\newcommand{\TThe} {%
+	\textcolor{possiblebadtranslationcolor}{The?}
 }
 
 % to use citations to bibliography items and citations under chapter titles
@@ -231,7 +243,7 @@
 % requires the 'acronym' package
 
 \newcommand{\Abbreviation} [1] {%
-	\EnglishText{\ac{#1}}
+	\EnglishText{\ac{#1}}%
 }
 
 \newcommand{\RussianAbbreviation} [1] {%
