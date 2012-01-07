@@ -68,31 +68,31 @@
 % to mark a text translated possibly bad
 
 \newcommand{\T} [1] {%
-	\textcolor{possiblebadtranslationcolor}{#1?}%
+	\textcolor{possiblebadtranslationcolor}{\underline{#1}}%
 }
 
 \newcommand{\A} {%
-	\textcolor{possiblebadtranslationcolor}{a?}
+	\T{a}
 }
 
 \newcommand{\Aa} {%
-	\textcolor{possiblebadtranslationcolor}{A?}
+	\T{A}
 }
 
 \newcommand{\An} {%
-	\textcolor{possiblebadtranslationcolor}{an?}
+	\T{an}
 }
 
 \newcommand{\AAn} {%
-	\textcolor{possiblebadtranslationcolor}{An?}
+	\T{An}
 }
 
 \newcommand{\The} {%
-	\textcolor{possiblebadtranslationcolor}{the?}
+	\T{the}
 }
 
 \newcommand{\TThe} {%
-	\textcolor{possiblebadtranslationcolor}{The?}
+	\T{The}
 }
 
 % to use citations to bibliography items and citations under chapter titles
