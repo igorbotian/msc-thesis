@@ -2,17 +2,17 @@
 %
 Only binary code is needed to perform black box software security testing. 
 %
-In the case of this type of testing software is considered as a whole one. 
+In the case of this type of testing, software is considered as a whole one. 
 %
-It responds to input data by performing predefined operations and by returning appropriate output data. 
+It responds to input data by performing predefined operations and returning appropriate output data. 
 %
-The principle of the testing is based on compliance between input and output data from \The security point of view, subject to changing of software environment \Reference{Winograd2008}. 
+The principle of the testing is based on compliance between input and output data from security point of view, subject to changing of software environment \Reference{Winograd2008}. 
 
 \Paragraph{Advantages}
 %
 Black box security testing has a number of advantages \Reference{Sutton2007}. 
 %
-The main advantage is availability because the testing can be performed irrespective of presence of tested software. 
+The main advantage is availability because the testing can be performed irrespective of presence of tested software source code. 
 %
 Another advantage is repeatability of the testing because it considers tested software as a whole one regardless of it's inner mechanisms. 
 %
@@ -24,7 +24,7 @@ On the other hand, black box software security testing has also a number of disa
 %
 The main disadvantage is complication of the testing quality assessment. 
 %
-Another disadvantage is complexity of modeling of complex attacks targeted to \A specific vulnerability. 
+Another disadvantage is complexity of complex attacks modeling, targeted to \A specific vulnerability. 
 
 % ------------------------------------------------------------------------------------------------
 
@@ -34,9 +34,9 @@ Another disadvantage is complexity of modeling of complex attacks targeted to \A
 %
 Fuzz-testing consists in random invalid data transmission to \A tested application through it's entry points by the use of software environment or third-party components, and the results are verified afterwards \Reference{Winograd2008}. 
 %
-Generated input data are usually based on alteration of valid sets of input data. 
+Generated input data is usually based on alteration of valid input data. 
 %
-Tranmission of the data is performed by executing a special application called fuzzer. 
+Data tranmission is performed by executing a special application called fuzzer. 
 %
 Usually every fuzzer is related to a specific way of data transmission, for example, by the use of HTTP protocol. 
 
@@ -56,13 +56,13 @@ It analyzes output data of tested software and determines next values of input d
 
 \Paragraph{Advantages and disadvantages}
 %
-Fuzz-testing has a number of limitations related to type of vulnerabilitities that can be found using the testing \Reference{Sutton2007}. 
+Fuzz-testing has a number of limitations related to specific vulnerability type that can be found using the testing \Reference{Sutton2007}. 
 %
-These vulnerabilities are defects related to access control mechanism, logical and architectural errors, backdoor search, memory corruption, as well as complex vulnerabilities that are exposed by performing multistage complex attacks. 
+These vulnerabilities are defects related to an access control mechanism, logical and architectural errors, backdoor search, memory corruption, as well as complex vulnerabilities that are exposed by performing multistage complex attacks. 
 %
 The main disadvantage is requirement of appropriate fuzzer implementing or search of existing one. 
 %
-Moreover, in the second case the fuzzer setup is needed. 
+Moreover, in the second case, setup of the fuzzer is needed. 
 %
 Therefore it can be said that it is neccesary to have deep knowledge about tested software \Reference{Winograd2008}. 
 
@@ -97,9 +97,9 @@ Fault injection gives the following benefits \Reference{Winograd2008}:
 %
 The method comprises executing code analysis and can be used to find security vulnerabilities. 
 %
-In this case specialist plays a role of intruder and performs analysis of testing software by the means of various special tools. 
+In this case, a tester is playing the role of an intruder and performs tested software analysis by the means of various special tools. 
 %
-It allows to assess security of tested software from outside and find security vulnerabilities visible from this point of view \Reference{Goertzel2007}. 
+It allows to assess tested software security from outside and find security vulnerabilities visible from this point of view \Reference{Goertzel2007}. 
 %
 There is a lot of various tools used to perform this operation \Reference{Eilam2005}. 
 %
@@ -109,7 +109,7 @@ Therefore a set of tools is selected depending on tested software.
 
 \Paragraph{Disassemblers}
 %
-Disassemblers are one of the most widely used tools that are utilized to perform reverse engineering. 
+Disassemblers are most widely used tools that are utilized to perform reverse engineering. 
 %
 They decode binary code to text to make it human-readable. 
 %
@@ -139,11 +139,11 @@ The most well-known debugging tool is .NET Reflector \WebSite{dotNETReflector}.
 
 \Paragraph{System monitoring tools}
 %
-While performing reverse engineering system monitoring tools are often used. 
+While performing reverse engineering, system monitoring tools are often used. 
 %
-They allow to get a lot of information about interaction between tested software and it's software environment. 
+They allow to get a lot of information about interaction between a tested software and it's software environment. 
 %
-For example, they can let to know which system functions are called or which files are accessed by tested software. 
+For example, they can let to know which system functions are called or which files are accessed by a tested software. 
 %
 The most well-known sets of such kind of tools are the following. 
 %
@@ -155,9 +155,9 @@ A different sets of tools, such as \IT{ps}, \IT{lsof}, and others, can be used o
 %
 Reverse engineering, like any other security testing method, has a number of disadvantages \Reference{Chess2007}. 
 %
-The main diadvantage is complexity of executing code decoding and analysis. 
+The main disadvantage is complexity of executing code decoding and analysis. 
 %
-Additional complications consists in the fact that it is necessary for specialist to know the basics of working with various tools. 
+Additional complications consists in the fact that it is necessary for a specialist to know the basics of working with various tools. 
 %
 Also, as it was noted above, composition of used tools can differ completely depending on testing software. 
 
@@ -173,17 +173,17 @@ Initially, tested software is divided by parts.
 %
 Then each part is tested individually. 
 %
-The goals of the black box testing is to find vulnerable parts of tested software. 
+The goal of the black box testing is to find vulnerable parts of a tested software. 
 %
-Especially the method is useful when third-party closed source components are used by tested software. 
+Especially the method is useful when third-party closed source components are used by a tested software. 
 
 \Paragraph{What is black box testing}
 %
-Black box testing is aimed to gather debug information about interaction of tested software with third-party components and it's software environment. 
+Black box testing is aimed to gather debug information about interaction of a tested software with it's third-party components and software environment. 
 %
 It is achieved by monitoring of external behaviour of tested software or it's part. 
 %
-By using this technique a set of vulnerabilities, such as error skipping, can be found and eliminated \Reference{Whittaker2003}. 
+By using this technique, a set of vulnerabilities, such as error skipping, can be found and eliminated \Reference{Whittaker2003}. 
 
 \Paragraph{Tools}
 %
@@ -198,9 +198,9 @@ The most well-known tools that support such functionality are IDA Pro \WebSite{I
 \SubSubSectionTitle{Vulnerability scanning}{software_security_analysis_black_box_techniques_vulnerability_scanning}
 
 \Paragraph{Description}
-Automatic vulnerability scanning is one of the most useful ways of software security testing and performs by the means of appropriate tools. 
+Automatic vulnerability scanning is one of the most useful ways of software security testing and is performed by the means of appropriate tools. 
 %
-\The principle of work of such kind of tools is that they interact with testing environment by passing of template data called signature \Reference{Winograd2008}. 
+\The principle of work of such kind of tools is that they interact with testing environment by passing of template data, called signature \Reference{Winograd2008}. 
 %
 Each vulnerability scanner contains a lot of such signatures, and each of them is related to specified type of security vulnerability. 
 
@@ -216,11 +216,11 @@ Utilization of such kind of tools has a number of disadvantages \Reference{Winog
 %
 Usually a vulnerability scanner is able to find only 30 \% of all types of vulnerabilities. 
 %
-Since efficiency of a vulnerability scanner depends on a number of signatures in it's signature database, it is necessary to update the database  periodically. 
+Since efficiency of a vulnerability scanner depends on a number of signatures in it's signature database, it is necessary to update the database periodically. 
 
 \Paragraph{Tools}
 %
-Vulnerability scanners are divided by several categories depending on way they interact with tested software. 
+Vulnerability scanners are divided by several categories depending on a way they interact with tested software. 
 %
 These categories are port scanners, web application vulnerability scanners, CGI scanners and others. 
 %
@@ -240,7 +240,7 @@ It performes on last software development stages and consist in analysis of test
 %
 Penetration testing has a number of characteristics \Reference{Winograd2008}. 
 %
-While performing of the testing tested software is executed in normal mode, without establishment of appropriate testing environment. 
+While performing of the testing, tested software is executin in normal mode, without establishment of appropriate testing environment. 
 %
 Penetration testing as opposed to other testing methods is also directed to search of architectural and design errors. 
 %
@@ -262,4 +262,4 @@ By-turn, penetration testing has a number of disadvantages \Reference{Winograd20
 %
 The main disadvantage is the fact that it is performed on late software development stages. 
 %
-Therefore found security vulnerabilities may require significant costs to eliminate them. 
+Therefore found security vulnerabilities may require significant costs for their elimination. 

@@ -33,7 +33,7 @@ But application of the analysis is not enough \Reference{Chess2007}.
 %
 It is directed to check whether calling party complies with the contract of appropriate called party. 
 %
-Safety of transfering data is not assured. 
+Transfering data safety is not assured. 
 
 \Paragraph{Example of the problem}
 %
@@ -57,29 +57,36 @@ Source code static analysis helps to reduce \A total number of such kind of erro
 %
 Static analysis is often performed during the process of source code revision. 
 %
-In this case the revision is performed sequentially and involves the following steps: goals of revision are established, static analysis tools are utilized, then accoring to the reports of their work source code revision is performed itself, found errors are eliminated \Reference{Chess2007}. 
+In this case the revision is performed sequentially. 
+It involves the following steps \Reference{Chess2007}: 
+\begin{itemize}
+	\item goals of revision are established
+	\item static analysis tools are utilized
+	\item then accoring to the reports of their work source code revision is performed itself
+	\item found errors are eliminated
+\end{itemize}
 
 \Paragraph{Static analysis disadvantages}
 %
-Carrying out of static analysis has a number of disadvantages \Reference{Winograd2008} \Reference{Chess2007}. 
+Static analysis carrying out has a number of disadvantages \Reference{Winograd2008} \Reference{Chess2007}. 
 %
 It can be used only as an additional tool in the process of error detection. 
 %
-It can be explained by the fact that absence of errors in the reports does not mean that they does not exist in the testing application. 
+It can be explained by the fact that error absence in the report does not mean that they do not exist in a tested application. 
 %
-For example, errors that does not exist in the code explicitly but become apparent during the application execution are referred to such kind of errors. 
+For example, errors invisible in the code explicitly but become apparent during the application execution are referred to such kind of errors. 
 %
-Also, records of the tools often contain a lot of false positives. 
+Also, a static analysis tool report often contains a lot of false positives. 
 %
 Threrefore the analysis should be performed by a security high-skilled expert. 
 
 \Paragraph{Well-known static analysis tools}
 %
-The well-known static analysis tools are the following \IT{Splint} \WebSite{Splint}, \IT{Cppcheck} \WebSite{Cppcheck}, \IT{RATS} \WebSite{RATS}, \IT{ITS4} \WebSite{ITS4}, \IT{PVS Studio} \WebSite{PVSStudio}, and others.
+The well-known static analysis tools are the following: \IT{Splint} \WebSite{Splint}, \IT{Cppcheck} \WebSite{Cppcheck}, \IT{RATS} \WebSite{RATS}, \IT{ITS4} \WebSite{ITS4}, \IT{PVS Studio} \WebSite{PVSStudio}, and others.
 %
 \IT{RATS} and \IT{PVS Studio} can be used to search concurrency problems, including race conditions. 
 %
-\IT{ITS4} and \IT{Splint} are intended for searching known vulnerabilities specific to \IT{C} and \IT{C++} programming languages, for example, buffer overflow, format function vulnerabilities, and others. 
+\IT{ITS4} and \IT{Splint} are intended to search of known vulnerabilities specific to \IT{C} and \IT{C++} programming languages, for example, buffer overflow, format function vulnerabilities, and others. 
 % !!! TODO: (see \ReferenceToSection{software_security_vulnerabilities_format_strings}). 
 
 % -------------------------------------------------------------------------------------------------
@@ -89,29 +96,29 @@ The well-known static analysis tools are the following \IT{Splint} \WebSite{Spli
 
 \Paragraph{Description}
 %
-Purpose of any kind of software tests is to examine reliability and functionality of tested software. 
+Purpose of any set of software tests is to examine reliability and functionality of tested software. 
 %
 In other words, verification of software semantic characteristics is carried out. 
 %
-This kind of testing is a variety of formal analysis technique, threrefore it is utilized only after implementation of declared features of tested software \Reference{Winograd2008}. 
+This kind of testing is a variety of formal analysis techniques, threrefore it is utilized only after implementation of declared tested software features \Reference{Winograd2008}. 
 
-\Paragraph{How it is performed}
+\Paragraph{How is it performed}
 %
 To perform property-based testing the following steps are carried out \Reference{Fink1997}. 
 %
 Specification of tested software is analyzed. 
 %
-On the basis of the specification a list of properties of the tested software is formed. 
+On the basis of the specification, a list of the tested software properties is formed. 
 %
-These properties, for example, correctness of authentication mechanism, should be verified. 
+These properties, for instance, correctness of authentication mechanism, should be verified. 
 %
-Then verification of each property is formalized, the appropriate test is prepared. 
+Then verification of each property is formalized, \The appropriate test is prepared. 
 %
 The process of verification is performed using source code. 
 
 \Paragraph{Disadvantages}
 %
-The main disadvantage of propert-based testing is the fact that it requires a lot of time to perform all activities listed above \Reference{Winograd2008}. 
+The main disadvantage of property-based testing is the fact that it requires a lot of time to perform all activities listed above \Reference{Winograd2008}. 
 %
 Especially, if the tested software is quite sizeable. 
 %

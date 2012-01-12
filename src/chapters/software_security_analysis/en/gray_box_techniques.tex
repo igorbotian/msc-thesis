@@ -21,17 +21,17 @@ The goal is to detect abnormal actions and to notify about them instantly \Refer
 %
 General operational principle of these tools is to run tested software in special environment that is used as a layer between the tested application and it's environment. 
 %
-After that the tools analyze all operations performed by the tested application. 
+After that, the tools analyze all operations performed by the tested application. 
 %
-If source code of the application is available information about location in source code of each anomaly is displayed. 
+If source code of the application is available, information about location in source code of each anomaly is displayed. 
 %
 Gray box testing tools often can exactly recognize an anomaly as a consequence of an error. 
 
 \Paragraph{Characteristics}
 %
-As opposed to static analysis dynamic analysis make it possible for tester to search security vulnerabilities which can be detected by interaction of tested software with user, environment, or own component. 
+As opposed to static analysis, dynamic analysis makes it possible for a tester to search security vulnerabilities which can be detected by interaction of tested software with user, environment, or it's own component. 
 %
-By performing dynamic code analysis one can find to find the following kind of errors: buffer overflow, format string function vulnerabilities, pointer vulnerabilities, and others \Reference{Newsome2005}. 
+By performing dynamic code analysis, one can find the following kind of errors: buffer overflow, format string function vulnerabilities, pointer vulnerabilities, and others \Reference{Newsome2005}. 
 %
 The following well-known tools can be utilized: \IT{StackGuard} \WebSite{StackGuard}, \IT{Libsafe} \WebSite{Libsafe}, \IT{FormatGuard} \WebSite{FormatGuard}, \IT{Valgrind} \WebSite{Valgrind}, \IT{Helgrind} \WebSite{Helgrind}. 
 
@@ -42,25 +42,25 @@ The following well-known tools can be utilized: \IT{StackGuard} \WebSite{StackGu
 
 \Paragraph{What is source code fault injection}
 %
-Source code fault injections is a method used to test fault-tolerance of software \Reference{Madeira2000}. 
+Source code fault injection is a method used to test fault-tolerance of software \Reference{Madeira2000}. 
 %
-The method by it's nature is manual various defects injection to source code of tested software. 
+The method by it's nature consists in manual injection of various defects to source code of tested software. 
 %
 The aim of this is, for example, to verify correctness of exception processing strategy \Reference{Winograd2008}. 
 %
-Manual fault injection makes it possible to check correctness of work of both whole testing application and it's component under conditions of fault existence in environment or in one of it's other component. 
+Manual fault injection makes it possible to check correctness of work of both whole tested application and it's component under conditions of fault existence in environment or in one of it's other component. 
 %
 Software fault emulation makes it possible to determine degree of fault-tolerance of tested software. 
 
 \Paragraph{What it makes it possible to detect}
 %
-Precise fault emulation makes it possible to determine consequence of error presence. 
+Precise fault emulation makes it possible to determine aftereffects of an error presence. 
 %
 Threrefore it can be said that support of precise fault emulation is the main task of this kind of testing \Reference{Madeira2000}. 
 %
 Fault injection is useful in case of searching errors, such as incorrect usage of pointers and arrays, race conditions, and others. 
 %
-The method makes it possible to find erros already at development stage. 
+The method makes it possible to find erros at development stage. 
 
 \Paragraph{Disadvantages}
 %
