@@ -2,25 +2,25 @@
 %
 Software security analysis is a variety of software testing. 
 %
-But unlike other varieties of software testing it is not based on requirements to software, it is not functional \Reference{Winograd2008}. 
+But unlike other varieties it is not based on requirements to software because it is not functional \Reference{Winograd2008}. 
 %
-The main reason of this is the fact that success of tests and fulfilment of all requirements can not say that \The tested software does not contain security vulnerabilities. 
+The main reason of this fact is that success of tests and fulfilment of all requirements to a tested software can not say that the software does not contain security vulnerabilities at all. 
 %
-This is a complexity of assessment of security of \A software. 
+It is related to complexity of software security assessment. 
 
 \Paragraph{Software security analysis characteristics}
 %
-Software security testing is intended for search of vulnerablities, not traditional errors. 
+Software security testing is intended for vulnerability searching, not traditional errors. 
 %
 They are differed qualitatively. 
 %
-Traditional errors are detected by developer accidentally and generally does not influence on other users. 
+Traditional errors are detected by developer accidentally and generally they do not affect other users. 
 %
-On the contrary, unlike a normal user a malicious person has some security knowledge and experience, that is interacts with software differently and looks for security defectes intentionally. 
+On the contrary, unlike a normal user, \A malicious person has some knowledge of security and experience in this area, that is interacts with targeted software differently and looks for security defectes intentionally. 
 %
-Consequences of his futher attack often influences on other users utilizing the attacking software. 
+Consequences of his futher attack often affect other users utilizing the attacking software. 
 %
-For this reason, software security testing is differed to traditional testing methods. 
+For this reason, software security testing is different to traditional testing methods. 
 %
 Michael enumerates the following differences \Reference{Michael2005}: 
 \begin{itemize}
@@ -28,14 +28,14 @@ Michael enumerates the following differences \Reference{Michael2005}:
 	\setlength{\itemsep}{0pt}%
 	%\setlength{\parsep}{0pt}%
 
-	\item code operating properly is not alwasy secure
-	\item most of security requirements can not be checked using traditional software testing methods
-	\item software security testing is intended for checking the fact that software should not do, whereas traditional software testing methods are intended for checking correctness of functionality of the software. 
+	\item properly operating code is not always secure
+	\item most of security requirements can not be checked by performing of traditional software testing methods
+	\item software security testing is intended for checking the fact that tested software should not do, whereas traditional software testing methods are intended for checking correctness of tested software functionality
 \end{itemize}
 
 \Paragraph{The goals of software security analysis}
 %
-From a formal point of view software security testing consists in verification of security-related characteristics. 
+From a formal point of view, software security testing consists in verification of security-related characteristics. 
 %
 They are following \Reference{Goertzel2007}: 
 \begin{enumerate}
@@ -45,22 +45,22 @@ They are following \Reference{Goertzel2007}:
 
 	\item behaviour of software is predictable and secure
 	\item software does not contain known security vulnerabilities
-	\item software is tolerant to defects and operates correctly in case of exception
-	\item software meets all non-function security requirements
-	\item software does not violate no one security factor
+	\item software is tolerant to defects of it's environment and operates correctly in a case of exception
+	\item software meets all non-functional security requirements
+	\item software does not violate security factors
 \end{enumerate}
 
 \Paragraph{Software security analysis approaches}
 %
-There are two approaches to make software security analysis: testing of software security mechanisms and risk-based security testing (simulation of attacker's behaviour) \Reference{Potter2004}. 
+There are two approaches to perform software security analysis: testing of software security mechanisms and risk-based security testing (simulation of \An attacker's behaviour) \Reference{Potter2004}. 
 %
-The first approach does not differ to traditional testing methods but is aimed to security mechanisms. 
+The first approach does not differ to traditional testing methods but it is aimed mainly to security mechanisms. 
 %
-The second one is intended to decrease a level of risks to detect security vulnerability in software. 
+The second approach is intended for decreasing of the level of risks to detect security vulnerability in software. 
 
 \Paragraph{Software security analysis characteristics}
 %
-While performing risk-based software security testing IA Triad principles (see \ReferenceToSection{software_security_concept}) can be utilized. 
+While performing risk-based software security testing, CIA Triad principles (see \ReferenceToSection{software_security_concept}) can be utilized. 
 %
 The security analysis is performed in terms of security risks and a set of security requirements, if they exist. 
 %
@@ -72,7 +72,7 @@ Moreover, a person performing the analysis should be high-skilled.
 %
 Risk-based software security analysis consists in source code revision and utilization of various software security testing methods using appropriate tools \Reference{Goertzel2007}. 
 %
-Source code revision is performed from \An attacker position and aimed at most important components and interfaces beetween components, including interfaces for plug-ins \Reference{Winograd2008}. 
+Source code revision is performed at \An attacker's side and it is aimed at the most important components and interfaces beetween components, including interfaces for plug-ins \Reference{Winograd2008}. 
 %
 Software security methods are applied to testing techniques based on ``white box'', ``gray box'', and ``black box'' principles. 
 
@@ -80,8 +80,8 @@ Software security methods are applied to testing techniques based on ``white box
 %
 The methods mentioned above have such names because they depend on artifacts available at the security analysis performing. 
 %
-While performing black box testing only binary code is applied. 
+While performing black box testing, only binary code is applied. 
 %
-While performing gray box testing both source and binary code are applied. 
+While performing gray box testing, both source and binary code are applied. 
 %
-Finally, While performing white box testing only source code is applied. 
+Finally, While performing white box testing, only source code is applied. 
