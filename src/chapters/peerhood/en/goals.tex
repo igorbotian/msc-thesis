@@ -48,23 +48,23 @@ A set of functional requirements to the PeerHood project are listed below \Refer
 
 	\item[Device discovery] System must be able to discovery other PeerHood capable devices within range and the same device neighborhood.
 	%
-	Device detection can be depend used network technology.
+	Device detection can depend on used network technology.
 		
-	\item[Service discovery] System must be able to discovery services from the local device and other PeerHood devices in the device neighborhood.
+	\item[Service discovery] System must be able to discover services from the local device and other PeerHood devices in the device neighborhood.
 	%
 	System must have capability to read service attributes as well with service discovery.
 
 	\item[Service sharing] PeerHood must provide mechanism to register services and use them by applications or middleware components. 
 	%
-	Services can locate on local or remote device. 
+	Services can locate services working on a local or a remote device. 
 	%
 	The PeerHood system must advertise registered services to other devices in a PeerHood neighborhood.
 
-	\item[Connection establishment] PeerHood must provide ability of connect to one or more other PeerHood device in a PeerHood neighborhood. 
+	\item[Connection establishment] PeerHood must provide ability of connect to one or more other PeerHood devices in a PeerHood neighborhood. 
 	%
-	Connect establishment must be transparent for used underlying network technology.
+	Connect establishment must be transparent for using underlying network technology.
 
-	\item[Active monitoring of a device] PeerHood must provide way to set a selected device in the PeerHood neighborhood under active monitoring. 
+	\item[Active monitoring of a device] PeerHood must provide way to set a selected device in a neighborhood under active monitoring. 
 	%
 	In the active monitoring state, a PeerHood client is notified when the device under monitoring is out of range or when it comes back in the range. 
 	%
@@ -74,18 +74,18 @@ A set of functional requirements to the PeerHood project are listed below \Refer
 	%
 	PeerHood should not take care of data being transferred. 
 	%
-	User of the PeerHood must take care of data endianess and word length of data.
+	PeerHood user must take care of data endianess and word length of data.
 
 	\item[Seamless connectivity] PeerHood should provide way to change used active network technology automatically if established connection weakens or breaks. 
 	%
-	PeerHood should provide always the best possible connections for the user. 
+	PeerHood should always provide the best possible connections for a user. 
 	%
 	Established connection should be possible to monitoring for detecting connection changes, which might cause change of used network technology.
 \end{description}
 
 \Paragraph{A new functional requirement}
 %
-A new additional functional requirement was added to the specification (but it is not supported by current implementation of PeerHood) \Reference{Kolehmainen2010}: 
+A new additional functional requirement was added to the specification (but it is not supported by the current implementation of PeerHood) \Reference{Kolehmainen2010}: 
 \begin{description}
 	\leftskip2em%
 	\setlength{\itemsep}{0pt}%

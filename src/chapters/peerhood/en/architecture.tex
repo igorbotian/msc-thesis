@@ -1,10 +1,10 @@
 \Paragraph{A list of PeerHood components}
 %
-From architectural point of view PeerHood is comprised of the following components: daemon, shared library and a set of network plug-ins. 
+From architectural point of view, PeerHood is comprised of the following components: daemon, shared library and a set of network plug-ins. 
 %
 They are represented on \OnReferenceToFigure{peerhood_components}. 
 %
-The components together are \T{the} middleware that provides communications in mobile \Abbreviation{P2P} environment regardless of underlying network technology. 
+The components together are middleware that provides communications in mobile \Abbreviation{P2P} environment regardless of underlying network technology. 
 
 \ReproducedImageFigure{The PeerHood components}{peerhood_components}{Kolehmainen2010}
 
@@ -14,9 +14,9 @@ PeerHood daemon is an independent process which is directly responsible for prov
 %
 It is accomplished by utilization of network plug-ins. 
 %
-PeerHood library is an component which is responsible for interaction with user applications via specified \Abbreviation{API} and have a role to play as glue between daemon and applications. 
+PeerHood library is a component which is responsible for interaction with user applications via specified \Abbreviation{API} and has a role to play as glue between daemon and applications. 
 %
-That is the way a process of communication between devices is encapsulated for applications. 
+That is the way the process of communication between devices is encapsulated for applications. 
 
 % ------------------------------------------------------------------------------------------------
 
@@ -26,21 +26,21 @@ That is the way a process of communication between devices is encapsulated for a
 %
 Daemon is a background process that is intended for discovering other devices and services in neighborhood. 
 %
-The operation is quite costly and consumes a lot of resources and hence is implemented as a separate component. 
+The operation is quite costly and consumes a lot of resources and hence it is implemented as a separate component. 
 %
 In this case during initializing of an application it is not necessary to gather information about neighborhood, so time needed for an application to start to work is reduced. 
 %
-The component has the such name because works in background and fully corresponds to the POSIX-term daemon \Reference{POSIX2008}. 
+The component has the such name because it works in background and fully corresponds to the POSIX ``daemon" term \Reference{POSIX2008}. 
 
 \Paragraph{Local services and their interaction with daemon}
 %
-By-turn, the daemon also gather information about other devices and services in neighborhood. 
+By-turn, the daemon also gathers information about other devices and services in a neighborhood. 
 %
 It provides operation of local services and gives possibility to use them by other devices. 
 %
-It sends information about local services to other devices in neighborhood. 
+It sends information about local services to other devices in a neighborhood. 
 %
-Data transmission, registration and deregistration of local services by applications as well are realized by shared library, which is an another component of PeerHood. 
+Data transmission, as well as registration and deregistration of local services by applications as well are realized as a shared library, which is another PeerHood component. 
 
 % ------------------------------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ The component has a role to play as glue between applications and daemon.
 %
 It is a dynamic link library that is directly used by applications. 
 %
-Interaction with them is performing via specially designed \Abbreviation{API} presented in \ReferenceToAppendix{appendix_peerhood_api}. 
+Interaction with them is performed via specially designed \Abbreviation{API} presented in \ReferenceToAppendix{appendix_peerhood_api}. 
 %
 For applications the library is a medium that used to get information about other devices in neighborhood, to do data exchange with them, to utilize remote services, and to make local services available for other devices. 
 %
@@ -68,11 +68,11 @@ Network plug-in subsystem is intended for making support of new network technolo
 %
 Each plug-in performs operations specific for a given network technology. 
 %
-Also, it should have specially designed \Abbreviation{API} used by the daemon. 
+Also, it should have a specially designed \Abbreviation{API} used by the daemon. 
 %
 Factically, plug-ins are dynamic link libraries which are loaded by daemon during PeerHood operating. 
 %
-Current PeerHood implementation has support of \T{the} following network technologies: Bluetooth \WebSite{Bluetooth}, \Abbreviation{WLAN} \WebSite{WLAN}, and \Abbreviation{GPRS} \WebSite{GPRS}. 
+Current PeerHood implementation has support of the following network technologies: Bluetooth \WebSite{Bluetooth}, \Abbreviation{WLAN} \WebSite{WLAN}, and \Abbreviation{GPRS} \WebSite{GPRS}. 
 
 % ------------------------------------------------------------------------------------------------
 
@@ -84,18 +84,18 @@ Applications are located on the top of PeerHood architecture.
 %
 It means that operations specific for a given network technology are performed by components located on lower layers. 
 %
-In such \The way transparency of interaction between applications is accomplished. 
+In such the way transparency of interaction between applications is accomplished. 
 
 \Paragraph{Interaction model}
 %
-To provide such interaction ``client -- server'' model is used. 
+To provide such interaction, ``client -- server'' model is used. 
 %
-That is an application can both utilize a service provided by other device and provide own service for utilizing by other applications. 
+That is an application can both utilize a service provided by other device and provide an own service to be utilized by other applications. 
 %
-Interacting applications, meanwhile, can be physically situated on both one or different devices. 
+Interacting applications, meanwhile, can be physically located on both one or different devices. 
 %
-At the same time an application can both provide a service and utilize own one. 
+At the same time an application can both provide a service and utilize it. 
 %
-Finally, an application can perform tracking of other devices in neighborhood. 
+Finally, an application can perform tracking of other devices in a neighborhood. 
 %
-When a device appeares in neighborhood or leaves it the application gets a notice about it. 
+When a device appeares in a neighborhood or leaves it, the application gets a notice about it. 
