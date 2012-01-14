@@ -1,1 +1,164 @@
-\TODO{mobile}
+\Paragraph{Introduction}
+%
+Research of the work is related to search of vulnerabilities in a mobile \Abbreviation{P2P} environment. 
+%
+Thus it is necessary to consider not only common vulnerabilities but even those that are specific for mobile \Abbreviation{P2P} environments. 
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Software security in a mobile environment}{software_security_mobile_environment}
+
+\Paragraph{What is mobile environment}
+%
+Mobile environment is characterized by the fact that data and information system access is realized by means of portable wireless devices \Reference{Karki2008}. 
+%
+A notebook, \Abbreviation{PDA}, a pager, a smartphone, a common mobile phone, and many others can be used as such portable mobile devices. 
+%
+Mobile environment is characterized by heterogeneity of computational devices, as well as instability of \Abbreviation{QoS} performed by underlying communication infrastructure \Reference{Davies1994}. 
+%
+Also the following essential properties of the environment can be noted: user and network element mobility, wireless nature of communication devices \Reference{Asokan1995}. 
+
+\Paragraph{General security problems}
+%
+From the security point of view, a mobile environment by its nature is even more vulnerable than a general network environment. 
+%
+The consequence of this fact is software security complication. 
+%
+Li Wenjia gives the following security problems that can be occured in a mobile environment \Reference{Li2004}: 
+\begin{description}
+	\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parsep}{0pt}%
+
+	\item[Lack of security boundaries.] Mobile environment becomes more and more exposed to such attacks as passive interception, active interference in data transfer process, confidential information leakage, \Abbreviation{DoS}. 
+
+	\item[Threat from compromised nodes.] Gaining control of one or more nodes in an environment makes it possible to perform more large-scale attacks other nodes. 
+
+	\item[Lack of central control facility.] It leads to complication of attack detection and prevention because of node autonomy. 
+
+	\item[Limited power supply.] It promotes to DoS-attacks performance and explosion of operations executing between several nodes together. 
+\end{description}
+
+\Paragraph{Mobile code security problems}
+%
+At this time it is popular to use mobile code and content in a mobile environment. 
+%
+It is also somewhat affects the security. 
+%
+Goertzel notes the following security problems related to mobile code and content: trust problems, integrity problems during delivery, software environment security \Reference{Winograd2008}. 
+%
+Denial of service, data modification, confidential information leakage, data interception are risks that may be rated as the most critical \Reference{Bian2005}. 
+%
+To solve these problems, the following methods can be used: digital signature of mobile code, sandboxes, usage of static and dynamic analysis tools, and a number of others \Reference{Winograd2008} \Reference{Bian2005} \Reference{Rubin1998} \Reference{OWASPMobileTopTen2011}. 
+
+\Paragraph{Security threats}
+%
+Asokan gives a general security threat classification in mobile environment on the basis of notion of CIA Triad (see \ReferenceToSection{software_security_concept}) \Reference{Asokan1995}. 
+%
+According to the classification, security threats are divided by categories depending on an CIA Triad element associated to every threat. 
+%
+A threat to availability consists in possibility to perform a DoS-attack. 
+%
+A threat to confidentiality consists in possibilty to perform traffic analysis or data interception attacks. 
+%
+A threat to integrity consists in possibility to perform a man-in-the-middle attack or session hijacking. 
+
+\Paragraph{Transition to security problems of peer-to-peer environments}
+%
+At the present, it is popular to set up spontaneous and often short-term mobile environments. 
+%
+In this case each node shares data for other nodes. 
+%
+This communication way led to application of \Abbreviation{P2P} architecture in mobile environments. 
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Software security in peer-to-peer environment}{software_security_peer_to_peer_environment}
+
+\Paragraph{Definition}
+%
+Network environment is \Abbreviation{P2P}, if it is based on distributed architecture, and all nodes share some own resources (computational power, printers, services, etc.) \Reference{Schollmeier2001}. 
+%
+The distinctions of each \Abbreviation{P2P} environment are the following: lack of centralized servers, nodes are communicated with each other directly. 
+%
+In this case, each node may play a role of both service provider and consumer. 
+
+\Paragraph{Types of P2P environments}
+%
+\Abbreviation{P2P} network architecture is most often used in the cases of file exchange, distributed processing, overlay multicast, and others \Reference{Schollmeier2001}. 
+%
+Depending on a specified \Abbreviation{P2P} environment goal, a malicious person can aim at different purposes \Reference{RFC5765} \Reference{Wallach2002}. 
+%
+Low level of attack traceability in such networks promotes to easy virus propagation and other types of malicious software. 
+%
+Setting up a botnet from nodes of an \Abbreviation{P2P} network, a malicious person can perform both traffic analysis and large-scale DoS-attacks. 
+%
+Thus a node, a service, or transerfing data can be victims of an attack. 
+
+\Paragraph{Security threats}
+%
+To understand how an attacker may perform attacks in a \Abbreviation{P2P} environment, it is necessary to consider that can act as a possible attack reason. 
+%
+In the security area they are closely related with the notion of a threat. 
+%
+Security threats are classified depending on which CIA Triad (see \ReferenceToSection{software_security_concept}) are related to them \Reference{RFC5765} \Reference{Wallach2002} \Reference{Barcellos2008}. 
+%
+Threats related to availability consist in denial of a service in a network or decrease of the service workload. 
+%
+Threats related to integrity consist in corruption of data provided by an attacked service. 
+%
+It should be noted that in this case a malicious person may pose himself as a source of the transferring data. 
+%
+Finally, threats related to confidentiality conist in the fact that all services operating in a network are available to all nodes. 
+
+\Paragraph{Types of attacks}
+%
+Because of the distinctive characteristics of \Abbreviation{P2P} environment, it is easier to perform some kinds of attacks. 
+%
+These attacks are man-in-the-middle and self-replication \Reference{Damiani2002}. 
+%
+Because of lack of a central server in \Abbreviation{P2P} environments, it is quite difficult to detect a real sender or a receiver of any message. 
+%
+Each node of the network may potentially pose itself as other, and it permits a malicious person to use it for his purposes. 
+%
+Providing it's own resources each node performing some operations poses as a broker between the sender and receiver. 
+%
+In this case it is more easy to carry out man-in-the-middle attack for a malicious person. 
+
+\Paragraph{Methods of protecting}
+%
+To protect software against the attacks mentioned above, there is a number of the following methods. 
+%
+One of them is based on early detection of an attacker and has two variations depending on a mode the protection is taking place: proactive or reactive \Reference{RFC5765}. 
+%
+Proactive protection mode is a periodic other nodes activity check for suspiciousness. 
+%
+Reactive protection mode is an activity check for suspiciousness of one node by another one during their communication. 
+%
+A fundamentally different protection method is based on idea of reputation system that involves all nodes of a \Abbreviation{P2P} network \Reference{RFC5765} \Reference{Damiani2002}. 
+%
+In this case a node performing a malicious activitity has \T{low} reputation, and other nodes are notified about it. 
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Summary}{software_security_summary}
+
+\Paragraph{Security in mobile peer-to-peer environment}
+%
+Security assurance in mobile \Abbreviation{P2P} is quite hard. 
+%
+It can be explained by the nature of the environment, it gives a malicious person a possibility to carry out attacks, including large-scale. 
+%
+Also the fact considerably complicates ways to detect the attacks by other nodes in the environment. 
+
+\Paragraph{Security threats}
+%
+Considering security threats in a mobile \Abbreviation{P2P} environment as threats to CIA Triad element violation, it appears that threats to availability are related to denial of service operating in the environment, threats to confidentiality are related to a high probability of data interception and lack of confidential information, threats to integrity are related to transfering data fabrication, session hijacking, or posing as any other use by a malicious person. 
+
+\Paragraph{Attacks in a mobile peer-to-peer environment}
+%
+Mobile \Abbreviation{P2P} environment architecture permits an attacker to perform a big number of variuos attacks, and the most popular of them are man-in-the-middle and self-replication. 
+%
+Capability of repulsing of the attacks on operating in the environment services is fully related to a level of their safety. 
+%
+Additional protection methods may include be following: digital signature, reputation system, early attacker detection, and mobile code execution in sandboxes. 

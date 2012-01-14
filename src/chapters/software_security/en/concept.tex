@@ -1,1 +1,75 @@
-\TODO{Concept}
+\Paragraph{The role of information nowadays}
+%
+The role of information is great, it's significance is solely decreased in the process of continual complication of science and technology \Reference{Stratonovich1975}. 
+%
+According to the Cambridge Dictionary of Philosophy \Reference{CambridgeDictionary1999}, information is ``an objective entity and can be generated, carried, stored, and others''. 
+%
+Modern business environment is increasingly interconnected, thus information transmission operation forms the basis of information systems \Reference{ISO17799}. 
+%
+Therefore information security assurance problem in such systems becomes more and more urgent. 
+
+\Paragraph{Information security assurance}
+%
+The term information security means ``information and information system protection from unauthorized access, use, disclosure, alteration, or destruction'' \Reference{USCodeTitle44}. 
+%
+It aims to protection of the following information properties:
+\begin{description}
+	\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parsep}{0pt}%
+
+	\item[Integrity] Guarding against improper information modification or destruction, and includes ensuring information nonrepudiation and authenticity. 
+	\item[Confidentiality] Preserving authorized restrictions on access and disclosure, including means for protecting personal privacy and proprietary information. 
+	\item[Availability] Ensuring timely and reliable access to and use of information. 
+\end{description}
+
+\Paragraph{Additional goals of information security assurance}
+%
+Protection of these properties is known as CIA Triad, that is represented on \ReferenceToFigure{software_security_cia_triad}. 
+%
+Besides the properties the following additional properties are also noted: trustworthiness, accountability, non-repudiation, and reliability \Reference{ISO17799}. 
+
+\ReproducedImageFigure{Information security goals}{software_security_cia_triad}{Stallings2008}
+
+\Paragraph{Consequences of information security properties violation}
+%
+If one CIA Triad element is not taked into account, this fact may cause serious complications \Reference{FIBSPUB199}. 
+%
+A loss of confidentiality is the unauthorized disclosure of information. 
+%
+A loss of availability is the disruption of access to or use of information or an information system. 
+%
+A loss of integrity is the unauthorized modification or destruction of information. 
+
+\Paragraph{Approaches to information security assurance}
+%
+To avoid the problems listed above, various approaches to information security assurance are applied. 
+%
+Domarev marks out the following methods: legislative, administrative, procedural, and program-technical \Reference{Domarev2004}. 
+%
+The methods are complementary, so they may be used both in the aggregate and separately. 
+%
+In this work only program-technical approach to information security assurance is considered. 
+%
+It is closely related to the notion of computer security. 
+
+\Paragraph{Computer security}
+%
+According to the RFC 4949 \Reference{RFC4949}, computer security is ``the protection afforded to an automated information system in order to attain the applicable objectives of preserving the integrity, availability and confidentiality of information system resources (includes hardware, software, firmware, information/data, and telecommunications)''. 
+%
+By contrast with information security, computer security has also two additional goals \Reference{Stallings2008}: 
+%
+\begin{description}
+	\item[Authenticity] The property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator \Reference{RFC4949}.
+	\item[Accountability] The security goal generates the requirement for actions of an entity to be traced uniquely to that entity \Reference{RFC4949}.
+\end{description}
+
+\Paragraph{Software security}
+%
+Software security forms the basis of information security. 
+%
+McGraw considers that software is principal and the most critical aspect of computer security \Reference{McGraw2006}. 
+%
+The idea of software security consists is to provide proper software execution under a malicious person attack \Reference{McGrawArticle2004}. 
+%
+A number of factors that affect this capability is considered in the next subsection. 
