@@ -1,1 +1,141 @@
-\TODO{The specification analysis}
+\Paragraph{What PeerHood specification contains}
+%
+PeerHood specification contains the following information. 
+%
+The project goals define that should the software must to do. 
+%
+The functional requirements define which functional characteristics should be have PeerHood to achieve it's goals. 
+%
+Non-functional requirements define a structure of the project. 
+
+% ---------------------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{PeerHood goals analysis}{peerhood_analysis_specification_analysis_goals_analysis}
+
+\Paragraph{Goals}
+%
+The PeerHood goal consists in personal communication support in a mobile \Abbreviation{P2P} environment regardless of underlying network technologies. 
+%
+It is achieved at the expense of proactivity, connectivity and reactivity support (see \ReferenceToSection{peerhood_concept}). 
+
+\Paragraph{Connectivity analysis}
+%
+Connectivity support composes a logical level of the applicatio that is responsible to seamless communication between mobile devices. 
+%
+According PeerHood concept, it is needed to link ``Network technologies'' elements with each other (see \ReferenceToFigure{peerhood_concept}). 
+
+\Paragraph{Reactivity analysis}
+%
+Reactivity support composes a logical level of the application that is responsible to communication between user services. 
+%
+According to PeerHood concept, it is needed to link ``User applications'' elements with each other (see \ReferenceToFigure{peerhood_concept}). 
+
+\Paragraph{Proactivity analysis}
+%
+Proactivity support composes a logical level of the application that is responsible to connect the levels described above. 
+%
+According to PeerHood concept, it is needed to link ``Network technologies'' elements with ``Middleware modules'' elements and ``User applications'' elements with ``Middleware modules'' (see \ReferenceToFigure{peerhood_concept}). 
+
+\Paragraph{Summary}
+%
+Thus correctness of all PeerHood components functioning on each logical level defines a possibility of successful solution of all tasks targeted by the project. 
+%
+And their fault-tolerance defines a possibility of correct PeerHood functioning under attack. 
+
+% ---------------------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{PeerHood requirements analysis}{peerhood_analysis_specification_analysis_requirement_analysis}
+
+\Paragraph{PeerHood requirements analysis}
+%
+Correctnes of each PeerHood component functioning is defined by meeting of all requirements related to the component, functional and non-functional. 
+%
+And all requirements in the aggregate aim at the project goals achievement. 
+
+\Paragraph{Connectivity}
+%
+Connectivity is achieved by meeting the following requirements: seamless communication, connection establishment, data transfer between devices, architecture of network plug-ins, and network management.
+%
+It's achievement conists in seamless data exchange between devices with a possibility of switching between available network technologies. 
+%
+It is achieved via network plug-ins, each of them is aimed at support of a specified network technology, it has special interface for performing network-specific operations (data transfer, connection establishment, and others). 
+
+\Paragraph{Proactivity}
+%
+Proactivity is achieved by meeting of the following requirements: device discovery, device detection, component management, and provision of the basis for simultaneous client serving. 
+%
+It's achievement consists in provision of up-to-date information about the network environment to one or more client. 
+%
+It is achieved via middleware modules that connect components of other levels. 
+%
+The modules provide information about the network environment to high level components and notify them about changes. 
+%
+Low level component in their turn are utilized by the modules to perform data transfer directly and to process received from they notifications about network events. 
+
+\Paragraph{Reactivity}
+%
+Reactivity is achieved by meeting the following requirements: service discovery, shared service utilization, user control, provision of client interface to receive events. 
+%
+It's achievement conists in shared both local and remote services utilization and the system control by user applications. 
+%
+It is achieved via high level modules that are aimed at execution of user operations within the concept of the services.
+
+\Paragraph{PeerHood functional characteristics}
+%
+Realization of the fact how all PeerHood components are functioning enables to define a set of functional characteristics of the project. 
+%
+The charactestics affecting successul each PeerHood goal achievement are given in \InReferenceToTable{peerhood_assets}: proactivity, connectivity, and reactivity. 
+%
+Their analysis enables to define components of information security concering PeerHood. 
+
+\TableFigure{PeerHood functional characteristics}{peerhood_assets} {
+	\begin{tabular}{ | p{4cm} | p{10cm} | }
+	  \hline                       
+	  \Bold{Goal} & \Bold{Characteristics} \\ \hline
+	  Connectivity & data transfer, retrieving of up-to-date information about devices in the network environment (using different network technologies) \\ \hline
+	  Proactivity & retrieving of up-to-date information about available devices in the network environment data exchange between devices,  simultaneous serving of several clients (local or remote) \\ \hline
+	  Reactivity & retrieving of up-to-date information about available devices in the network environment (local or remote), user data transfer, user control \\ \hline
+	\end{tabular}
+}
+
+\Paragraph{PeerHood security components}
+%
+From the security point of view, influence on each functional characteristic is \T{arisen} depending on it's nature. 
+%
+It depends on the fact how the characteristic is related to each CIA Triad principle: availability, confidentiality, and integrity. 
+
+\Paragraph{Availability concering PeerHood}
+%
+Availability is related to the following functional characteristics: retrieving of up-to-date information about devices and services in the network environment, simultaneous serving of several clients, as well as user control. 
+%
+It can be explained by the fact that fault-tolerance of these characteristics is related to the fact of a possibility of information retrieving, user control, simultaneous serving of several clients. 
+
+\Paragraph{Confidentiality concerning PeerHood}
+%
+Confidentiality is related to the following functional characteristics: data transfer between both the system components and devices. 
+%
+According to PeerHood concept, sent user data are transferred on all levels of the application (middleware modules, network plug-ins, network). 
+%
+Thus there is a possibility to intercept the data. 
+
+\Paragraph{Integrity concerning PeerHood}
+%
+Integrity is related to the all functional characteristics except user control and simultaneous serving of several clients. 
+%
+They are related to user data transfer or information about services and devices. 
+%
+Thus there is a possibility of their modification, fabrication, and other types of attacks. 
+
+\Paragraph{Access to system and user data}
+%
+It should be noted that each PeerHood component can potentionally have an access to system files, including user data. 
+%
+This facut in its turn also affects the project security because the data can be corrupted or hijacked. 
+%
+Thus a potentional access to system files is related to the problem of their integrity and confidentiality. 
+
+\Paragraph{Transition to PeerHood risk modeling}
+%
+Violation of any CIA Triad principle considered above leads to PeerHood security non-assurance. 
+%
+There is a lot of security risks that affects the each principle. 
