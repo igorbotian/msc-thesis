@@ -1,1 +1,54 @@
-\TODO{Results}
+\Paragraph{Which software security vulnerabilities PeerHood contains}
+%
+PeerHood security analysis showed that the project contains security vulnerabilities. 
+%
+These are as follows:
+\begin{itemize}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item non-safe access rights assigned to the configuration file
+	\item lack of security mechanisms
+	\item data is transferred between devices in unencrypted form
+	\item information about hostname and identifier of a device is transmitted during communication between devices
+	\item violation of PeerHood \Abbreviation{API} classes encapsulation
+	\item lack of input data checking in all entry points of the project
+\end{itemize}
+
+\Paragraph{Are PeerHood functional characteristics violated}
+%
+The fact that PeerHood contains the security vulnerabilities listed above influences on it's functioning. 
+%
+It may lead to violation of the following PeerHood functional characteristics: 
+\begin{itemize}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item data transferability between devices
+	\item confidentiality and integrity of transferred data
+
+	\item availability, confidentiality, and integrity of up-to-date information about devices in the network environment
+	\item possibility of user data exchange and exchange of information about available devices in the network environment
+
+	\item availability, confidentiality, and integrity of up-to-date information about available services in the network environment
+	\item possibility of exchange between devices of information about available services in the network environment
+
+	\item possibility of user data transfer between devices
+	\item confidentiality and integrity of user data transferred between devices
+\end{itemize}
+
+\Paragraph{Violation of security principles and security requirements to PeerHood}
+%
+Violation of the functional characteristics listed above leads to violation of all components of PeerHood security: integrity, availability, and confidentiality. 
+%
+This in turn leads to apperance of a threat to violation of functional requirements to PeerHood. 
+
+\Paragraph{PeerHood goals violation}
+%
+Thus, violation of functional requirements to PeerHood leads to appearance of threats to non-conformances \T{of} the project goals. 
+%
+And this in turn negatively influences on it's fault-tolerance. 
+%
+Thus one can concludes that PeerHood is non-secure software. 
