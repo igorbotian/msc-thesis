@@ -1,1 +1,114 @@
-\TODO{classification}
+\Paragraph{Growth of a number of vulnerabilities}
+%
+According to the CERT data for the period from 1995 to QIII-2008 \Reference{CERTStatistics2008}, a number of discovered software security vulnerabilities constantly increases (see \ReferenceToFigure{software_security_vulnerabilities_reported_to_cert}). 
+%
+The fact demonstates that a risk of new attacks performance rises permamently. 
+%
+This leads to growth of software security assurance in general. 
+
+\ReproducedImageFigure{Total number of vulnerabilities reported to CERT}{software_security_vulnerabilities_reported_to_cert}{CERTStatistics2008}
+
+\Paragraph{Security vulnerability classification}
+%
+The consequence of the continued new vulnerability discovery growth for the last 20 years is appearance of a great number of classifications. 
+%
+A purpose of each such classification is to help a software developer and a securirty specialist to study common programming errors which affect software security \Reference{McGraw2006}. 
+%
+The first classifications became to apparent as long ago as 1970s, when the software security problem only appeared. 
+%
+At this moment the most widely used classifications are the following: OWASP \Reference{OWASPWebTop10}, Seven Pernicious Kingdoms \Reference{Tsipenyuk2005}, Fortify Taxonomy of Software Security Errors \Reference{FortifyTaxonomy2009}, and others. 
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{General classification}{software_security_vulnerabilities_general_classification}
+
+\Paragraph{How vulnerabilities are classified}
+%
+Classifying software security vulnerabilities, a specialist investigates a way, at what moment, and in which parts of the system each vulnerability appears \Reference{Landwehr1994} \Reference{Dowd2006} \Reference{Landwehr1993}. 
+%
+Thus the vulnerabilities can be classified in general by their origin, moment of appearance, and location. 
+%
+Also, the same vulnerability can be classified by several criterions. 
+
+\Paragraph{Classification by origin}
+%
+Vulnerabilities are classified by origin on the basis of a way how they appear in the system, and the classification is closely related to software development lifecycle stages. 
+%
+By this criterion vulnerabilities may appear in the system during making requirements, the specification development, code writing, or deployment \Reference{Landwehr1994} \Reference{Dowd2006}. 
+
+\Paragraph{Classification by location}
+%
+Vulnerabilities also can be classified by their location in the system \Reference{Landwehr1993}. 
+%
+They may appear in \Abbreviation{OS} components, applications, or third-party modules. 
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Seven Pernicious Kingdoms}{software_security_vulnerabilities_seven_pernicious_kingdoms}
+
+\Paragraph{Seven Pernicious Kingdoms}
+%
+One of the most well-known and widely used vulnerability classifications, called Seven Pernicious Kingdoms, has been developed by Gary McGraw \Reference{Goertzel2007} \Reference{McGraw2006} \Reference{Tsipenyuk2005}. 
+%
+According to the specification, all vulnerabilities are considered as commong programming errors from attacker's point of view, not developer's. 
+%
+It's the main advantage states on the fact that all vulnerabilities of this category can be easily discovered using automatic tools. 
+%
+The main disadvantage is it's incompleteness because it contains only known vulnerabilities. 
+%
+In this classification all vulnerabilities are divided by the seven categories, called kingdoms by the author: 
+\begin{description}
+	\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parsep}{0pt}%
+
+	\item[Input data check and representation.] Buffer overflow, shellcode injection, \Abbreviation{XSS}, format string vulnerabilities, integer overflow, invalid pointer value, SQL injection, relative file path use, and others. 
+
+	\item[Improper API use.] Violation of an \Abbreviation{API} contract, incorrect exception handling stategy, lack of returning values check, and so on.
+
+	\item[Security mechanisms.] Full or particular lack of security mechanisms: access control, authorization, authentification, and others.
+
+	\item[Time and state.] Lack or incorrect use of synchronization primitives, race conditions, deadlock, and others. 
+	
+	\item[Errors.] Lack of error handling strategy or it's incorrectness, double free of a memory block, memory leakage, NULL pointer dereferencing, and others.
+	
+	\item[Encapsulation.] Important information disclosure, not enough knowledge of \Abbreviation{OOP} basics.
+	
+	\item[Software environment.] Incorrect set of file access rights, keeping of unencrypted passwords or other confidential information. 
+\end{description}
+
+% -------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Vulnerability databases}{software_security_vulnerabilities_databases}
+
+\Paragraph{Vulnerability databases}
+%
+All existing vulnerability classifications are used in structure of vulnerability databases. 
+%
+At this moment there are several such kind of databases. 
+%
+The most well-known are ICAT \Reference{ICAT}, CWE \Reference{CWE}, BugTraq \Reference{BugTraq}, and a number of others. 
+%
+Such diversity leads to their redundancy. 
+%
+On one hand, information about vulnerability may be duplicated in each database. 
+%
+On another hand, it is necessary to utilize as more as possible databases to get comprehensive information. 
+%
+Moreover, each of the databases listed above has it's own vulnerability classification. 
+
+\Paragraph{The most dangerous vulnerabilities}
+%
+It can be said that the most important disadvantage of such kind of databases existence and utilization is a possibility to make statistical calculations: which vulnerabilities are appeared most often, which of them are the most urgent, an so on. 
+%
+Due this fact it is possible to get information about which of them are the most dangerous. 
+
+\Paragraph{The most dangerous vulnerabilities according to the CWE}
+%
+For instance, according to the CWE, all vulnerabilities are classified by three categories: unsafe interaction between the system components, risky resource management, and weak protection mechanism \Reference{CWETop25DangerousErrors2011}. 
+%
+Vulnerabilities of the first category are related to unsafety of used data transfer methods both between components of the application and between the application and it's software environment. 
+%
+Vulnerabilities of the second category are related to unsafe allocation, utilization and deallocation of system resources. 
+%
+Vulnerabilities of the third category are related to an incorrect selection of protection techniques or even lack of them. 
