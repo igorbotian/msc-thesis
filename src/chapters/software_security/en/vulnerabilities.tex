@@ -1,1 +1,444 @@
-\TODO{vulnerabilities}
+\Paragraph{Notion of programming error}
+%
+Developers often make errors during software development. 
+%
+The errors may appear on any software development lifecycle stage: in requirements, at design time, during writing the code, testing, or deployment. 
+%
+In common words, an error is an human's action that leads to incorrect results (for example, software that contains some defects) \Reference{Landwehr1994}. 
+%
+The consequence of any software error existence is the fact that defects appear in this software. 
+%
+The defects are incorrect instruction, process, or data definition in a computer program \Reference{Landwehr1994}. 
+%
+A defect in it's turn can bring to a fault. 
+%
+Fault is an impossibility of a software or it's individual component to perform needed operations according to the specification \Reference{Landwehr1994}. 
+
+\Paragraph{Why errors become to apparent}
+%
+Error related to security may become to apparent because of a number of reasons. 
+%
+It can be both lack of developers' motivation or knowledge and lack of utilized software security assurance technolody \Reference{Goertzel2007}. 
+%
+Graff marks out the following three factors influenced on lack of software security assurance by a developer: technical, psychological, and ordinary \Reference{Graff2003}. 
+%
+The technological factors are related to complexity of modern software in the first place. 
+%
+The psychological factors are related to incorrect security risk estimation and difference of developer's and attacker's attitude to a software. 
+%
+Finally, ordinary factors are the following: a source of third-party source code, existence of strict term of software development lifecycle, lack of security requirements. 
+
+\Paragraph{Notion of security vulnerability}
+%
+But not each error made by a developer affects security of software developing by him. 
+%
+Vulnerability is a such error in software specification, development, or configuration, that can lead to security policy violation and further exploiting of the software \Reference{RFC4949} \Reference{McGraw2004} \Reference{Heelan2009} \Reference{Alhazmi2006}. 
+%
+According to the Dowd's research results, the majority of vulnerabilities is related to improper input data handling, a trust level between the system's components, \Abbreviation{API}, interaction with software environment and other applications \Reference{Dowd2006}. 
+
+\Paragraph{Vulnerabilities closely related to C and C++ languages}
+%
+The majority of known at this moment vulnerabilities is discovered in software written in middle level languages \WebSite{ICAT} \WebSite{CWE} \WebSite{BugTraq}. 
+%
+On one hand, it can be explained by the fact that the languages provide less number of restrictions by design compared to more high level languages \Reference{Seacord2005}. 
+%
+For instance, middle level languages are characterized by manual memory management. 
+%
+On other hand, such languages as C \Reference{CStandard1999} and C++ \Reference{CppStandard2003} are the most popular programming languages at this moment \Reference{TIOBE}. 
+
+\Paragraph{The risk related to middle level languages}
+%
+But even utilizing more high level languages, one can not be sured that a developed software is secure because runtime environments of high level languages are written themself in a middle level language (PHP \WebSite{PHP}, Python \WebSite{Python}, Java \WebSite{JVM}, and others). 
+%
+So if a runtime environment has a vulnerability, then an appropriate high security risk becomes to apparent in all software systems based on this runtime environment. 
+
+\Paragraph{The most dangerous vulnerabilities}
+%
+Most often vulnerabilities specific to C/C++ languages are consequences of errors related to inadequate understanding by a developer of that how data is allocated in memory. 
+%
+The most dangerous and frequent (according to the CERT \Reference{CERTStatistics2008}) vulnerabilities are considered in the following subsections. 
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Integer errors}{software_security_vulnerabilities_integer_errors}
+
+\Paragraph{Description}
+%
+Almost all known programming languages are exposed to integer errors. 
+%
+The problem consists in the fact that integer data type has a limited number of it's possible values, so it has it's maximum and minimum values. 
+%
+The reason of the fact is architectural because each number is represented in memory as fixed block of bits \Reference{Chess2007}. 
+
+\Paragraph{Attacks}
+%
+There are several types of errors related to integer data types: integer overflow, sign error, and cast error \Reference{Seacord2005} \Reference{Chess2007} \Reference{Younan2004} \Reference{Chase2005} \Reference{CERTCCSecureCodingStandard2007}. 
+%
+In general case the may lead only to denial of service or logical errors. 
+%
+It means that they can'be exploited themself but they can lead to appearance of other types of vulnerabilities, such as buffer overflow (see \ReferenceToSection{software_security_vulnerabilities_buffer_overflow}) \Reference{Howard2005}. 
+
+\Paragraph{Example}
+%
+\ReferenceToAppendix{appendix_vulnerable_program} contains an example of a program that checks whether an entered number is ordinary or not. 
+%
+This program contains a number of vulnerabilities that can be utilized by a malicious person. 
+%
+One of them is related to the integer error. 
+%
+A number entered by a user is stored in \SourceCode{number} variable that has \SourceCode{unsigned char} type, and it's maximum value equals to \SourceCode{UCHAR\_MAX} (255). 
+%
+If the user enters a number greater than the maximum, then the \SourceCode{number} variable is overflowed. 
+%
+In this program it affects only to it's correctness. 
+%
+But in other cases this type of errors may lead to change of software normal state, denial of service, or confidential information leakage. 
+
+\Paragraph{Measures to prevent}
+%
+To find an integer error the following methods can be used: to verify source code, to utilize static analysis tools, to utilize facilities provided by compilers \Reference{Younan2004} \Reference{Howard2005}. 
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Buffer overflow}{software_security_vulnerabilities_buffer_overflow}
+
+\Paragraph{Description}
+%
+Buffer overflow is considered as most dangerous and frequent vulnerability related to the middle level languages \Reference{Howard2005}. 
+%
+In such languages built-in facilities aimed at array bound checking are not provided, thus operations related to arrays are possible unsafe. 
+
+\Paragraph{Attacks}
+%
+Most often the attacker's purpose of buffer overflow is to execute special code \Reference{McGraw2004}. 
+%
+For this he firstly prepares special input data that leads to buffer overflow, then gains control of the system, and executes needed operations. 
+
+\Paragraph{Example}
+%
+In code of the program represented in \InReferenceToAppendix{appendix_vulnerable_program} threre is an error that may lead to buffer overflow. 
+%
+If a user enters a number greater than 9999 (it means that the number has 5 or more digits), then it leads to overflow of the \SourceCode{number\_buf\_size} buffer. 
+%
+Presence of such error gives a malicious person to gain control over the program and execute a consequence of operations. 
+%
+It is most dangerous in the case when a program-victim has privileged access rights. 
+%
+Software gain control tecnhiques related to buffer overflow are explained in detail by Erickson and others \Reference{Erickson2003} \Reference{Lhee2003}. 
+
+\Paragraph{Measures to prevent}
+%
+To discover this type of vulnerability, the following methods can be used: source code inspection, utilization of compiler facilities, performing stress testing, utilization of automatic code analysis tools \Reference{Younan2004} \Reference{Chase2005} \Reference{Howard2005}. 
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Format string vulnerabilities}{software_security_vulnerabilities_format_strings}
+
+\Paragraph{Description}
+%
+Cause of format string vulnerabilities appearance is input data use without any checking. 
+%
+While formatted output functions, for instance \SourceCode{sprintf()} of C programming language, that wrute data to an array of characters are used, it is supposed that the buffer has intenionally big size \Reference{CERTCCSecureCodingStandard2007}. 
+%
+It may lead to it's overflow. 
+
+\Paragraph{Attack}
+%
+In C/C++ languages these vulnerabilities can be used by a malicious person to write some data to arbitrary blocks of memory or to carry out information leakage \Reference{Howard2005}. 
+%
+An application can be exploited to bring it into crash, to get stack contents, to get memory contents, or to rewrite the value of a memory block \Reference{Seacord2005} \Reference{Lhee2003} \Reference{Gallagher2006}. 
+
+\Paragraph{Example}
+%
+In code of the program represented in \InReferenceToAppendix{appendix_vulnerable_program} there is a vulnerability relatedt to a format string. 
+%
+\SourceCode{printf()} format string function is used to write output data. 
+%
+The first argument of this function is omitted, but it defines a format of output string. 
+%
+It permits an attacker to define it's own format, and an appropriate input data in this case can change the normal state of the program and even execute any consequence of operations \Reference{Erickson2003}. 
+
+\Paragraph{Measures to prevent}
+%
+To detect such kind of vulnerabilities the following methods are applied \Reference{Howard2005} \Reference{Lhee2003}: 
+\begin{itemize}
+	\item inspection of all blocks of code that use format output functions
+	\item utilization of automatic static analysis tools (RATS \WebSite{RATS}, Flawfinder \WebSite{Flawfinder}, PScan \WebSite{PScan}, and others) 
+	\item utilization of additional libraries that increase safety (FormatGuard \WebSite{FormatGuard}, libformat \WebSite{Libformat}, libsafe \WebSite{Libsafe}, and others)
+\end{itemize}
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Pointer vulnerabilities}{software_security_vulnerabilities_pointers}
+
+\Paragraph{Description}
+%
+Pointer is a variable that stores a function address, an array's element or another type of data structure \Reference{Seacord2005}. 
+%
+It can be quite difficult to use pointers because they are error prone by their nature. 
+%
+The most frequent error is double free of a memory block pointed by a pointer \Reference{CERTCCSecureCodingStandard2007}. 
+%
+Also there are other types of pointer vulnerabilities, such as pointers to data or functions. 
+
+\Paragraph{Attacks}
+%
+Pointer subterfuge is used as a general term for exploits that change value of a pointer \Reference{Seacord2005}. 
+%
+Pointers to data also can be changed to execute arbitrary code. 
+%
+If a pointer to data is used as a target for the following assignment, then an attacker may control it's address to change values of other blocks of memory \Reference{Seacord2005}. 
+
+\Paragraph{Example}
+%
+In code of the program represented in \InReferenceToAppendix{appendix_vulnerable_program}, an input data entered by a user are stored in a array. 
+%
+Access to them is performed via \SourceCode{number\_buf\_size} pointer. 
+%
+If it has an appropriate value, then an attacker may perform arbitrary operations. 
+%
+Exploiting is directly performed using this pointer to data. 
+
+\Paragraph{Measures to prevent}
+%
+The main measure to prevent this kind of vulnerabilities is thorough revision of all blocks of code that use pointers. 
+%
+Additional measure is to use special compiler facilities or it's extensions that are aimed at search of this kind of errors. 
+%
+\IT{Mudflap} is an example of such kind of technical tool \Reference{Eigler2003}. 
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Incorrect error and exception handling}{software_security_vulnerabilities_errors_and_exceptions}
+
+\Paragraph{Description}
+%
+The error can lead to crash or denial of service of software, as well as transition to an unsafe state and other appearance of other types of vulnerabilities \Reference{Howard2005} \Reference{AppleSecureCodingGuide2010}. 
+%
+In general, it may appear in the following cases \Reference{McConnell2004}:
+\begin{itemize}
+	\item an application prints too much information in an error message
+	\item error ignoring
+	\item incorrect error handling
+	\item handling of not all possible exceptions
+	\item exception handling on an inappropriate abstraction level
+\end{itemize}
+
+\Paragraph{Example}
+%
+In the listing below a fragment of code written in Java language represents \Abbreviation{API} for providing information about range of goods in an internet-store. 
+%
+The program contains an error related to wrong choice of an abstraction level of the exception that the code may raise. 
+%
+In a signature of \SourceCode{getTShirts()} method, information about how the method may raise a \SourceCode{SQLException} exception is given. 
+%
+This exception is a part of standard Java distribution package. 
+%
+It is used to notify about database errors. 
+%
+From the security point of view such kind of signature is incorrect. 
+%
+At first, a malicious person may know details about the inner program mechanism, but it can not be allowed. 
+%
+At second, using the error message of the exception he may retrieve important information that makes him easier to intrude to the system. 
+
+\Listing{Example of an API element that declares an exception with incorrect abstraction level}
+	{Java}
+	{listings/vulnerabilities/exceptions.java}
+
+\Paragraph{Measures to prevent}
+%
+Such kind of vulnerabilities depend strongly on a context, so they can be found and eliminated only by thorough code inspection. 
+%
+To eleminate them the following techniques can be used \Reference{Howard2005}:
+\begin{itemize}
+	\item proper handling of all possible exceptions with appropriate abstraction levels
+	\item checking of returned values if they can signal about errors
+	\item utilization of logging facilities instead of brief information about an axception inclusion into a message about error
+\end{itemize}
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Information leakage}{software_security_vulnerabilities_information_leakage}
+
+\Paragraph{Description}
+%
+Information leakage can help a malicious person to perform an attack to the system or data \Reference{Howard2005}. 
+%
+System configuration and other type of important information can be included to messages about errors delivered to a user \Reference{Chase2005}. 
+%
+Confidential data can be stored unencrypted both in source code and in an application's resources that are readable for a user \Reference{Howard2005}.
+
+\Paragraph{Example}
+%
+In the listing below a fragment of code of an internet-store is represented. 
+%
+The \SourceCode{getTShirts()} method is not safe because it contains a vulnerabilitity that can lead to information leakage. 
+%
+If the operation related to retrieving of details about goods from a database fails, then the method raises an exception with \SourceCode{FanStoreException} type. 
+%
+But beside text message about the error, the exception stores information about causes of the operation failure. 
+%
+It is not safe because a malicious person has access to information about system configuration and details about inner details of the system. 
+
+%\newpage
+\Listing{Example of code that contains important information leakage}
+	{Java}
+	{listings/vulnerabilities/information_leakage.java}
+
+\Paragraph{Measures to prevent}
+%
+The following measures can be used to prevent such kind of vulnerabilities: 
+%
+\begin{itemize}
+	\item utilization of logging facilities for storing detail information about errors; messages about errors do not contain this information
+	\item storing confidential information in encrypted form
+	\item utilization of safe channels to perform interprocess communication
+	\item data transmission in encrypted form if the channels are not established
+\end{itemize}
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{File system}{software_security_vulnerabilities_file_system}
+
+\Paragraph{Description}
+%
+Such kind of security problems is closely related to interaction between applications and file system. 
+%
+From the user point of view, each file has own contents and a set of attributes (name, information about owner, access rights, and others). 
+%
+Thus security risks related to file system utilization are related not only to possibility of read and alteration of a file contents but also with correctness of attributes assigned to this file \Reference{Drepper2009}. 
+
+\Paragraph{Vulnerabilities}
+%
+A number of vulnerabilities is related to unsafe file system utilization. 
+%
+File attributes assigned incorrectly may lead to unathorized read or alteration of the file \Reference{Seacord2008}. 
+%
+When a file is used as a shared resource by several processes or threads, it may lead to appearance of a race condition (see \ReferenceToSection{software_security_vulnerabilities_race_conditions}) \Reference{Howard2005} \Reference{AppleSecureCodingGuide2010}. 
+%
+Finally, a file can contain confidential information \Reference{Seacord2008}. 
+%
+Thus, one can conclude that an application is responsible for contents and access rights of files used by this application. 
+
+\Paragraph{Measures to prevent}
+%
+To prevent such kind of vulnerabilities the following activities can be performed: to store confidential information in encrypted form, to set access rights to all used files correctly, to consider files as potentionally shared resources in case of multitasking environment. 
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Input data checking}{software_security_vulnerabilities_input_data}
+
+\Paragraph{Description}
+%
+From an attacker point of view, his interaction with attacked software is occuring via input data handling. 
+%
+For every application there are several input data sources. 
+%
+Such kind of sources can be standard input, file system, software environment, user interface, and others \Reference{AppleSecureCodingGuide2010} \Reference{Wheeler2003}. 
+
+\Paragraph{Attack}
+%
+The majority of attacks is carried out using specially formed input data for an attacked application \Reference{Seacord2005}. 
+%
+As a result of an error related to the input data handling, the application brings to an unsafe state and can perform operations needed for a malicious person. 
+
+\Paragraph{Example}
+%
+Code of the program represented in \InReferenceToAppendix{appendix_vulnerable_program} contains buffer overflow and format string vulnerabilities. 
+%
+Checking of input data entered by user can decrease probability of these vulnerabilities exploitation and even prevent them. 
+
+\Paragraph{Measures to prevent}
+%
+The main measure to prevent such kind of vulnerability is input data checking on all application levels, realizing ``security in depth'' principle \Reference{Viega2003}. 
+%
+The principle of input data checking on all application levels is also known as secure programming technique \Reference{McConnell2004}. 
+%
+Input data safety assurance consists in the following activities \Reference{Chess2007}: 
+\begin{enumerate}
+	\item identification of all application input data sources on all levels
+	\item selection of appropriate strategy to recognize incorrect data on each level of the application
+	\item attempt to decrease possibility of incorrect data input through \Abbreviation{API} or other sources
+\end{enumerate}
+
+\Paragraph{Advantages and disadvantages}
+%
+However secure programming technique has it'w own number of advantages and disadvantages \Reference{McConnell2004}. 
+%
+The main disadvantages are the following: increase of software complexity and decrease of it's execution efficiency after putting into operation of input data checking blocks. 
+%
+And the code can contain errors at that. 
+%
+The obvious advantage consists in radip error dection and elimination. 
+
+% ------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Race conditions}{software_security_vulnerabilities_race_conditions}
+
+\Paragraph{Concept}
+%
+Some operations require atomicity, continuity of their execution \Reference{Eckel2006}. 
+%
+During their execution they can not and should not be interrupted by other threads. 
+%
+Errors happen when condition of atomicity in an application is violated \Reference{Dowd2006}. 
+%
+It happens in the case of parallel execution of such kind of operations. 
+%
+Race condition is a design error of multitasking software, when success of operation execution depends on the order it's blocks of code are executed \Reference{Netzer1992}. 
+%
+In this case condition of atomicity is violated. 
+
+\Paragraph{Description in details}
+%
+Race condition does not depend on programming language. 
+%
+More often it happens in a moment when two different executing threads or processes have possibility to alter some specified shared resource, and because of this fact they intervene themselves \Reference{Howard2005} \Reference{AppleSecureCodingGuide2010}. 
+%
+A shared memory block, a database, a file, or event a variable can be used as such kind of shared resources. 
+
+\Paragraph{Attack}
+%
+Exploitation of applications that contain race condition vulnerability occurs by the means of shared resource alteration \Reference{Stallings2008}. 
+%
+And the attack is carried out in specified time window at that. 
+%
+In this moment these resources can be altered by developer's error. 
+%
+Consequences of such attacks are the following: destruction of a shared resource, crash of attacked application, data fabrication and it's further handling by a victim at the level of it's privilegies. 
+
+\Paragraph{Example}
+%
+In the listing below a fragment of code written in Java language uses some shared resource. 
+%
+This fragment contains a race condition error. 
+%
+Originally, after each checking of the resource availability (\SourceCode{isResourceAvailable()} method) it is possible to handle the resource data (\SourceCode{processResourceData()} method). 
+%
+From the security point of view, it is not correct because there is a gap between execution of these methods. 
+%
+At this moment thread manager may interrupt execution of this block of code. 
+%
+And after it's resuming the following situation may occur: resource data is not yet ready to be processed but this operation will be executed. 
+
+%\newpage
+\Listing{Example of race condition}
+	{Java}{listings/vulnerabilities/race_condition.c}
+
+\Paragraph{Measures to prevent}
+%
+To provide correct execution of an application in a multitasking environment, it is necessary to fulfill one of the following conditions depending on the context \Reference{Dowd2006} \Reference{Netzer1992}: 
+\begin{itemize}
+	\item \A state of a process should not depend on \A state of a shared resource
+	\item each shared resource should be read-only
+	\item access to each shared resource should be synchronized
+\end{itemize}
+
+\Paragraph{Additional measure to prevent}
+%
+Additional measure to find and prevent race conditions related to file system is utilization of static and dynamic tools \Reference{Seacord2005}. 
+%
+The most well-known such static analysis tools are the following: \IT{ITS4} \WebSite{ITS4}, \IT{PVS Studio} \WebSite{PVSStudio}, and \IT{RATS} \WebSite{RATS}.
+%
+And the most well-known such dynamic analysis tools are \IT{Helgrind} \WebSite{Helgrind}, and \IT{Inspector XE} \WebSite{InspectorXE}. 
