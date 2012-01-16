@@ -109,11 +109,11 @@ The goal of static analysis is a search of source code level security vulnerabil
 %
 It conists in utilization of automatic tools intended for search of programming errors affecting the application security. 
 %
-To carry out PeerHood static analysis the following tools are used: Cppcheck, RATS, GCC compiler features related to security. 
+To carry out PeerHood static analysis the following tools are used: \IT{Cppcheck}, \IT{RATS}, \IT{GCC} compiler features related to security. 
 
 \Paragraph{GCC}
 %
-GCC compiler allows to perform search of format string vulnerabilities, array bounds checking, detection of uninitialized data, and others types of errors at compile time \WebSite{GCC}. 
+\IT{GCC} compiler allows to perform search of format string vulnerabilities, array bounds checking, detection of uninitialized data, and others types of errors at compile time \WebSite{GCC}. 
 %
 To perform this operations, the tool is executed with the special \SourceCode{-Wall} argument which switches execution of such operations on. 
 %
@@ -123,7 +123,7 @@ This says that vulnerabilities are not found using this tool.
 
 \Paragraph{Cppcheck}
 %
-Cppcheck is intended for searching the following types of errors: array bounds crossing, exception safety, memory leakage, uninitalized variable values, and others \WebSite{Cppcheck}. 
+\IT{Cppcheck} is intended for searching the following types of errors: array bounds crossing, exception safety, memory leakage, uninitalized variable values, and others \WebSite{Cppcheck}. 
 %
 Utilization of this tools concerning PeerHood has not found any errors (see \ReferenceToAppendix{appendix_cppcheck_output}). 
 %
@@ -131,7 +131,7 @@ Only some reccomendations are given but they are not related to security.
 
 \Paragraph{RATS}
 %
-RATS is intended for search of buffer overflow vulnerabilities, race conditions, and other errors \WebSite{RATS}. 
+\IT{RATS} is intended for search of buffer overflow vulnerabilities, race conditions, and other errors \WebSite{RATS}. 
 %
 This tools gives only several security warnings but source code revision of the appropriate blocks of the code does not detect any errors (see \ReferenceToAppendix{appendix_rats_output}). 
 %
@@ -165,11 +165,11 @@ It consists in utilization of automatic tools intended for abnormal activity det
 %
 Using these tools the following runtime errors can be detected: buffer overflow, format string vulnerabilies, memory leakage, and others. 
 %
-To perform PeerHood dynamic analysis Valgrind and Helgrind tools are utilized. 
+To perform PeerHood dynamic analysis \IT{Valgrind} and \IT{Helgrind} tools are utilized. 
 
 \Paragraph{Valgrind}
 %
-Valgrind tool is intended to detect runtime errors listed above and errors related to memory allocation \WebSite{Valgrind}. 
+\IT{Valgrind} tool is intended to detect runtime errors listed above and errors related to memory allocation \WebSite{Valgrind}. 
 %
 Utilization of the tools has not detected any abnormal activities or runtime errors (see \ReferenceToAppendix{appendix_valgrind_output}). 
 %
@@ -179,7 +179,7 @@ But the appropriate PeerHood source code revision has shown that the leakage is 
 
 \Paragraph{Helgrind}
 %
-Helgring tools is intended for synchronization error detection, including race conditions \WebSite{Helgrind}. 
+\IT{Helgring} tools is intended for synchronization error detection, including race conditions \WebSite{Helgrind}. 
 %
 Utilization of the tools has not detected any errors related to incorrect use of synchronization primitives in the application (\ReferenceToAppendix{appendix_helgrind_output}). 
 %
