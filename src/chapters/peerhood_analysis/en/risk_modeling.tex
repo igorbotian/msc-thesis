@@ -1,1 +1,164 @@
-\TODO{Risk modeling}
+\Paragraph{Purpose of risk analysis}
+%
+PeerHood specification analysis enables to determine what composes a functionality of the project. 
+%
+But it is necessary to investigate what influences on it's fault-tolerance. 
+%
+PeerHood security risk analysis allows to do it. 
+
+\Paragraph{PeerHood architecture analysis and deployment diagrams}
+%
+Knowing PeerHood functional characteristics it is necessary to determine how they are implemented in the project. 
+%
+According to it's architecture, PeerHood is comprised of the following components: a daemon, a shared library and a set of network plug-ins (see \ReferenceToSection{peerhood_architecture}). 
+%
+How they are implemented and interact with each other it is shown on the PeerHood deployment diagram (\ReferenceToFigure{peerhood_deployment_diagram}). 
+
+\ImageFigure{PeerHood deployment diagram}{peerhood_deployment_diagram}
+
+\Paragraph{What each component is responsible for}
+%
+User applications via services interact with library by the use of specially designed \Abbreviation{API}. 
+%
+On one hand, the library itself utilizes common components to register a service, to perform PeerHood user control, and to perform other activities. 
+%
+On another hand, the library interacts with the PeerHood local daemon. 
+%
+The daemon utilizes available network plug-ins to interact with other mobile devices and also it utilizes common components to process the configuration. 
+
+\Paragraph{Pair of components that interacts with each other}
+%
+Thus it is possible to compose the following pairs of interacting with each other components. 
+%
+These are as follows: 
+\begin{itemize}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item Network plug-in -- Network plug-in
+	\item Daemon -- Network plug-in
+	\item Daemon -- Common components
+	\item Daemon -- Daemon
+	\item Common components -- File system
+	\item User library -- Common components
+	\item User library -- Daemon
+	\item User application -- User library
+\end{itemize}
+
+\Paragraph{Transition to analysis of each pair}
+%
+Each of the pairs is responsible for support of some functional characteristic, so it is associated with some PeerHood security component. 
+%
+Interaction analysis of each pair and security risks related to the pair are given below. 
+
+\Paragraph{Network plug-in -- Network plug-in}
+%
+Network plug-ins are utilized to support a specified network technology and they are responsible for support of connection between devices, as well as data transfer between them. 
+%
+From the security point of view, the following security risks are related to this fact. 
+%
+Transferred data can my important, thus they can be attacked; they can be hijacked, corrupted, fabricated, and so on. 
+%
+They should be protected on the level of a utilizing network technology or a protocol, as well as by encryption. 
+%
+On another hand, it is possible to attack a utilizing network technology itself. 
+%
+Thus, if an implementation of such connection is not fault-tolerance, then it may lead to violation of all CIA Triad principles concerning PeerHood. 
+
+\Paragraph{Daemon -- Network plug-in}
+%
+The daemon performs interaction with network plug-ins via \Abbreviation{API} for data exchange. 
+%
+They data can be various: user data, information about available devices and services in a network environment. 
+%
+Thus each network plug-in should be trusted for the daemon. 
+%
+From the security point of view, there is a risk of malicious operations performed by a plug-in and targeted to the daemon. 
+%
+It can lead to violation of integrity and confidentiality principles concering PeerHood. 
+
+\Paragraph{Daemon, user library -- Common components}
+%
+PeerHood is an configurable software. 
+%
+Configuration software facilities are provided by the common components. 
+%
+From the security point of view, data received from the components may contain incorrect values. 
+%
+It can influence on correctness of PeerHood functioning, so it can lead to violation of availabilty principle concerning PeerHood. 
+
+\Paragraph{Daemon, user library -- Daemon}
+%
+Interaction between daemons and between the user library and a daemon is performed via communication through a socket. 
+%
+Transferred data can contain both user data and information about available devices and services in a network environment. 
+%
+From the security point of view, interaction with a daemon functioning on another device can lead to performance of malicious operations targeted to the transferred data. 
+%
+Also the following alternative is possible. 
+%
+An application masking as a remote daemon or a user library can attack the daemon itself to knock it out. 
+%
+Thus the all CIA Triad principles related to data can be violated concerning PeerHood. 
+
+\Paragraph{Common components -- File system}
+%
+As it was noted above, PeerHood software configuration facility is supported by the common components. 
+%
+The configuring process itself consists in read of a specified configuration file and provision of values storing in the file. 
+%
+In particular, a file system path to network plug-ins is obtained by this way. 
+%
+From the security point of view, there is a possibility to perform unathorized alteration of the configuration file, and it can affect PeerHood fault-tolerance and security. 
+%
+For example, there is a risk of a non-trusted plug-in loading, an the plug-in may perform some malicious operations on transferred data. 
+%
+Thus it leads to violation of integrity and confidentiality principles related to transferred data concering PeerHood. 
+
+\Paragraph{Resume of interacting components analysis}
+%
+In summary, one can conclude that the project has ``vulnerable'' places. 
+%
+The highest possibility of an attack performance is related to the places. 
+%
+They are shown as links between components on the PeerHood deployment diagram (\ReferenceToFigure{peerhood_deployment_diagram}). 
+%
+``Vulnerable'' places are be the following:
+\begin{itemize}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item the configuration file
+	\item the socket used by the daemon to serve several clients
+	\item \Abbreviation{API} for network plug-ins
+	\item \Abbreviation{API} for configuration facilities
+	\item \Abbreviation{API} for user applications
+\end{itemize}
+
+\Paragraph{Taking into account mobility}
+%
+Since PeerHood is aimed at functioning in a mobile environment it is necessary to take into consideration possible security risks related to the environment. 
+%
+A mobile environment is characterized by a risk of performance of malicious operations related to transferred data, confidential user information leakage, or denial of service. 
+
+\Paragraph{Taking into account P2P}
+%
+On the other hand, PeerHood network environment is based on the \Abbreviation{P2P} communication concept. 
+%
+From the security point of view, availability of a service for all other devices in the environment is characterized by a threat of an attack targeted to transferred data, operating services, and the device itself. 
+
+\Paragraph{Conclusions}
+%
+One can conclude that taking into account mobility and \Abbreviation{P2P} of the environment only underlines the significance of the security risks considered in this subsection. 
+%
+Thus this fact concerning PeerHood promotes to growth of a possibility of a transferred data integrity and confidentiality violation, as well as availability of devices in the network environment. 
+
+\Paragraph{Transition to security testing}
+%
+To estimate PeerHood security risks it is necessary to perform it's security testing. 
+%
+It enables to estimate fault-toleance of each PeerHood component. 
+%
+Activities related to security testing are considered in the next subsection. 
