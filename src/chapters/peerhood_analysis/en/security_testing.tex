@@ -1,1 +1,468 @@
-\TODO{Software security testing}
+\Paragraph{The fact of PeerHood source code availability}
+%
+A set of utilized software security testing methods depends on source code availability of a tested application and it's third-party components. 
+%
+PeerHood is an open source software, the source code is available on \Reference{PeerHoodGitorious} (the \Italic{81eeb64} version of \FourDigitsDate{2011}{08}{11} is used for the testing). 
+%
+Thus it is necessary to make a selection of appropriate testing methods of the ones considered in \InReferenceToSection{software_security_analysis}. 
+%
+Because PeerHood source code is available, in the first place it is necessary to examine applicability of black box testing methods. 
+
+% -------------------------------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Testing methods selection}{peerhood_analysis_security_testing_method_choosing}
+
+\Paragraph{Fuzz testing}
+%
+Fuzz testing by its nature is quite cost-based, and the results can be obtained using easier methods, namely using entry points source code revision. 
+%
+For PeerHood the entry points are the ``vulnerable'' places listed in \InReferenceToSection{peerhood_analysis_risk_modeling}. 
+
+\Paragraph{Reverse engineering}
+%
+PeerHood reverse engineering conducting is unnecessary because of the source code availability, and also closed third-party components are not utilized by the project. 
+%
+PeerHood utilizes Qt framework \Reference{Qt} as a platform, thus it can be said that PeerHood security depends of security of this platform. 
+
+\Paragraph{Black box debugging}
+%
+PeerHood black box debugging is also unnecessary for the same reasons. 
+%
+More comprehensive analysis of a way how an application interacts with software environment can be peformed using white box testing methods. 
+
+\Paragraph{Vulnerability scanners}
+%
+Utilization of vulnerability scanners is also unnecessary for the same reasons. 
+%
+More qualitative results can be obtained using source code revision of PeerHood ``vulnerable'' places. 
+%
+Source code revision aimed at error handling mechanisms analysis and checking the ``security in depth'' principle can be performed instead of this method. 
+%
+PeerHood is not so big project. 
+
+\Paragraph{Fault injection}
+%
+On the contrary, resource and component fault injection may be effective. 
+%
+Using this method it is possible to estimate how much PeerHood is fault-tolerant to it's environment faults (resources, third-party component, software environment). 
+
+\Paragraph{Penetration testing}
+%
+Penetration testing method is aimed at estimation of an application fault-tolerance. 
+%
+Risk estimation, ``vulnerable'' places analysis, and search of vulnerabilities put together a set of activities that are used for penetration testing performance. 
+%
+Thus it can be said that PeerHood security analysis implies penetration testing. 
+
+\Paragraph{Property based testing}
+%
+The same can be said about property based testing. 
+%
+PeerHood security testing is aimed at estimation of such characteristics as the CIA Triad principles concerning PeerHood. 
+%
+A detailed list of such characteristics is gived below:
+\begin{itemize}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item availability of data transfer
+	\item confidentiality and integrity of transferred data
+
+	\item availability, confidentiality, and integrity of up-to-date information about devices in the network environment
+	\item availability of exchange of user data and information about available devices between devices in the network environment
+	\item possibility of simultaneous several clients serving
+
+	\item availability, confidentiality, and integrity of up-to-date information about available services in the network environment
+	\item availability of exhange of information about available services between devices in the network environment
+
+	\item possibility of user data exchange between devices
+	\item confidentiality and integrity of user data transferred between devices
+	\item possibility of the system control
+\end{itemize}
+
+\Paragraph{Static and dynamic analysis}
+%
+Static and dynamic analysis conducting is aimed at search of vulnerabilities on source code level and at runtime respectively. 
+%
+Utilization of various tools promotes to more detail analysis of PeerHood. 
+%
+But utilization of these security testing methods does not enable to perform comprehensive analysis of the application. 
+%
+Thus it can be said that conducting of these methods is reasonable and necessary. 
+
+\Paragraph{Source code revision}
+%
+Using automatic security testing methods one can find only a limited number of vulnerabilities. 
+%
+Thus it is necessary to perform source code revision to carry out more comprehensive PeerHood analysis. 
+%
+As it was already noted above, it is especially urgent for the ``vulnerable'' places of PeerHood. 
+
+% -------------------------------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{PeerHood code static analysis}{peerhood_analysis_security_testing_static_analysis}
+
+\Paragraph{Goals}
+%
+The goal of static analysis is a search of source code level security vulnerabilities (see \ReferenceToSection{software_security_analysis_blackbox_testing_techniques_static_code_analysis}). 
+%
+It conists in utilization of automatic tools intended for search of programming errors affecting the application security. 
+%
+To carry out PeerHood static analysis the following tools are used: Cppcheck, RATS, GCC compiler features related to security. 
+
+\Paragraph{GCC}
+%
+GCC compiler allows to perform search of format string vulnerabilities, array bounds checking, detection of uninitialized data, and others types of errors at compile time \WebSite{GCC}. 
+%
+To perform this operations, the tool is executed with the special \SourceCode{-Wall} argument which switches execution of such operations on. 
+%
+PeerHood compilation passes without any errors and warnings. 
+%
+This says that vulnerabilities are not found using this tool. 
+
+\Paragraph{Cppcheck}
+%
+Cppcheck is intended for searching the following types of errors: array bounds crossing, exception safety, memory leakage, uninitalized variable values, and others \WebSite{Cppcheck}. 
+%
+Utilization of this tools concerning PeerHood has not found any errors (see \ReferenceToAppendix{appendix_cppcheck_output}). 
+%
+Only some reccomendations are given but they are not related to security. 
+
+\Paragraph{RATS}
+%
+RATS is intended for search of buffer overflow vulnerabilities, race conditions, and other errors \WebSite{RATS}. 
+%
+This tools gives only several security warnings but source code revision of the appropriate blocks of the code does not detect any errors (see \ReferenceToAppendix{appendix_rats_output}). 
+%
+The first warning is related to a possibility of overflow of the buffer that stores ICMP message data transferred by a network plug-in. 
+%
+Utilization of the buffer is carried out securely. 
+%
+The second warning is related to a possibility of a race condition state when several signals are registering via \SourceCode{signal()} function at the same time. 
+%
+But only signal is registered in the application. 
+%
+The last warning is related to non-safety of the \SourceCode{gethostbyname()} function because a returned by the function value can be fabricated from without. 
+%
+But software environment of the project (platform or \Abbreviation{OS}) is responsible for the safety of this function, not PeerHood itself. 
+
+\Paragraph{Conclusions}
+%
+Thus PeerHood static analysis has not found any security errors on source code level. 
+%
+It can be explained by the fact that the application actively utilizes facilities of the Qt framework. 
+
+% -------------------------------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{PeerHood code dynamic analysis}{peerhood_analysis_security_testing_dynamic_analysis}
+
+\Paragraph{Goals}
+%
+The goal of dynamic code analysis is a search of security vulnerabilities at runtime (see \ReferenceToSection{software_security_analysis_gray_box_techniques_dynamic_code_analysis}). 
+%
+It consists in utilization of automatic tools intended for abnormal activity detection, search of errors related to interaction between a tested application and it's software environment, and detection of other defects affecting security of the application. 
+%
+Using these tools the following runtime errors can be detected: buffer overflow, format string vulnerabilies, memory leakage, and others. 
+%
+To perform PeerHood dynamic analysis Valgrind and Helgrind tools are utilized. 
+
+\Paragraph{Valgrind}
+%
+Valgrind tool is intended to detect runtime errors listed above and errors related to memory allocation \WebSite{Valgrind}. 
+%
+Utilization of the tools has not detected any abnormal activities or runtime errors (see \ReferenceToAppendix{appendix_valgrind_output}). 
+%
+It should be noted that the tools has detected a potentional memory leakage. 
+%
+But the appropriate PeerHood source code revision has shown that the leakage is related to inner mechanism of Qt implementation. 
+
+\Paragraph{Helgrind}
+%
+Helgring tools is intended for synchronization error detection, including race conditions \WebSite{Helgrind}. 
+%
+Utilization of the tools has not detected any errors related to incorrect use of synchronization primitives in the application (\ReferenceToAppendix{appendix_helgrind_output}). 
+%
+The tool, in turn, has detected possible race conditions in many places. 
+%
+But they are related to inner mechanisms of Qt implementation. 
+
+\Paragraph{Conclusions}
+%
+Thus PeerHood dynamic analysis has not detected any runtime errors. 
+%
+However, potentional errors are detected in Qt framework that is used by PeerHood. 
+%
+Hence one can conclude that PeerHood security depends on security of this platform. 
+
+% -------------------------------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Fault injection}{peerhood_analysis_security_testing_fault_injection}
+
+\Paragraph{Goal}
+%
+The goal of fault injection is a tolerance estimation of a tested application when it's component are functioning incorrectly or it's resources are not corrupted (see \ReferenceToSection{software_security_analysis_black_box_techniques_fault_injection}). 
+%
+It conists in fault injection into every component of a tested application, after that the appropriate interaction checking is carried out. 
+
+\Paragraph{Fault injection concerning PeerHood}
+%
+PeerHoos is comprised of the following interacting components: a set of network plug-ins, the daemon, common components, the user library, user applications, the configuration file (see \ReferenceToSection{peerhood_analysis_risk_modeling}). 
+%
+The interaction is peformed in these ways: 
+\begin{itemize}
+	%\leftskip2em%
+	\setlength{\itemsep}{0pt}%
+	%\setlength{\parsep}{0pt}%
+
+	\item dynamic loading of shared objects (libraries) and further interaction via \Abbreviation{API} (the daemon -- network plug-ins, the daemon -- common components, the user library -- common components, a user application - the user library)
+	\item interaction via socket (the daemon -- the daemon, the user library -- the daemon)
+	\item interaction with file system (the user library -- the configuration file)
+\end{itemize}
+
+\Paragraph{Interaction via API analysis}
+%
+Binary fault injection into a shared object (library) can be performed in two ways. 
+%
+The first one affects an interface part of the object. 
+%
+In this case an error occurs during dynamic binding of the object, this leads to it's failure. 
+%
+The second one affects only inner functioning change of this object, and this leads to it's incorrect functioning. 
+%
+It can affect a tested component, for instance, return of incorrect or even malicious data. 
+%
+To estimate tolerance of a tested component it is necessary to perform analysis of the \Abbreviation{API} utilized to perform this interaction. 
+%
+Because PeerHood source code is available, the best way to perform this operation is to revise appropriate blocks of the source code. 
+
+\Paragraph{Interaction via socket analysis}
+%
+The same conclusion can be made concerning the components interacting via network socket (the daemon and the user library). 
+%
+Received in \A such way data may be incorrect, thus it is necessary to estimate tolerance of these components. 
+%
+Because PeerHood source code is available, the easiest way to perform this operation is to revise the appropriate blocks of the source code. 
+
+\Paragraph{Interacting with file system analysis}
+%
+Common components comprise configuration facilities. 
+%
+PeerHood stores it's own configuration in a specified file with a given format. 
+%
+Lack of this file or violation of it's format leads to PeerHood failure. 
+%
+The configuration file contains a file system path to network plug-ins loaded by the daemon. 
+%
+In the current daemon implementation there is no default value of this key, thus lack of the key leads to inability for network plug-ins loading and the daemon proper functioning. 
+
+\Paragraph{Analysis of access rights to files used by PeerHood}
+%
+The current PeerHood implementation does not comprise a special install script. 
+%
+At the present, deployment of the application conists in a copy of it's libraries, executing modules, and resources to a specified directory. 
+%
+The necessary from the security point of view access rights to these files are not assigned. 
+
+\Paragraph{Possibility to compromise PeerHood modules}
+%
+This can lead to PeerHood modules compromise. 
+%
+The consequence of this fact is a possibility of the application failure or a possibility of an attack performance on data transferred between the modules. 
+
+\Paragraph{Configuration file access control analysis}
+%
+PeerHood also utilizes a text file to store it's own configuration there. 
+%
+The file is also readable and writable for other applications. 
+%
+Thus there is a risk related to an unathorized alteration of the file. 
+%
+The goal of this alteration can be, for example, a change of file system path to network plug-ins location with further malicious plug-ins loading by the daemon. 
+
+\Paragraph{Conclusions}
+%
+Using this method concerning PeerHood, a vulnerability related to unsafe deployment of the project has been detected. 
+%
+Exploitation of the vulnerability by an attacker leads to violation of all PeerHood security components (see \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}). 
+
+% -------------------------------------------------------------------------------------------------------------------------
+
+\SubSubSectionTitle{Source code revision}{peerhood_analysis_security_testing_code_inspection}
+
+The goal of PeerHood source code revision is to search of vulnerabilities affecting it's security. 
+%
+According to \Reference{Michael2005} \Reference{NISTSP500268}, such process is comprised of the following steps: revision goals establishment, selection of potential vulnerability classes, and further their detecion in source code. 
+%
+The PeerHood revision goal consists in estimation of it's security components listed in \InReferenceToSection{peerhood_analysis_security_testing_method_choosing}. 
+%
+And particular attention is given to these blocks of code that corresponds to ``vulnerable'' places at that (see \ReferenceToSection{peerhood_analysis_risk_modeling}). 
+%
+Seven Pernicious Kingdoms vulnerability categories can be used as the such vulnerability classes (see \ReferenceToSection{software_security_vulnerabilities_seven_pernicious_kingdoms}). 
+%
+These are as follows: input data checking and representation, improper \Abbreviation{API} use, security mechanisms, time and state, errors, encapsulation, software environment \Reference{Tsipenyuk2005}. 
+
+\Paragraph{Input data checking}
+%
+Input data checking category consists in the following vulnerabilities: buffer overflow, code injection, format string vulnerabilities, integer overflow, invalid pointer value \Reference{Tsipenyuk2005}. 
+%
+C/C++ arrays are not used in PeerHood source code with the exception considered in \InReferenceToSection{peerhood_analysis_security_testing_static_analysis}. 
+%
+More safe Qt alternatives are used instead of them: \SourceCode{QString}, \SourceCode{QList}, \SourceCode{QStringList}, \SourceCode{QByteArray} \WebSite{QtDocs}. 
+%
+Format strings are also not used in the project. 
+%
+Source code revision has shown that the project does not contain integer overflow errors, as well as improper pointer usage. 
+
+\Paragraph{Security mechanisms}
+%
+The category related to security mechanisms contains vulnerabilities related to a full or particular lack of security mechanisms in a software (access control, authorization, authentification, protection of transferred data, and others) \Reference{Tsipenyuk2005}. 
+%
+According to the specification (see \ReferenceToSection{peerhood}), the mechanism are not yet implemented in PeerHood. 
+%
+But their implementation is planned and it is related to one of the further development directions of the project. 
+%
+Source code revision has shown that data are transferred in unencrypted form between mobile devices in the network environment. 
+%
+Thus it can be said that confidentiality and integrity of the data as PeerHood security components can be violated. 
+
+\Paragraph{Errors}
+%
+The category related to errors contains the following vulnerabilities: double free of memory blocks, memory leakage, dereferencing of a NULL pointer \Reference{Tsipenyuk2005}. 
+%
+The current PeerHood implementation is delivered with a set of tests, including those that are intended for memory leakage detection. 
+%
+They pass successfully, thus it can be said that PeerHood does not contain memory leaks. 
+%
+This is proved by dynamic analysis results (see \ReferenceToSection{peerhood_analysis_security_testing_dynamic_analysis}). 
+%
+PeerHood source code revision has shown that errors related to NULL pointer dereferencing and double free of memory block are not found in the project. 
+
+\Paragraph{Software environment}
+%
+The category related to software environment contains the following vulnerabilities: unsafe assignment of access rights to files used by a software, storing confidential information in unencrypted form \Reference{Tsipenyuk2005}. 
+%
+The PeerHood vulnerability related to access rights set to it's configuration file has been considered in \InReferenceToSection{peerhood_analysis_security_testing_fault_injection}. 
+%
+But there is another one that is related to the fact that the configuration file stores information about name of the mobile device and it's identifier. 
+%
+These values are used to differentiate devices in a network environment. 
+%
+Unauthorized modification of these parameters can lead to incorrect device identification. 
+%
+In this case an attacker can pose as a normal user and perform appropriate malicious operations. 
+%
+The consequence of this fact is a possible violation of confidentiality related to transferred data. 
+
+\Paragraph{Encapsulation}
+%
+The category related to encapsulation contains the following vulnerabilities: information disclosure, encapsulation violation related to classes of an software \Reference{Tsipenyuk2005}. 
+%
+In the current PeerHood implementation, the daemon utilizes the hostname and the device identifier and transfers them to another devices in a network environment. 
+%
+Such behaviour from the security point of view can be considered as a fact of information disclosure because it helps an attacker to pose himself as another user in the network. 
+%
+The consequences of this fact has been already considered above in this subsection. 
+%
+Search of \Abbreviation{API} classes encapsulation violation is performed further in this subsection. 
+
+\Paragraph{Improper API use}
+%
+The category related to improper API use deals with \Abbreviation{API} contract elements violation \Reference{Tsipenyuk2005}. 
+%
+Such operation can promote to incorrect functioning of an application, including unsafe behaviour. 
+%
+PeerHood \Abbreviation{API} security analysis enables to estimate fault-tolerance of it's components. 
+%
+Additionally it promotes to a search of vulnerabilities related to information disclosure. 
+
+\Paragraph{Encapsulation violation}
+%
+As it was noted above, PeerHood utilizes the more safe alternatives to C/C++ arrays: \SourceCode{QList}, \SourceCode{QString} classes and others \WebSite{QtDocs}. 
+%
+According to Qt documentation \Reference{QtDocs}, these classes are not immutable, so their state can be changed at runtime. 
+%
+Including in a unauthorized manner, it may lead to some security problems. 
+%
+In \Abbreviation{OOP} languages it is expressed as violation of class encapsulation. 
+%
+The violation is related to modification of a field of a class from outside of the class, not in a method or a constructor of the class. 
+%
+From the security point of view, such vulnerability can lead to confidentiality violation, if a field is storing some confidential information. 
+%
+Also this can lead to violation of integrity, when a value of the field is modified in a unauthorized manner. 
+%
+Finally, this can lead to violation of availability, when a block of memory holding the field is freed in an unauthorized manner. 
+
+\Paragraph{Encapsulation violation in PeerHood}
+%
+PeerHood \Abbreviation{API} contains a number of vulnerabilities related to it's class encapsulation violation. 
+%
+They are listed in \InReferenceToTable{peerhood_analysis_security_testing_api_encapsulation}. 
+%
+These vulnerabilities affect all the functional PeerHood characteristics except availability of simultenous several client serving and a capabiltiy of user control (see \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}). 
+
+\TableFigure{PeerHood API classes with violated encapsulation}{peerhood_analysis_security_testing_api_encapsulation}{
+	\begin{tabular}{ | p{4cm} | p{10cm} | }
+		\hline
+		\Bold{Class} & \Bold{Methods/constructors} \\ \hline
+		\SourceCode{Service} & \SourceCode{const QString\& name() \linebreak const QStringList\& attributes() \linebreak const QStringList\& attributes()} \\ \hline
+		\SourceCode{AbstractConnection} & \SourceCode{const QString remoteAddress()} \\ \hline
+		\SourceCode{AbstractCreator} & \SourceCode{const QString\& connectionBase()} \\ \hline
+		\SourceCode{AbstractMonitor} & \SourceCode{const QString\& connectionBase() \linebreak const QString\& address()} \\ \hline
+		\SourceCode{AbstractPinger} & \SourceCode{const QString\& connectionBase() \linebreak const QString\& address()} \\ \hline
+		\SourceCode{Device} & \SourceCode{const QString\& name() \linebreak const QString\& prototype() \linebreak const QString\& address() \linebreak QList<Service\*>\& serviceList()} \\ \hline
+		\SourceCode{AbstractAdverter} & \SourceCode{const QString\& connectionBase()} \\ \hline
+	\end{tabular}
+}
+
+\Paragraph{Method arguments checking}
+%
+To provide fault-tolerance assurance for an application, it's components should perform input data checking. 
+%
+In case of \Abbreviation{API} function arguments act as such input data. 
+%
+Lack of input data checking by a component may lead to violation of it's functioning. 
+%
+From the security point of view, this may cause availability violation when input data has unexpected or incorrect value and they cause the application failure. 
+
+\Paragraph{Vulnerable methods of PeerHood API classes}
+%
+Concerning PeerHood such vulnerabilities affect it's functioning. 
+%
+They affect it's functional characteristics related to availability and capability (see \ReferenceToSection{peerhood_analysis_security_testing_method_choosing}). 
+%
+The methods related in PeerHood \Abbreviation{API} classes are listed in \InReferenceToTable{peerhood_analysis_security_testing_unsafe_api_methods}. 
+%
+They do not verify values of their arguments. 
+%
+Source code revision has shown that PeerHood do not check input data, including transferred data. 
+%
+In particularly, deserialization of \SourceCode{Service} and \SourceCode{Device} classes is unsafe. 
+
+\TableFigure{PeerHood API classes that do not check input data}{peerhood_analysis_security_testing_unsafe_api_methods}{
+	\begin{tabular}{ | p{4cm} | p{10cm} | }
+		\hline
+		\Bold{Class} & \Bold{Methods/constructors} \\ \hline
+		\SourceCode{Service} & \SourceCode{void setPort(unsigned int) \linebreak Service(const QString\& name, const QStringList\& attributes, unsigned int port, quint64 pid = 0, QObject\* parent=0)} \\ \hline
+
+		\SourceCode{AbstractConnection} & \SourceCode{AbstractConnection(const QString\& connectionBase, const QHostAddress\& address = QHostAddress::Any, QObject\* parent = 0) \linebreak bool listen(quint16 port)} \\ \hline
+		\SourceCode{AbstractCreator} & \SourceCode{AbstractMonitor\* createMonitor(const QString\& address) \linebreak AbstractPinger\* createPinger(const QString\& address)} \\ \hline
+		\SourceCode{AbstractMonitor} & \SourceCode{AbstractMonitor(const QString\& address, const QString\& connectionBase)} \\ \hline
+		\SourceCode{AbstractPinger} & \SourceCode{AbstractPinger(const QString\& address, const QString\& connectionBase)} \\ \hline
+		\SourceCode{Device} & \SourceCode{Device(QDataStream\& stream, QObject \*parent = 0)} \\ \hline
+		\SourceCode{PeerHood} & \SourceCode{int registerService(const QString\& name, const QStringList\& attributes = QStringList(), unsigned int port = 0) \linebreak bool unregisterService(const QString\& name, unsigned int port = 0) \linebreak void connectNotify(const char\* signal) \linebreak void disconnectNotify(const char\* signal)} \\ \hline
+	\end{tabular}
+}
+
+\Paragraph{Capability of user control and simultaneous several clients serving}
+%
+PeerHood user control consists in a capability of changing it's state, for example, transition of low power consumption state. 
+%
+From the security point of view, \Abbreviation{API} components responsible for this functionality are implemented correctly. 
+%
+The same can be said about simultaneous serving of several clients. 
+%
+The feature is implemented correctly by means of synchronization primitives (\SourceCode{QMutex} \WebSite{QtDocs}). 
+%
+Revision of the appropriate blocks of PeerHood source code responsible for utilization of resources has not detected any race condition. 
