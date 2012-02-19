@@ -25,13 +25,13 @@
 \newcommand{\SubSectionTitle} [2] {%
 	\subsection{#1}%
 	\PlaceReferenceToSection{#2}%
-	\vspace*{0.5em}%
+	%\vspace*{0.5em}%
 }
 
 \newcommand{\SubSubSectionTitle} [2] {%
 	\subsubsection{#1}%
 	\PlaceReferenceToSection{#2}%
-	\vspace*{0.5em}%
+	%\vspace*{0.5em}%
 }
 
 \newcommand{\PreambleSectionTitle} [1] {%
@@ -41,7 +41,7 @@
 
 \newcommand{\PreambleSubSectionTitle} [1] {%
 	\subsection*{#1}%
-	\vspace*{1em}%
+	%\vspace*{1em}%
 }
 
 % to define own delimiters between paragraphs and sentences
@@ -49,8 +49,8 @@
 \newcommand{\Paragraph} [1] {
 	\ifthenelse{\isempty{#1}}
 		{\par\vspace*{1em}}
-		%{\par\vspace*{1em}}
-		{\par\colorbox{paragraphdescriptionbgcolor}{#1}\par} % {\par\vspace*{1em}}
+		{\par\vspace*{1em}}
+		%{\par\colorbox{paragraphdescriptionbgcolor}{#1}\par} % {\par\vspace*{1em}}
 }
 
 \newcommand{\Sentence} {}
