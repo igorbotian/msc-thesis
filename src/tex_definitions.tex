@@ -55,12 +55,21 @@
 
 \newcommand{\Sentence} {}
 
+\newcommand{\Remark} [1] {
+	\par\colorbox{remarkbgcolor}{#1}\par%
+}
+
+\NewEnviron{remarks} {%
+	\par\colorbox{remarkbgcolor}{\BODY}\par%
+}
+
 % to define new text colors
 % requires the 'color' package
 
 \definecolor{commentcolor}{gray}{0.2}
 \definecolor{paragraphdescriptionbgcolor}{RGB}{255,248,220} % pale yellow (cornsilk)
 \definecolor{remarkcolor}{gray}{0.2}
+\definecolor{remarkbgcolor}{RGB}{255,160,122}
 \definecolor{suggestioncolor}{RGB}{235,140,0} % dark orange
 \definecolor{websitecolor}{gray}{0.4}
 \definecolor{possiblebadtranslationcolor}{RGB}{64,0,0}
