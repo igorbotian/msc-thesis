@@ -226,7 +226,7 @@ In general, it may appear in the following cases \Reference{McConnell2004}:
 
 \Paragraph{Example}
 %
-In the listing below a fragment of code written in Java language represents \Abbreviation{API} for providing information about range of goods in an internet-store. 
+In the listing below a fragment of code written in C++ language represents \Abbreviation{API} for providing information about range of goods in an internet-store. 
 %
 The program contains an error related to wrong choice of an abstraction level of the exception that the code may raise. 
 %
@@ -243,8 +243,8 @@ At first, a malicious person may know details about the inner program mechanism,
 At second, using the error message of the exception he may retrieve important information that makes him easier to intrude to the system. 
 
 \Listing{Example of an API element that declares an exception with incorrect abstraction level}
-	{Java}
-	{listings/vulnerabilities/exceptions.java}
+	{C++}
+	{listings/vulnerabilities/exceptions.cpp}
 
 \Paragraph{Measures to prevent}
 %
@@ -283,8 +283,8 @@ It is not safe because a malicious person has access to information about system
 
 %\newpage
 \Listing{Example of code that contains important information leakage}
-	{Java}
-	{listings/vulnerabilities/information_leakage.java}
+	{C++}
+	{listings/vulnerabilities/information_leakage.cpp}
 
 \Paragraph{Measures to prevent}
 %
@@ -410,11 +410,11 @@ Consequences of such attacks are the following: destruction of a shared resource
 
 \Paragraph{Example}
 %
-In the listing below a fragment of code written in Java language uses some shared resource. 
+In the listing below a fragment of code written in C language uses some shared resource. 
 %
 This fragment contains a race condition error. 
 %
-Originally, after each checking of the resource availability (\SourceCode{isResourceAvailable()} method) it is possible to handle the resource data (\SourceCode{processResourceData()} method). 
+Originally, after each checking of the resource availability (\SourceCode{is\_resource\_available()} method) it is possible to handle the resource data (\SourceCode{process\_resource\_data()} method). 
 %
 From the security point of view, it is not correct because there is a gap between execution of these methods. 
 %
@@ -424,7 +424,7 @@ And after it's resuming the following situation may occur: resource data is not 
 
 %\newpage
 \Listing{Example of race condition}
-	{Java}{listings/vulnerabilities/race_condition.c}
+	{C}{listings/vulnerabilities/race_condition.c}
 
 \Paragraph{Measures to prevent}
 %

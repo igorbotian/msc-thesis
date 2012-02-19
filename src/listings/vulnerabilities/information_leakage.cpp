@@ -10,7 +10,6 @@ class fan_store_impl : fan_store {
 public: 
 	std::list<tshirt> get_tshirts() 
 		throw fan_store_exception;
-	// ...
 
 private:
 	std::list<tshirt> get_tshirts_from_db() 

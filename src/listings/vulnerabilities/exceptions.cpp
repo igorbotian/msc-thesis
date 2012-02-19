@@ -4,6 +4,5 @@
 class fan_store {
 public:
 	std::list<tshirt> get_tshirts() throw sql_exception;
-
 	// ...
 }
